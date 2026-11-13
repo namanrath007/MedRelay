@@ -1,0 +1,40 @@
+{
+  "system": "hl7_feed",
+  "passed": true,
+  "attempts_used": 1,
+  "status": "ready_for_approval",
+  "total_seconds": 0.18,
+  "finished_at": "2026-11-12T17:40:27+00:00",
+  "fidelity_target_pct": 99.0,
+  "attempts": [
+    {
+      "attempt": 1,
+      "source": "gemini-3.8-flash",
+      "notes": "Adapter transforms HL7 ORU_R01 records into Patient and Observation FHIR R4 resources using standard helper functions and standard FHIR code system URIs.",
+      "generate_seconds": 0.0,
+      "summary": "security OK | records 400 | runtime errors 0 | FHIR errors 0 | fidelity 100.0% | PASS",
+      "result": {
+        "security": [],
+        "runtime_errors": 0,
+        "runtime_examples": [],
+        "records": 400,
+        "resources": {
+          "Patient": 400,
+          "Observation": 400
+        },
+        "structure_errors": 0,
+        "structure_examples": {},
+        "fidelity": {
+          "checks": 4801,
+          "passed": 4801,
+          "fidelity_pct": 100.0,
+          "failures": []
+        },
+        "passed": true,
+        "seconds": 0.17
+      },
+      "feedback_sent": null,
+      "code": "import re\nfrom fhirbridge_runtime.transforms import (\n    SYS,\n    code_map,\n    ref,\n    split_range,\n    stable_id,\n    to_decimal,\n    ts_to_datetime,\n    yyyymmdd_to_date,\n)\n\ndef _is_valid_id(val: str) -> bool:\n    return bool(val and 1 <= len(val) <= 64 and re.match(r'^[A-Za-z0-9-.]+$', val))\n\ndef to_fhir(entity: str, record: dict) -> list[dict]:\n    if entity != \"ORU_R01\":\n        return []\n\n    resources = []\n    mrn = record.get(\"PID-3.1\")\n    \n    if mrn:\n        patient = {\n            \"resourceType\": \"Patient\",\n            \"id\": mrn,\n            \"identifier\": [{\"system\": SYS[\"mrn\"], \"value\": mrn}],\n        }\n        \n        family = record.get(\"PID-5.1\")\n        given = record.get(\"PID-5.2\")\n        name_dict = {}\n        if family:\n            name_dict[\"family\"] = family\n        if given:\n            name_dict[\"given\"] = [given]\n        if name_dict:\n            patient[\"name\"] = [name_dict]\n            \n        dob = record.get(\"PID-7\")\n        if dob:\n            patient[\"birthDate\"] = yyyymmdd_to_date(dob)\n            \n        gender = record.get(\"PID-8\")\n        if gender:\n            mapped_gender = code_map(gender, {\"F\": \"female\", \"M\": \"male\"}, default=\"unknown\")\n            if mapped_gender:\n                patient[\"gender\"] = mapped_gender\n                \n        resources.append(patient)\n\n    obs_raw_id = record.get(\"OBR-3\")\n    code_val = record.get(\"OBX-3.1\") or record.get(\"OBR-4.1\")\n    obs_id = obs_raw_id if (obs_raw_id and _is_valid_id(obs_raw_id)) else stable_id(\"Observation\", mrn, obs_raw_id, code_val)\n    \n    obs = {\n        \"resourceType\": \"Observation\",\n        \"id\": obs_id,\n        \"status\": code_map(record.get(\"OBX-11\"), {\"F\": \"final\", \"C\": \"corrected\", \"P\": \"preliminary\"}, default=\"final\"),\n    }\n    \n    if obs_raw_id:\n        obs[\"identifier\"] = [{\"value\": obs_raw_id}]\n        \n    if mrn:\n        obs[\"subject\"] = ref(\"Patient\", mrn)\n        \n    display_val = record.get(\"OBX-3.2\") or record.get(\"OBR-4.2\")\n    if code_val:\n        coding = {\"system\": SYS[\"loinc\"], \"code\": code_val}\n        if display_val:\n            coding[\"display\"] = display_val\n        obs[\"code\"] = {\"coding\": [coding]}\n        \n    eff_dt = record.get(\"OBX-14\") or record.get(\"OBR-7\")\n    if eff_dt:\n        obs[\"effectiveDateTime\"] = ts_to_datetime(eff_dt)\n        \n    val_num = to_decimal(record.get(\"OBX-5\"))\n    unit = record.get(\"OBX-6\")\n    if val_num is not None:\n        vq = {\"value\": val_num}\n        if unit:\n            vq[\"unit\"] = unit\n        obs[\"valueQuantity\"] = vq\n        \n    ref_str = record.get(\"OBX-7\")\n    if ref_str:\n        low, high = split_range(ref_str)\n        rr = {}\n        if low is not None:\n            rr[\"low\"] = {\"value\": low, \"unit\": unit} if unit else {\"value\": low}\n        if high is not None:\n            rr[\"high\"] = {\"value\": high, \"unit\": unit} if unit else {\"value\": high}\n        if rr:\n            obs[\"referenceRange\"] = [rr]\n            \n    interp_raw = record.get(\"OBX-8\")\n    if interp_raw:\n        interp_code = code_map(interp_raw, {\"H\": \"H\", \"L\": \"L\", \"N\": \"N\"})\n        if interp_code:\n            obs[\"interpretation\"] = [{\n                \"coding\": [{\n                    \"system\": SYS[\"obs_interp\"],\n                    \"code\": interp_code\n                }]\n            }]\n\n    resources.append(obs)\n    return resources\n"
+    }
+  ]
+}

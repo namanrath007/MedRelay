@@ -1,0 +1,374 @@
+{
+  "system": "rest_api",
+  "model": "gemini-3.5-flash",
+  "threshold": 0.8,
+  "timing_seconds": {
+    "ml": 0.004,
+    "llm": 6.64
+  },
+  "mappings": [
+    {
+      "source": "memberId",
+      "target": "Patient.identifier.value",
+      "transform": "none",
+      "confidence": 0.98,
+      "status": "auto_approved",
+      "decided_by": "hybrid",
+      "reason": "Unique member identifier maps to Patient identifier value.",
+      "valid_target": true,
+      "ml_top1": "Patient.identifier.value",
+      "ml_candidates": [
+        [
+          "Patient.identifier.value",
+          0.51
+        ],
+        [
+          "Encounter.identifier.value",
+          0.321
+        ],
+        [
+          "Observation.identifier.value",
+          0.302
+        ],
+        [
+          "none",
+          0.134
+        ],
+        [
+          "Observation.code.coding.code",
+          0.093
+        ]
+      ]
+    },
+    {
+      "source": "extRef",
+      "target": "Patient.identifier.value",
+      "transform": "none",
+      "confidence": 0.95,
+      "status": "auto_approved",
+      "decided_by": "hybrid",
+      "reason": "External reference number or MRN maps to Patient identifier value.",
+      "valid_target": true,
+      "ml_top1": "Patient.identifier.value",
+      "ml_candidates": [
+        [
+          "Patient.identifier.value",
+          0.347
+        ],
+        [
+          "Condition.clinicalStatus",
+          0.167
+        ],
+        [
+          "Observation.valueQuantity.value",
+          0.135
+        ],
+        [
+          "Observation.referenceRange",
+          0.124
+        ],
+        [
+          "Encounter.subject",
+          0.098
+        ]
+      ]
+    },
+    {
+      "source": "nm.first",
+      "target": "Patient.name.given",
+      "transform": "none",
+      "confidence": 0.99,
+      "status": "auto_approved",
+      "decided_by": "hybrid",
+      "reason": "Given/first name maps to Patient.name.given.",
+      "valid_target": true,
+      "ml_top1": "Patient.name.given",
+      "ml_candidates": [
+        [
+          "Patient.name.given",
+          0.717
+        ],
+        [
+          "Patient.name.family",
+          0.342
+        ],
+        [
+          "Observation.code.coding.display",
+          0.238
+        ],
+        [
+          "Condition.code.coding.display",
+          0.227
+        ],
+        [
+          "Patient.identifier.value",
+          0.081
+        ]
+      ]
+    },
+    {
+      "source": "nm.last",
+      "target": "Patient.name.family",
+      "transform": "none",
+      "confidence": 0.99,
+      "status": "auto_approved",
+      "decided_by": "hybrid",
+      "reason": "Family/last name maps to Patient.name.family.",
+      "valid_target": true,
+      "ml_top1": "Patient.name.family",
+      "ml_candidates": [
+        [
+          "Patient.name.family",
+          0.717
+        ],
+        [
+          "Patient.name.given",
+          0.355
+        ],
+        [
+          "Patient.meta.lastUpdated",
+          0.313
+        ],
+        [
+          "Observation.code.coding.display",
+          0.249
+        ],
+        [
+          "Condition.code.coding.display",
+          0.237
+        ]
+      ]
+    },
+    {
+      "source": "dob",
+      "target": "Patient.birthDate",
+      "transform": "DD/MM/YYYY -> YYYY-MM-DD",
+      "confidence": 0.98,
+      "status": "auto_approved",
+      "decided_by": "hybrid",
+      "reason": "Date of birth formatted to FHIR YYYY-MM-DD date standard.",
+      "valid_target": true,
+      "ml_top1": "Patient.birthDate",
+      "ml_candidates": [
+        [
+          "Patient.birthDate",
+          0.887
+        ],
+        [
+          "Condition.onsetDateTime",
+          0.295
+        ],
+        [
+          "Patient.deceasedDateTime",
+          0.224
+        ],
+        [
+          "Observation.effectiveDateTime",
+          0.181
+        ],
+        [
+          "Encounter.period.start",
+          0.172
+        ]
+      ]
+    },
+    {
+      "source": "sx",
+      "target": "Patient.gender",
+      "transform": "F -> female, M -> male",
+      "confidence": 0.98,
+      "status": "auto_approved",
+      "decided_by": "hybrid",
+      "reason": "Administrative sex code mapped to FHIR AdministrativeGender value set.",
+      "valid_target": true,
+      "ml_top1": "Patient.gender",
+      "ml_candidates": [
+        [
+          "Patient.gender",
+          0.345
+        ],
+        [
+          "Observation.code.coding.code",
+          0.192
+        ],
+        [
+          "Condition.code.coding.code",
+          0.173
+        ],
+        [
+          "Patient.address.postalCode",
+          0.114
+        ],
+        [
+          "Patient.identifier.value",
+          0.097
+        ]
+      ]
+    },
+    {
+      "source": "contact.mobile",
+      "target": "Patient.telecom.value",
+      "transform": "none",
+      "confidence": 0.98,
+      "status": "auto_approved",
+      "decided_by": "hybrid",
+      "reason": "Mobile phone number maps to Patient telecom contact value.",
+      "valid_target": true,
+      "ml_top1": "Patient.telecom.value",
+      "ml_candidates": [
+        [
+          "Patient.telecom.value",
+          0.85
+        ],
+        [
+          "Encounter.identifier.value",
+          0.079
+        ],
+        [
+          "Observation.identifier.value",
+          0.075
+        ],
+        [
+          "Patient.address.line",
+          0.069
+        ],
+        [
+          "Patient.identifier.value",
+          0.055
+        ]
+      ]
+    },
+    {
+      "source": "contact.addr.street",
+      "target": "Patient.address.line",
+      "transform": "none",
+      "confidence": 0.98,
+      "status": "auto_approved",
+      "decided_by": "hybrid",
+      "reason": "Street address line maps to Patient.address.line.",
+      "valid_target": true,
+      "ml_top1": "Patient.address.line",
+      "ml_candidates": [
+        [
+          "Patient.address.line",
+          0.645
+        ],
+        [
+          "Patient.address.city",
+          0.156
+        ],
+        [
+          "Patient.address.country",
+          0.152
+        ],
+        [
+          "Patient.telecom.value",
+          0.108
+        ],
+        [
+          "Observation.code.coding.display",
+          0.096
+        ]
+      ]
+    },
+    {
+      "source": "contact.addr.town",
+      "target": "Patient.address.city",
+      "transform": "none",
+      "confidence": 0.98,
+      "status": "auto_approved",
+      "decided_by": "hybrid",
+      "reason": "Town or city maps to Patient address city element.",
+      "valid_target": true,
+      "ml_top1": "Patient.address.city",
+      "ml_candidates": [
+        [
+          "Patient.address.city",
+          0.688
+        ],
+        [
+          "Observation.code.coding.code",
+          0.183
+        ],
+        [
+          "Condition.code.coding.code",
+          0.166
+        ],
+        [
+          "Patient.address.postalCode",
+          0.164
+        ],
+        [
+          "Patient.address.country",
+          0.145
+        ]
+      ]
+    },
+    {
+      "source": "contact.addr.eircode",
+      "target": "Patient.address.postalCode",
+      "transform": "none",
+      "confidence": 0.98,
+      "status": "auto_approved",
+      "decided_by": "hybrid",
+      "reason": "Eircode maps to Patient address postal code element.",
+      "valid_target": true,
+      "ml_top1": "Patient.address.postalCode",
+      "ml_candidates": [
+        [
+          "Patient.address.postalCode",
+          0.861
+        ],
+        [
+          "Observation.code.coding.code",
+          0.338
+        ],
+        [
+          "Condition.code.coding.code",
+          0.306
+        ],
+        [
+          "Patient.address.country",
+          0.146
+        ],
+        [
+          "Observation.code.coding.display",
+          0.1
+        ]
+      ]
+    },
+    {
+      "source": "portalStatus",
+      "target": "Patient.active",
+      "transform": "ACTIVE -> true, else false",
+      "confidence": 0.9,
+      "status": "auto_approved",
+      "decided_by": "hybrid",
+      "reason": "Portal account active status maps to boolean Patient.active.",
+      "valid_target": true,
+      "ml_top1": "Patient.active",
+      "ml_candidates": [
+        [
+          "Patient.active",
+          0.656
+        ],
+        [
+          "Observation.status",
+          0.332
+        ],
+        [
+          "Condition.clinicalStatus",
+          0.328
+        ],
+        [
+          "Encounter.status",
+          0.304
+        ],
+        [
+          "Patient.maritalStatus",
+          0.253
+        ]
+      ]
+    }
+  ]
+}

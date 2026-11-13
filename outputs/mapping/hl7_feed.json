@@ -1,0 +1,1199 @@
+{
+  "system": "hl7_feed",
+  "model": "gemini-3.5-flash",
+  "threshold": 0.8,
+  "timing_seconds": {
+    "ml": 0.001,
+    "llm": 135.33
+  },
+  "mappings": [
+    {
+      "source": "MSH-2",
+      "target": null,
+      "transform": "none",
+      "confidence": 0.833,
+      "status": "auto_approved",
+      "decided_by": "hybrid",
+      "reason": "MSH-2 contains message encoding characters used for parsing.",
+      "valid_target": true,
+      "ml_top1": "Patient.identifier.value",
+      "ml_candidates": [
+        [
+          "Patient.identifier.value",
+          0.0
+        ],
+        [
+          "Patient.name.family",
+          0.0
+        ],
+        [
+          "Patient.name.given",
+          0.0
+        ],
+        [
+          "Patient.gender",
+          0.0
+        ],
+        [
+          "Patient.birthDate",
+          0.0
+        ]
+      ]
+    },
+    {
+      "source": "MSH-3",
+      "target": null,
+      "transform": "none",
+      "confidence": 0.98,
+      "status": "auto_approved",
+      "decided_by": "hybrid",
+      "reason": "MSH-3 represents the sending application metadata.",
+      "valid_target": true,
+      "ml_top1": null,
+      "ml_candidates": [
+        [
+          "none",
+          0.299
+        ],
+        [
+          "Observation.code.coding.code",
+          0.194
+        ],
+        [
+          "Condition.code.coding.code",
+          0.176
+        ],
+        [
+          "Observation.code.coding.display",
+          0.174
+        ],
+        [
+          "Condition.code.coding.display",
+          0.166
+        ]
+      ]
+    },
+    {
+      "source": "MSH-4",
+      "target": null,
+      "transform": "none",
+      "confidence": 0.98,
+      "status": "auto_approved",
+      "decided_by": "hybrid",
+      "reason": "MSH-4 represents the sending facility metadata.",
+      "valid_target": true,
+      "ml_top1": null,
+      "ml_candidates": [
+        [
+          "none",
+          0.299
+        ],
+        [
+          "Observation.code.coding.code",
+          0.194
+        ],
+        [
+          "Condition.code.coding.code",
+          0.176
+        ],
+        [
+          "Observation.code.coding.display",
+          0.174
+        ],
+        [
+          "Condition.code.coding.display",
+          0.166
+        ]
+      ]
+    },
+    {
+      "source": "MSH-5",
+      "target": null,
+      "transform": "none",
+      "confidence": 0.98,
+      "status": "auto_approved",
+      "decided_by": "hybrid",
+      "reason": "MSH-5 represents the receiving application metadata.",
+      "valid_target": true,
+      "ml_top1": null,
+      "ml_candidates": [
+        [
+          "none",
+          0.231
+        ],
+        [
+          "Observation.code.coding.code",
+          0.212
+        ],
+        [
+          "Condition.code.coding.code",
+          0.192
+        ],
+        [
+          "Observation.code.coding.display",
+          0.19
+        ],
+        [
+          "Condition.code.coding.display",
+          0.181
+        ]
+      ]
+    },
+    {
+      "source": "MSH-6",
+      "target": null,
+      "transform": "none",
+      "confidence": 0.98,
+      "status": "auto_approved",
+      "decided_by": "hybrid",
+      "reason": "MSH-6 represents the receiving facility metadata.",
+      "valid_target": true,
+      "ml_top1": null,
+      "ml_candidates": [
+        [
+          "none",
+          0.231
+        ],
+        [
+          "Observation.code.coding.code",
+          0.212
+        ],
+        [
+          "Condition.code.coding.code",
+          0.192
+        ],
+        [
+          "Observation.code.coding.display",
+          0.19
+        ],
+        [
+          "Condition.code.coding.display",
+          0.181
+        ]
+      ]
+    },
+    {
+      "source": "MSH-7",
+      "target": null,
+      "transform": "none",
+      "confidence": 0.807,
+      "status": "auto_approved",
+      "decided_by": "hybrid",
+      "reason": "MSH-7 represents the message creation timestamp metadata.",
+      "valid_target": true,
+      "ml_top1": "Observation.effectiveDateTime",
+      "ml_candidates": [
+        [
+          "Observation.effectiveDateTime",
+          0.479
+        ],
+        [
+          "Condition.onsetDateTime",
+          0.401
+        ],
+        [
+          "Patient.deceasedDateTime",
+          0.346
+        ],
+        [
+          "Patient.birthDate",
+          0.263
+        ],
+        [
+          "Encounter.period.start",
+          0.171
+        ]
+      ]
+    },
+    {
+      "source": "MSH-9.1",
+      "target": null,
+      "transform": "none",
+      "confidence": 0.98,
+      "status": "auto_approved",
+      "decided_by": "hybrid",
+      "reason": "MSH-9.1 is the HL7 message type code.",
+      "valid_target": true,
+      "ml_top1": null,
+      "ml_candidates": [
+        [
+          "none",
+          0.319
+        ],
+        [
+          "Observation.code.coding.code",
+          0.175
+        ],
+        [
+          "Encounter.class",
+          0.174
+        ],
+        [
+          "Condition.code.coding.code",
+          0.159
+        ],
+        [
+          "Patient.address.postalCode",
+          0.105
+        ]
+      ]
+    },
+    {
+      "source": "MSH-9.2",
+      "target": null,
+      "transform": "none",
+      "confidence": 0.98,
+      "status": "auto_approved",
+      "decided_by": "hybrid",
+      "reason": "MSH-9.2 is the HL7 trigger event code.",
+      "valid_target": true,
+      "ml_top1": null,
+      "ml_candidates": [
+        [
+          "none",
+          0.319
+        ],
+        [
+          "Observation.code.coding.code",
+          0.175
+        ],
+        [
+          "Encounter.class",
+          0.174
+        ],
+        [
+          "Condition.code.coding.code",
+          0.159
+        ],
+        [
+          "Patient.address.postalCode",
+          0.105
+        ]
+      ]
+    },
+    {
+      "source": "MSH-10",
+      "target": null,
+      "transform": "none",
+      "confidence": 0.98,
+      "status": "auto_approved",
+      "decided_by": "hybrid",
+      "reason": "MSH-10 is a technical message control identifier.",
+      "valid_target": true,
+      "ml_top1": null,
+      "ml_candidates": [
+        [
+          "none",
+          0.423
+        ],
+        [
+          "Encounter.identifier.value",
+          0.352
+        ],
+        [
+          "Observation.identifier.value",
+          0.331
+        ],
+        [
+          "Patient.identifier.value",
+          0.327
+        ],
+        [
+          "Observation.code.coding.code",
+          0.102
+        ]
+      ]
+    },
+    {
+      "source": "MSH-11",
+      "target": null,
+      "transform": "none",
+      "confidence": 0.833,
+      "status": "auto_approved",
+      "decided_by": "hybrid",
+      "reason": "MSH-11 is the message processing environment code.",
+      "valid_target": true,
+      "ml_top1": "Observation.code.coding.code",
+      "ml_candidates": [
+        [
+          "Observation.code.coding.code",
+          0.671
+        ],
+        [
+          "Encounter.identifier.value",
+          0.58
+        ],
+        [
+          "Observation.identifier.value",
+          0.546
+        ],
+        [
+          "Patient.identifier.value",
+          0.54
+        ],
+        [
+          "Condition.code.coding.code",
+          0.455
+        ]
+      ]
+    },
+    {
+      "source": "MSH-12",
+      "target": null,
+      "transform": "none",
+      "confidence": 0.98,
+      "status": "auto_approved",
+      "decided_by": "hybrid",
+      "reason": "MSH-12 specifies the HL7 standard version.",
+      "valid_target": true,
+      "ml_top1": null,
+      "ml_candidates": [
+        [
+          "none",
+          0.316
+        ],
+        [
+          "Encounter.identifier.value",
+          0.263
+        ],
+        [
+          "Observation.identifier.value",
+          0.247
+        ],
+        [
+          "Patient.identifier.value",
+          0.245
+        ],
+        [
+          "Observation.code.coding.code",
+          0.076
+        ]
+      ]
+    },
+    {
+      "source": "PID-1",
+      "target": null,
+      "transform": "none",
+      "confidence": 0.931,
+      "status": "auto_approved",
+      "decided_by": "hybrid",
+      "reason": "PID-1 is a sequential set ID for the PID segment.",
+      "valid_target": true,
+      "ml_top1": "Encounter.identifier.value",
+      "ml_candidates": [
+        [
+          "Encounter.identifier.value",
+          0.352
+        ],
+        [
+          "Observation.identifier.value",
+          0.331
+        ],
+        [
+          "Patient.identifier.value",
+          0.327
+        ],
+        [
+          "Observation.valueQuantity.value",
+          0.319
+        ],
+        [
+          "none",
+          0.285
+        ]
+      ]
+    },
+    {
+      "source": "PID-3.1",
+      "target": "Patient.identifier.value",
+      "transform": "string copy",
+      "confidence": 0.98,
+      "status": "auto_approved",
+      "decided_by": "hybrid",
+      "reason": "PID-3.1 contains the actual patient identifier value.",
+      "valid_target": true,
+      "ml_top1": "Patient.identifier.value",
+      "ml_candidates": [
+        [
+          "Patient.identifier.value",
+          0.778
+        ],
+        [
+          "Encounter.identifier.value",
+          0.733
+        ],
+        [
+          "Observation.identifier.value",
+          0.69
+        ],
+        [
+          "none",
+          0.306
+        ],
+        [
+          "Observation.code.coding.code",
+          0.213
+        ]
+      ]
+    },
+    {
+      "source": "PID-3.4",
+      "target": null,
+      "transform": "none",
+      "confidence": 0.902,
+      "status": "auto_approved",
+      "decided_by": "hybrid",
+      "reason": "Assigning authority component metadata is not mapped directly to a primitive string target.",
+      "valid_target": true,
+      "ml_top1": "Patient.identifier.value",
+      "ml_candidates": [
+        [
+          "Patient.identifier.value",
+          0.778
+        ],
+        [
+          "Encounter.identifier.value",
+          0.733
+        ],
+        [
+          "Observation.identifier.value",
+          0.69
+        ],
+        [
+          "none",
+          0.306
+        ],
+        [
+          "Observation.code.coding.code",
+          0.213
+        ]
+      ]
+    },
+    {
+      "source": "PID-3.5",
+      "target": null,
+      "transform": "none",
+      "confidence": 0.902,
+      "status": "auto_approved",
+      "decided_by": "hybrid",
+      "reason": "Identifier type code component metadata.",
+      "valid_target": true,
+      "ml_top1": "Patient.identifier.value",
+      "ml_candidates": [
+        [
+          "Patient.identifier.value",
+          0.778
+        ],
+        [
+          "Encounter.identifier.value",
+          0.733
+        ],
+        [
+          "Observation.identifier.value",
+          0.69
+        ],
+        [
+          "none",
+          0.306
+        ],
+        [
+          "Observation.code.coding.code",
+          0.213
+        ]
+      ]
+    },
+    {
+      "source": "PID-5.1",
+      "target": "Patient.name.family",
+      "transform": "string copy",
+      "confidence": 0.98,
+      "status": "auto_approved",
+      "decided_by": "hybrid",
+      "reason": "PID-5.1 represents the patient's family (last) name.",
+      "valid_target": true,
+      "ml_top1": "Patient.name.family",
+      "ml_candidates": [
+        [
+          "Patient.name.family",
+          0.724
+        ],
+        [
+          "Patient.name.given",
+          0.719
+        ],
+        [
+          "Observation.code.coding.display",
+          0.129
+        ],
+        [
+          "Condition.code.coding.display",
+          0.123
+        ],
+        [
+          "Encounter.subject",
+          0.102
+        ]
+      ]
+    },
+    {
+      "source": "PID-5.2",
+      "target": "Patient.name.given",
+      "transform": "string copy",
+      "confidence": 0.931,
+      "status": "auto_approved",
+      "decided_by": "hybrid",
+      "reason": "PID-5.2 represents the patient's given (first) name.",
+      "valid_target": true,
+      "ml_top1": "Patient.name.family",
+      "ml_candidates": [
+        [
+          "Patient.name.family",
+          0.724
+        ],
+        [
+          "Patient.name.given",
+          0.719
+        ],
+        [
+          "Observation.code.coding.display",
+          0.129
+        ],
+        [
+          "Condition.code.coding.display",
+          0.123
+        ],
+        [
+          "Encounter.subject",
+          0.102
+        ]
+      ]
+    },
+    {
+      "source": "PID-7",
+      "target": "Patient.birthDate",
+      "transform": "YYYYMMDD -> YYYY-MM-DD",
+      "confidence": 0.98,
+      "status": "auto_approved",
+      "decided_by": "hybrid",
+      "reason": "PID-7 represents the patient's date of birth.",
+      "valid_target": true,
+      "ml_top1": "Patient.birthDate",
+      "ml_candidates": [
+        [
+          "Patient.birthDate",
+          0.811
+        ],
+        [
+          "Observation.effectiveDateTime",
+          0.479
+        ],
+        [
+          "Condition.onsetDateTime",
+          0.401
+        ],
+        [
+          "Patient.deceasedDateTime",
+          0.346
+        ],
+        [
+          "Encounter.period.start",
+          0.171
+        ]
+      ]
+    },
+    {
+      "source": "PID-8",
+      "target": "Patient.gender",
+      "transform": "F->female, M->male",
+      "confidence": 0.98,
+      "status": "auto_approved",
+      "decided_by": "hybrid",
+      "reason": "PID-8 maps administrative sex to FHIR gender codes.",
+      "valid_target": true,
+      "ml_top1": "Patient.gender",
+      "ml_candidates": [
+        [
+          "Patient.gender",
+          0.397
+        ],
+        [
+          "Observation.code.coding.code",
+          0.313
+        ],
+        [
+          "Condition.code.coding.code",
+          0.283
+        ],
+        [
+          "Patient.address.postalCode",
+          0.187
+        ],
+        [
+          "Patient.address.country",
+          0.098
+        ]
+      ]
+    },
+    {
+      "source": "OBR-1",
+      "target": null,
+      "transform": "none",
+      "confidence": 0.931,
+      "status": "auto_approved",
+      "decided_by": "hybrid",
+      "reason": "OBR-1 is a sequential set ID for the OBR segment.",
+      "valid_target": true,
+      "ml_top1": "Encounter.identifier.value",
+      "ml_candidates": [
+        [
+          "Encounter.identifier.value",
+          0.352
+        ],
+        [
+          "Observation.identifier.value",
+          0.331
+        ],
+        [
+          "Patient.identifier.value",
+          0.327
+        ],
+        [
+          "Observation.valueQuantity.value",
+          0.319
+        ],
+        [
+          "none",
+          0.285
+        ]
+      ]
+    },
+    {
+      "source": "OBR-3",
+      "target": "Observation.identifier.value",
+      "transform": "string copy",
+      "confidence": 0.85,
+      "status": "auto_approved",
+      "decided_by": "hybrid",
+      "reason": "Filler order number serves as the primary observation group/order identifier.",
+      "valid_target": true,
+      "ml_top1": "Observation.identifier.value",
+      "ml_candidates": [
+        [
+          "Observation.identifier.value",
+          0.519
+        ],
+        [
+          "Encounter.identifier.value",
+          0.107
+        ],
+        [
+          "Patient.telecom.value",
+          0.1
+        ],
+        [
+          "Patient.address.line",
+          0.093
+        ],
+        [
+          "Patient.identifier.value",
+          0.074
+        ]
+      ]
+    },
+    {
+      "source": "OBR-4.1",
+      "target": "Observation.code.coding.code",
+      "transform": "string copy",
+      "confidence": 0.85,
+      "status": "auto_approved",
+      "decided_by": "hybrid",
+      "reason": "OBR-4.1 specifies the code for the overall observation/panel request.",
+      "valid_target": true,
+      "ml_top1": "Observation.code.coding.code",
+      "ml_candidates": [
+        [
+          "Observation.code.coding.code",
+          0.621
+        ],
+        [
+          "Observation.code.coding.display",
+          0.515
+        ],
+        [
+          "Condition.code.coding.display",
+          0.491
+        ],
+        [
+          "Condition.code.coding.code",
+          0.331
+        ],
+        [
+          "Encounter.identifier.value",
+          0.306
+        ]
+      ]
+    },
+    {
+      "source": "OBR-4.2",
+      "target": "Observation.code.coding.display",
+      "transform": "string copy",
+      "confidence": 0.807,
+      "status": "auto_approved",
+      "decided_by": "hybrid",
+      "reason": "OBR-4.2 specifies the display text for the overall observation/panel request.",
+      "valid_target": true,
+      "ml_top1": "Observation.code.coding.code",
+      "ml_candidates": [
+        [
+          "Observation.code.coding.code",
+          0.621
+        ],
+        [
+          "Observation.code.coding.display",
+          0.515
+        ],
+        [
+          "Condition.code.coding.display",
+          0.491
+        ],
+        [
+          "Condition.code.coding.code",
+          0.331
+        ],
+        [
+          "Encounter.identifier.value",
+          0.306
+        ]
+      ]
+    },
+    {
+      "source": "OBR-4.3",
+      "target": null,
+      "transform": "none",
+      "confidence": 0.807,
+      "status": "auto_approved",
+      "decided_by": "hybrid",
+      "reason": "Code system identifier component.",
+      "valid_target": true,
+      "ml_top1": "Observation.code.coding.code",
+      "ml_candidates": [
+        [
+          "Observation.code.coding.code",
+          0.621
+        ],
+        [
+          "Observation.code.coding.display",
+          0.515
+        ],
+        [
+          "Condition.code.coding.display",
+          0.491
+        ],
+        [
+          "Condition.code.coding.code",
+          0.331
+        ],
+        [
+          "Encounter.identifier.value",
+          0.306
+        ]
+      ]
+    },
+    {
+      "source": "OBR-7",
+      "target": "Observation.effectiveDateTime",
+      "transform": "YYYYMMDDHHMMSS -> YYYY-MM-DDThh:mm:ss",
+      "confidence": 0.85,
+      "status": "auto_approved",
+      "decided_by": "hybrid",
+      "reason": "OBR-7 specifies the clinically relevant date/time of observation/sampling.",
+      "valid_target": true,
+      "ml_top1": "Observation.effectiveDateTime",
+      "ml_candidates": [
+        [
+          "Observation.effectiveDateTime",
+          0.731
+        ],
+        [
+          "Condition.onsetDateTime",
+          0.498
+        ],
+        [
+          "Patient.deceasedDateTime",
+          0.429
+        ],
+        [
+          "Patient.birthDate",
+          0.326
+        ],
+        [
+          "Observation.issued",
+          0.262
+        ]
+      ]
+    },
+    {
+      "source": "OBX-1",
+      "target": null,
+      "transform": "none",
+      "confidence": 0.931,
+      "status": "auto_approved",
+      "decided_by": "hybrid",
+      "reason": "OBX-1 is a sequential set ID for the OBX segment.",
+      "valid_target": true,
+      "ml_top1": "Encounter.identifier.value",
+      "ml_candidates": [
+        [
+          "Encounter.identifier.value",
+          0.352
+        ],
+        [
+          "Observation.identifier.value",
+          0.331
+        ],
+        [
+          "Patient.identifier.value",
+          0.327
+        ],
+        [
+          "Observation.valueQuantity.value",
+          0.319
+        ],
+        [
+          "none",
+          0.285
+        ]
+      ]
+    },
+    {
+      "source": "OBX-2",
+      "target": null,
+      "transform": "none",
+      "confidence": 0.902,
+      "status": "auto_approved",
+      "decided_by": "hybrid",
+      "reason": "OBX-2 defines the value data type structure in HL7.",
+      "valid_target": true,
+      "ml_top1": "Patient.name.family",
+      "ml_candidates": [
+        [
+          "Patient.name.family",
+          0.252
+        ],
+        [
+          "Patient.name.given",
+          0.25
+        ],
+        [
+          "Observation.code.coding.code",
+          0.235
+        ],
+        [
+          "Encounter.class",
+          0.233
+        ],
+        [
+          "none",
+          0.215
+        ]
+      ]
+    },
+    {
+      "source": "OBX-3.1",
+      "target": "Observation.code.coding.code",
+      "transform": "string copy",
+      "confidence": 0.98,
+      "status": "auto_approved",
+      "decided_by": "hybrid",
+      "reason": "OBX-3.1 contains the observation item code.",
+      "valid_target": true,
+      "ml_top1": "Observation.code.coding.code",
+      "ml_candidates": [
+        [
+          "Observation.code.coding.code",
+          0.689
+        ],
+        [
+          "Observation.code.coding.display",
+          0.549
+        ],
+        [
+          "Condition.code.coding.display",
+          0.471
+        ],
+        [
+          "Observation.identifier.value",
+          0.377
+        ],
+        [
+          "Condition.code.coding.code",
+          0.317
+        ]
+      ]
+    },
+    {
+      "source": "OBX-3.2",
+      "target": "Observation.code.coding.display",
+      "transform": "string copy",
+      "confidence": 0.931,
+      "status": "auto_approved",
+      "decided_by": "hybrid",
+      "reason": "OBX-3.2 contains the description/display name of the observation.",
+      "valid_target": true,
+      "ml_top1": "Observation.code.coding.code",
+      "ml_candidates": [
+        [
+          "Observation.code.coding.code",
+          0.689
+        ],
+        [
+          "Observation.code.coding.display",
+          0.549
+        ],
+        [
+          "Condition.code.coding.display",
+          0.471
+        ],
+        [
+          "Observation.identifier.value",
+          0.377
+        ],
+        [
+          "Condition.code.coding.code",
+          0.317
+        ]
+      ]
+    },
+    {
+      "source": "OBX-3.3",
+      "target": null,
+      "transform": "none",
+      "confidence": 0.807,
+      "status": "auto_approved",
+      "decided_by": "hybrid",
+      "reason": "Code system name component.",
+      "valid_target": true,
+      "ml_top1": "Observation.code.coding.code",
+      "ml_candidates": [
+        [
+          "Observation.code.coding.code",
+          0.689
+        ],
+        [
+          "Observation.code.coding.display",
+          0.549
+        ],
+        [
+          "Condition.code.coding.display",
+          0.471
+        ],
+        [
+          "Observation.identifier.value",
+          0.377
+        ],
+        [
+          "Condition.code.coding.code",
+          0.317
+        ]
+      ]
+    },
+    {
+      "source": "OBX-5",
+      "target": "Observation.valueQuantity.value",
+      "transform": "string to decimal",
+      "confidence": 0.95,
+      "status": "auto_approved",
+      "decided_by": "hybrid",
+      "reason": "OBX-5 contains the numeric observation measurement value.",
+      "valid_target": true,
+      "ml_top1": "Observation.valueQuantity.value",
+      "ml_candidates": [
+        [
+          "Observation.valueQuantity.value",
+          0.577
+        ],
+        [
+          "Observation.subject",
+          0.197
+        ],
+        [
+          "Observation.category",
+          0.176
+        ],
+        [
+          "Observation.identifier.value",
+          0.169
+        ],
+        [
+          "Observation.code.coding.code",
+          0.156
+        ]
+      ]
+    },
+    {
+      "source": "OBX-6",
+      "target": "Observation.valueQuantity.unit",
+      "transform": "string copy",
+      "confidence": 0.98,
+      "status": "auto_approved",
+      "decided_by": "hybrid",
+      "reason": "OBX-6 contains the unit of measure for the observation value.",
+      "valid_target": true,
+      "ml_top1": "Observation.valueQuantity.unit",
+      "ml_candidates": [
+        [
+          "Observation.valueQuantity.unit",
+          0.871
+        ],
+        [
+          "Patient.identifier.value",
+          0.0
+        ],
+        [
+          "Patient.name.family",
+          0.0
+        ],
+        [
+          "Patient.name.given",
+          0.0
+        ],
+        [
+          "Patient.gender",
+          0.0
+        ]
+      ]
+    },
+    {
+      "source": "OBX-7",
+      "target": "Observation.referenceRange",
+      "transform": "parse range string to low/high limits",
+      "confidence": 0.95,
+      "status": "auto_approved",
+      "decided_by": "hybrid",
+      "reason": "OBX-7 specifies the normal reference range for the test.",
+      "valid_target": true,
+      "ml_top1": "Observation.referenceRange",
+      "ml_candidates": [
+        [
+          "Observation.referenceRange",
+          0.93
+        ],
+        [
+          "Observation.interpretation",
+          0.222
+        ],
+        [
+          "Encounter.subject",
+          0.075
+        ],
+        [
+          "Observation.subject",
+          0.068
+        ],
+        [
+          "Condition.subject",
+          0.066
+        ]
+      ]
+    },
+    {
+      "source": "OBX-8",
+      "target": "Observation.interpretation",
+      "transform": "H->high, L->low, N->normal",
+      "confidence": 0.95,
+      "status": "auto_approved",
+      "decided_by": "hybrid",
+      "reason": "OBX-8 contains abnormal flag codes mapped to FHIR interpretation.",
+      "valid_target": true,
+      "ml_top1": "Observation.interpretation",
+      "ml_candidates": [
+        [
+          "Observation.interpretation",
+          0.41
+        ],
+        [
+          "Observation.code.coding.code",
+          0.326
+        ],
+        [
+          "Condition.code.coding.code",
+          0.295
+        ],
+        [
+          "Patient.address.postalCode",
+          0.195
+        ],
+        [
+          "Patient.active",
+          0.175
+        ]
+      ]
+    },
+    {
+      "source": "OBX-11",
+      "target": "Observation.status",
+      "transform": "F->final, C->corrected, P->preliminary",
+      "confidence": 0.95,
+      "status": "auto_approved",
+      "decided_by": "hybrid",
+      "reason": "OBX-11 provides the status of the observation result.",
+      "valid_target": true,
+      "ml_top1": "Observation.status",
+      "ml_candidates": [
+        [
+          "Observation.status",
+          0.701
+        ],
+        [
+          "Encounter.status",
+          0.471
+        ],
+        [
+          "Patient.maritalStatus",
+          0.393
+        ],
+        [
+          "Patient.active",
+          0.377
+        ],
+        [
+          "Condition.clinicalStatus",
+          0.369
+        ]
+      ]
+    },
+    {
+      "source": "OBX-14",
+      "target": "Observation.effectiveDateTime",
+      "transform": "YYYYMMDDHHMMSS -> YYYY-MM-DDThh:mm:ss",
+      "confidence": 0.95,
+      "status": "auto_approved",
+      "decided_by": "hybrid",
+      "reason": "OBX-14 represents the date/time when the specific observation was performed.",
+      "valid_target": true,
+      "ml_top1": "Observation.effectiveDateTime",
+      "ml_candidates": [
+        [
+          "Observation.effectiveDateTime",
+          0.731
+        ],
+        [
+          "Condition.onsetDateTime",
+          0.498
+        ],
+        [
+          "Patient.deceasedDateTime",
+          0.429
+        ],
+        [
+          "Patient.birthDate",
+          0.326
+        ],
+        [
+          "Observation.issued",
+          0.262
+        ]
+      ]
+    }
+  ]
+}

@@ -1,0 +1,11 @@
+{
+  "masked_values": {
+    "identifier": 31,
+    "name": 15,
+    "date": 28,
+    "address": 11,
+    "postal_code": 6,
+    "phone": 6
+  },
+  "total": 97
+}

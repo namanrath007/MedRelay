@@ -1,0 +1,290 @@
+{
+  "system": "rest_api",
+  "status": "pending_review",
+  "generated_at": "2026-11-12T17:38:23+00:00",
+  "profile": {
+    "system": "rest_api",
+    "kind": "REST API (OpenAPI)",
+    "location": "http://localhost:8001",
+    "entities": [
+      {
+        "name": "/api/v1/members",
+        "rows": 200,
+        "pagination": [
+          "page",
+          "size",
+          "total"
+        ]
+      }
+    ],
+    "fields": [
+      {
+        "name": "memberId",
+        "type": "str",
+        "distinct_in_sample": 50,
+        "samples": [
+          "MBR-00##19",
+          "MBR-01##38",
+          "MBR-02##57"
+        ]
+      },
+      {
+        "name": "extRef",
+        "type": "str",
+        "distinct_in_sample": 50,
+        "samples": [
+          "40##01",
+          "40##02",
+          "40##03"
+        ]
+      },
+      {
+        "name": "nm.first",
+        "type": "str",
+        "distinct_in_sample": 19,
+        "samples": [
+          "S***",
+          "D***",
+          "C***"
+        ]
+      },
+      {
+        "name": "nm.last",
+        "type": "str",
+        "distinct_in_sample": 15,
+        "samples": [
+          "W***",
+          "K***",
+          "G***"
+        ]
+      },
+      {
+        "name": "dob",
+        "type": "str",
+        "distinct_in_sample": 50,
+        "samples": [
+          "##/##/####",
+          "##/##/####",
+          "##/##/####"
+        ]
+      },
+      {
+        "name": "sx",
+        "type": "str",
+        "distinct_in_sample": 2,
+        "all_values": [
+          "F",
+          "M"
+        ]
+      },
+      {
+        "name": "contact.mobile",
+        "type": "str",
+        "distinct_in_sample": 50,
+        "samples": [
+          "+### ## ### ##79",
+          "+### ## ### ##35",
+          "+### ## ### ##03"
+        ]
+      },
+      {
+        "name": "contact.addr.street",
+        "type": "str",
+        "distinct_in_sample": 47,
+        "samples": [
+          "## G***",
+          "## S***",
+          "## G***"
+        ]
+      },
+      {
+        "name": "contact.addr.town",
+        "type": "str",
+        "distinct_in_sample": 5,
+        "all_values": [
+          "Cork",
+          "Dublin",
+          "Galway",
+          "Limerick",
+          "Waterford"
+        ]
+      },
+      {
+        "name": "contact.addr.eircode",
+        "type": "str",
+        "distinct_in_sample": 50,
+        "samples": [
+          "H91 ****",
+          "D04 ****",
+          "H91 ****"
+        ]
+      },
+      {
+        "name": "portalStatus",
+        "type": "str",
+        "distinct_in_sample": 1,
+        "all_values": [
+          "ACTIVE"
+        ]
+      }
+    ],
+    "docs": {
+      "title": "CarePortal Member API",
+      "description": "Patient-portal member records (mock system for MedRelay).",
+      "paths": {
+        "/health": [
+          "get"
+        ],
+        "/api/v1/members": [
+          "get"
+        ],
+        "/api/v1/members/{member_id}": [
+          "get"
+        ]
+      },
+      "header_params": {
+        "/health": [],
+        "/api/v1/members": [
+          "X-API-Key"
+        ],
+        "/api/v1/members/{member_id}": [
+          "X-API-Key"
+        ]
+      }
+    }
+  },
+  "analysis": {
+    "system_summary": "The CarePortal Member API is a RESTful service storing patient-portal registration and demographic records. It contains personal identifiers, contact details, Eircode addresses, and account status attributes, but no direct clinical encounter or diagnostic data.",
+    "entities": [
+      {
+        "name": "/api/v1/members",
+        "meaning": "Patient portal member accounts containing demographic and contact information",
+        "likely_fhir_resource": "Patient"
+      }
+    ],
+    "fields": [
+      {
+        "name": "memberId",
+        "meaning": "Primary internal member identifier for the portal",
+        "format": "String (e.g. MBR-00##19)",
+        "is_phi": true,
+        "phi_type": "identifier",
+        "role": "patient_identifier"
+      },
+      {
+        "name": "extRef",
+        "meaning": "External reference key linking to another system",
+        "format": "Numeric string",
+        "is_phi": true,
+        "phi_type": "identifier",
+        "role": "foreign_key"
+      },
+      {
+        "name": "nm.first",
+        "meaning": "Member first name",
+        "format": "free text",
+        "is_phi": true,
+        "phi_type": "name",
+        "role": "value"
+      },
+      {
+        "name": "nm.last",
+        "meaning": "Member last name",
+        "format": "free text",
+        "is_phi": true,
+        "phi_type": "name",
+        "role": "value"
+      },
+      {
+        "name": "dob",
+        "meaning": "Date of birth",
+        "format": "DD/MM/YYYY",
+        "is_phi": true,
+        "phi_type": "date_of_birth",
+        "role": "value"
+      },
+      {
+        "name": "sx",
+        "meaning": "Administrative sex",
+        "format": "code list F/M",
+        "is_phi": false,
+        "phi_type": "none",
+        "role": "code"
+      },
+      {
+        "name": "contact.mobile",
+        "meaning": "Mobile telephone contact number",
+        "format": "E.164 phone string",
+        "is_phi": true,
+        "phi_type": "phone",
+        "role": "value"
+      },
+      {
+        "name": "contact.addr.street",
+        "meaning": "Street address line",
+        "format": "free text",
+        "is_phi": true,
+        "phi_type": "address",
+        "role": "value"
+      },
+      {
+        "name": "contact.addr.town",
+        "meaning": "City or town name",
+        "format": "free text",
+        "is_phi": true,
+        "phi_type": "address",
+        "role": "lookup"
+      },
+      {
+        "name": "contact.addr.eircode",
+        "meaning": "Irish postal code (Eircode)",
+        "format": "Eircode format (e.g. A65 F4E2)",
+        "is_phi": true,
+        "phi_type": "postal_code",
+        "role": "value"
+      },
+      {
+        "name": "portalStatus",
+        "meaning": "Account activation status in the portal",
+        "format": "code list ACTIVE",
+        "is_phi": false,
+        "phi_type": "none",
+        "role": "metadata"
+      }
+    ],
+    "patient_identifier": {
+      "field": "memberId",
+      "description": "Unique alphanumeric string identifying the portal member account"
+    },
+    "link_keys": [
+      {
+        "field": "extRef",
+        "likely_links_to": "Medical Record Number (MRN) or primary enterprise patient identifier in an EHR"
+      }
+    ],
+    "integration_pattern": {
+      "pattern": "api_wrapper",
+      "reason": "Source system is a REST API documented with OpenAPI, providing paginated GET endpoints authenticated via API key headers."
+    },
+    "data_quality_notes": [
+      "Date of birth (`dob`) is formatted as DD/MM/YYYY and requires parsing to ISO-8601 YYYY-MM-DD for FHIR compliance.",
+      "Administrative sex (`sx`) uses single-letter codes ('F', 'M') which need mapping to FHIR AdministrativeGender ('female', 'male').",
+      "Nested JSON fields (e.g. `nm.first`, `contact.addr.street`) require object extraction and mapping into FHIR structure blocks (`name`, `telecom`, `address`)."
+    ],
+    "risks": [
+      "Security risk: Endpoint is exposed over unencrypted HTTP (`http://localhost:8001`) with static `X-API-Key` header authentication.",
+      "Privacy risk: API exposes complete Patient PHI (full name, phone, address, DOB) which requires strict TLS enforcement and access control auditing."
+    ]
+  },
+  "timing_seconds": {
+    "profile": 0.02,
+    "llm": 70.03
+  },
+  "model": "gemini-3.5-flash",
+  "coverage": {
+    "profiled_fields": 11,
+    "analysed_fields": 11,
+    "missing": [],
+    "invented": []
+  }
+}

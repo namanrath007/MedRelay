@@ -1,0 +1,660 @@
+{
+  "system": "legacy_db",
+  "status": "pending_review",
+  "generated_at": "2026-11-12T17:36:19+00:00",
+  "profile": {
+    "system": "legacy_db",
+    "kind": "relational database (SQLite)",
+    "location": "/Users/namanrath/Desktop/test/fhirbridge-last/mock_systems/legacy_db/legacy_ehr.db",
+    "entities": [
+      {
+        "name": "PT_MSTR",
+        "rows": 200,
+        "foreign_keys": {}
+      },
+      {
+        "name": "ENC_HDR",
+        "rows": 492,
+        "foreign_keys": {
+          "PT_ID": "PT_MSTR.PT_ID"
+        }
+      },
+      {
+        "name": "DX_DTL",
+        "rows": 492,
+        "foreign_keys": {
+          "ENC_ID": "ENC_HDR.ENC_ID"
+        }
+      },
+      {
+        "name": "REF_CD",
+        "rows": 8,
+        "foreign_keys": {}
+      }
+    ],
+    "fields": [
+      {
+        "name": "PT_MSTR.PT_ID",
+        "type": "TEXT",
+        "primary_key": true,
+        "distinct": 200,
+        "nulls": 0,
+        "samples": [
+          "40##01",
+          "40##02",
+          "40##03"
+        ]
+      },
+      {
+        "name": "PT_MSTR.PT_LST_NM",
+        "type": "TEXT",
+        "primary_key": false,
+        "distinct": 15,
+        "nulls": 0,
+        "samples": [
+          "W***",
+          "K***",
+          "G***"
+        ]
+      },
+      {
+        "name": "PT_MSTR.PT_FST_NM",
+        "type": "TEXT",
+        "primary_key": false,
+        "distinct": 20,
+        "nulls": 0,
+        "samples": [
+          "S***",
+          "D***",
+          "C***"
+        ]
+      },
+      {
+        "name": "PT_MSTR.PT_SX_CD",
+        "type": "TEXT",
+        "primary_key": false,
+        "distinct": 2,
+        "nulls": 0,
+        "all_values": [
+          "1",
+          "2"
+        ]
+      },
+      {
+        "name": "PT_MSTR.PT_BIRTH_DT",
+        "type": "TEXT",
+        "primary_key": false,
+        "distinct": 200,
+        "nulls": 0,
+        "samples": [
+          "########",
+          "########",
+          "########"
+        ]
+      },
+      {
+        "name": "PT_MSTR.PT_ADR_1",
+        "type": "TEXT",
+        "primary_key": false,
+        "distinct": 172,
+        "nulls": 0,
+        "samples": [
+          "## G***",
+          "## S***",
+          "## G***"
+        ]
+      },
+      {
+        "name": "PT_MSTR.PT_CTY",
+        "type": "TEXT",
+        "primary_key": false,
+        "distinct": 5,
+        "nulls": 0,
+        "all_values": [
+          "CORK",
+          "DUBLIN",
+          "GALWAY",
+          "LIMERICK",
+          "WATERFORD"
+        ]
+      },
+      {
+        "name": "PT_MSTR.PT_PST_CD",
+        "type": "TEXT",
+        "primary_key": false,
+        "distinct": 198,
+        "nulls": 0,
+        "samples": [
+          "H91 ****",
+          "D04 ****",
+          "H91 ****"
+        ]
+      },
+      {
+        "name": "PT_MSTR.PT_CNTRY",
+        "type": "TEXT",
+        "primary_key": false,
+        "distinct": 1,
+        "nulls": 0,
+        "all_values": [
+          "IRL"
+        ]
+      },
+      {
+        "name": "PT_MSTR.PT_PH_NO",
+        "type": "TEXT",
+        "primary_key": false,
+        "distinct": 200,
+        "nulls": 0,
+        "samples": [
+          "+##########79",
+          "+##########35",
+          "+##########03"
+        ]
+      },
+      {
+        "name": "PT_MSTR.REC_UPD_TS",
+        "type": "TEXT",
+        "primary_key": false,
+        "distinct": 1,
+        "nulls": 0,
+        "all_values": [
+          "##############"
+        ]
+      },
+      {
+        "name": "ENC_HDR.ENC_ID",
+        "type": "TEXT",
+        "primary_key": true,
+        "distinct": 492,
+        "nulls": 0,
+        "samples": [
+          "V00##01",
+          "V00##02",
+          "V00##03"
+        ]
+      },
+      {
+        "name": "ENC_HDR.PT_ID",
+        "type": "TEXT",
+        "primary_key": false,
+        "distinct": 200,
+        "nulls": 0,
+        "references": "PT_MSTR.PT_ID",
+        "samples": [
+          "40##01",
+          "40##01",
+          "40##01"
+        ]
+      },
+      {
+        "name": "ENC_HDR.ENC_TYP_CD",
+        "type": "TEXT",
+        "primary_key": false,
+        "distinct": 3,
+        "nulls": 0,
+        "all_values": [
+          "ED",
+          "IP",
+          "OP"
+        ]
+      },
+      {
+        "name": "ENC_HDR.ADM_DT",
+        "type": "TEXT",
+        "primary_key": false,
+        "distinct": 423,
+        "nulls": 0,
+        "samples": [
+          "########",
+          "########",
+          "########"
+        ]
+      },
+      {
+        "name": "ENC_HDR.DSCH_DT",
+        "type": "TEXT",
+        "primary_key": false,
+        "distinct": 412,
+        "nulls": 0,
+        "samples": [
+          "########",
+          "########",
+          "########"
+        ]
+      },
+      {
+        "name": "ENC_HDR.ENC_STAT",
+        "type": "TEXT",
+        "primary_key": false,
+        "distinct": 1,
+        "nulls": 0,
+        "all_values": [
+          "C"
+        ]
+      },
+      {
+        "name": "DX_DTL.DX_SEQ",
+        "type": "INTEGER",
+        "primary_key": true,
+        "distinct": 492,
+        "nulls": 0,
+        "samples": [
+          "1",
+          "2",
+          "3"
+        ]
+      },
+      {
+        "name": "DX_DTL.ENC_ID",
+        "type": "TEXT",
+        "primary_key": false,
+        "distinct": 492,
+        "nulls": 0,
+        "references": "ENC_HDR.ENC_ID",
+        "samples": [
+          "V00##01",
+          "V00##02",
+          "V00##03"
+        ]
+      },
+      {
+        "name": "DX_DTL.PT_ID",
+        "type": "TEXT",
+        "primary_key": false,
+        "distinct": 200,
+        "nulls": 0,
+        "samples": [
+          "40##01",
+          "40##01",
+          "40##01"
+        ]
+      },
+      {
+        "name": "DX_DTL.DX_CD",
+        "type": "TEXT",
+        "primary_key": false,
+        "distinct": 6,
+        "nulls": 0,
+        "all_values": [
+          "E119",
+          "E785",
+          "I10",
+          "J069",
+          "J45#09",
+          "N183"
+        ]
+      },
+      {
+        "name": "DX_DTL.DX_DESC",
+        "type": "TEXT",
+        "primary_key": false,
+        "distinct": 6,
+        "nulls": 0,
+        "all_values": [
+          "ACUTE UPPER RESPIRATORY INFECTION, UNSPECIFIED",
+          "CHRONIC KIDNEY DISEASE, STAGE 3",
+          "ESSENTIAL (PRIMARY) HYPERTENSION",
+          "HYPERLIPIDEMIA, UNSPECIFIED",
+          "TYPE 2 DIABETES MELLITUS WITHOUT COMPLICATIONS",
+          "UNSPECIFIED ASTHMA, UNCOMPLICATED"
+        ]
+      },
+      {
+        "name": "DX_DTL.DX_DT",
+        "type": "TEXT",
+        "primary_key": false,
+        "distinct": 423,
+        "nulls": 0,
+        "samples": [
+          "########",
+          "########",
+          "########"
+        ]
+      },
+      {
+        "name": "DX_DTL.DX_STAT",
+        "type": "TEXT",
+        "primary_key": false,
+        "distinct": 1,
+        "nulls": 0,
+        "all_values": [
+          "A"
+        ]
+      },
+      {
+        "name": "REF_CD.CD_TYP",
+        "type": "TEXT",
+        "primary_key": false,
+        "distinct": 3,
+        "nulls": 0,
+        "all_values": [
+          "ENC",
+          "STAT",
+          "SX"
+        ]
+      },
+      {
+        "name": "REF_CD.CD_VAL",
+        "type": "TEXT",
+        "primary_key": false,
+        "distinct": 8,
+        "nulls": 0,
+        "all_values": [
+          "1",
+          "2",
+          "9",
+          "A",
+          "C",
+          "ED",
+          "IP",
+          "OP"
+        ]
+      },
+      {
+        "name": "REF_CD.CD_DESC",
+        "type": "TEXT",
+        "primary_key": false,
+        "distinct": 8,
+        "nulls": 0,
+        "all_values": [
+          "ACTIVE",
+          "COMPLETE",
+          "EMERGENCY DEPT",
+          "FEMALE",
+          "INPATIENT",
+          "MALE",
+          "OUTPATIENT",
+          "UNKNOWN"
+        ]
+      }
+    ],
+    "docs": {
+      "ddl": {
+        "PT_MSTR": "CREATE TABLE PT_MSTR (            -- patient master\n    PT_ID       TEXT PRIMARY KEY, -- MRN\n    PT_LST_NM   TEXT,\n    PT_FST_NM   TEXT,\n    PT_SX_CD    TEXT,             -- 1/2/9, see REF_CD\n    PT_BIRTH_DT   TEXT,             -- YYYYMMDD\n    PT_ADR_1    TEXT,\n    PT_CTY      TEXT,\n    PT_PST_CD   TEXT,\n    PT_CNTRY    TEXT,\n    PT_PH_NO    TEXT,\n    REC_UPD_TS  TEXT\n)",
+        "ENC_HDR": "CREATE TABLE ENC_HDR (            -- encounter header\n    ENC_ID      TEXT PRIMARY KEY,\n    PT_ID       TEXT REFERENCES PT_MSTR(PT_ID),\n    ENC_TYP_CD  TEXT,             -- OP/ED/IP, see REF_CD\n    ADM_DT      TEXT,             -- YYYYMMDD\n    DSCH_DT     TEXT,             -- YYYYMMDD\n    ENC_STAT    TEXT              -- C = complete\n)",
+        "DX_DTL": "CREATE TABLE DX_DTL (             -- diagnosis detail\n    DX_SEQ      INTEGER PRIMARY KEY AUTOINCREMENT,\n    ENC_ID      TEXT REFERENCES ENC_HDR(ENC_ID),\n    PT_ID       TEXT,\n    DX_CD       TEXT,             -- ICD-10, no dot (E119)\n    DX_DESC     TEXT,\n    DX_DT       TEXT,             -- YYYYMMDD\n    DX_STAT     TEXT              -- A = active\n)",
+        "REF_CD": "CREATE TABLE REF_CD (             -- local code lookup\n    CD_TYP  TEXT,\n    CD_VAL  TEXT,\n    CD_DESC TEXT\n)"
+      }
+    }
+  },
+  "analysis": {
+    "system_summary": "This legacy relational database (SQLite) acts as a basic Electronic Health Record (EHR) system. It stores patient demographics, administrative encounter headers, clinical diagnosis details, and local reference lookup codes.",
+    "entities": [
+      {
+        "name": "PT_MSTR",
+        "meaning": "Patient Master table storing core demographic and contact details.",
+        "likely_fhir_resource": "Patient"
+      },
+      {
+        "name": "ENC_HDR",
+        "meaning": "Encounter Header table recording patient visits and admission/discharge dates.",
+        "likely_fhir_resource": "Encounter"
+      },
+      {
+        "name": "DX_DTL",
+        "meaning": "Diagnosis Details table linking clinical conditions and ICD-10 codes to encounters.",
+        "likely_fhir_resource": "Condition"
+      },
+      {
+        "name": "REF_CD",
+        "meaning": "Reference Code lookup table defining internal codes for sex, encounter type, and statuses.",
+        "likely_fhir_resource": "none"
+      }
+    ],
+    "fields": [
+      {
+        "name": "PT_MSTR.PT_ID",
+        "meaning": "Primary patient identifier (MRN)",
+        "format": "numeric text (6 digits)",
+        "is_phi": true,
+        "phi_type": "identifier",
+        "role": "patient_identifier"
+      },
+      {
+        "name": "PT_MSTR.PT_LST_NM",
+        "meaning": "Patient last name",
+        "format": "free text",
+        "is_phi": true,
+        "phi_type": "name",
+        "role": "other"
+      },
+      {
+        "name": "PT_MSTR.PT_FST_NM",
+        "meaning": "Patient first name",
+        "format": "free text",
+        "is_phi": true,
+        "phi_type": "name",
+        "role": "other"
+      },
+      {
+        "name": "PT_MSTR.PT_SX_CD",
+        "meaning": "Patient sex code",
+        "format": "code list 1/2/9",
+        "is_phi": false,
+        "phi_type": "none",
+        "role": "code"
+      },
+      {
+        "name": "PT_MSTR.PT_BIRTH_DT",
+        "meaning": "Patient date of birth",
+        "format": "YYYYMMDD",
+        "is_phi": true,
+        "phi_type": "date_of_birth",
+        "role": "other"
+      },
+      {
+        "name": "PT_MSTR.PT_ADR_1",
+        "meaning": "Patient street address line 1",
+        "format": "free text",
+        "is_phi": true,
+        "phi_type": "address",
+        "role": "other"
+      },
+      {
+        "name": "PT_MSTR.PT_CTY",
+        "meaning": "Patient city",
+        "format": "free text",
+        "is_phi": false,
+        "phi_type": "none",
+        "role": "other"
+      },
+      {
+        "name": "PT_MSTR.PT_PST_CD",
+        "meaning": "Patient postal code / Eircode",
+        "format": "alphanumeric (e.g. H91 ****)",
+        "is_phi": true,
+        "phi_type": "postal_code",
+        "role": "other"
+      },
+      {
+        "name": "PT_MSTR.PT_CNTRY",
+        "meaning": "Patient country",
+        "format": "ISO 3166-1 alpha-3 (e.g. IRL)",
+        "is_phi": false,
+        "phi_type": "none",
+        "role": "other"
+      },
+      {
+        "name": "PT_MSTR.PT_PH_NO",
+        "meaning": "Patient contact phone number",
+        "format": "E.164 phone number format",
+        "is_phi": true,
+        "phi_type": "phone",
+        "role": "other"
+      },
+      {
+        "name": "PT_MSTR.REC_UPD_TS",
+        "meaning": "Record update timestamp",
+        "format": "YYYYMMDDHHMMSS (14 digits)",
+        "is_phi": false,
+        "phi_type": "none",
+        "role": "metadata"
+      },
+      {
+        "name": "ENC_HDR.ENC_ID",
+        "meaning": "Primary key for encounter record",
+        "format": "alphanumeric ID (e.g. V00##01)",
+        "is_phi": false,
+        "phi_type": "none",
+        "role": "other"
+      },
+      {
+        "name": "ENC_HDR.PT_ID",
+        "meaning": "Foreign key referencing PT_MSTR.PT_ID",
+        "format": "numeric text (6 digits)",
+        "is_phi": true,
+        "phi_type": "identifier",
+        "role": "foreign_key"
+      },
+      {
+        "name": "ENC_HDR.ENC_TYP_CD",
+        "meaning": "Encounter class code",
+        "format": "code list OP/ED/IP",
+        "is_phi": false,
+        "phi_type": "none",
+        "role": "code"
+      },
+      {
+        "name": "ENC_HDR.ADM_DT",
+        "meaning": "Encounter admission date",
+        "format": "YYYYMMDD",
+        "is_phi": false,
+        "phi_type": "none",
+        "role": "other"
+      },
+      {
+        "name": "ENC_HDR.DSCH_DT",
+        "meaning": "Encounter discharge date",
+        "format": "YYYYMMDD",
+        "is_phi": false,
+        "phi_type": "none",
+        "role": "other"
+      },
+      {
+        "name": "ENC_HDR.ENC_STAT",
+        "meaning": "Encounter status code",
+        "format": "single-character code (C)",
+        "is_phi": false,
+        "phi_type": "none",
+        "role": "code"
+      },
+      {
+        "name": "DX_DTL.DX_SEQ",
+        "meaning": "Primary key sequence for diagnosis details",
+        "format": "autoincrement integer",
+        "is_phi": false,
+        "phi_type": "none",
+        "role": "other"
+      },
+      {
+        "name": "DX_DTL.ENC_ID",
+        "meaning": "Foreign key referencing ENC_HDR.ENC_ID",
+        "format": "alphanumeric ID",
+        "is_phi": false,
+        "phi_type": "none",
+        "role": "foreign_key"
+      },
+      {
+        "name": "DX_DTL.PT_ID",
+        "meaning": "Patient identifier for diagnosis record",
+        "format": "numeric text (6 digits)",
+        "is_phi": true,
+        "phi_type": "identifier",
+        "role": "foreign_key"
+      },
+      {
+        "name": "DX_DTL.DX_CD",
+        "meaning": "ICD-10 diagnosis code",
+        "format": "ICD-10 without decimal dots (e.g. E119)",
+        "is_phi": false,
+        "phi_type": "none",
+        "role": "code"
+      },
+      {
+        "name": "DX_DTL.DX_DESC",
+        "meaning": "Human-readable diagnosis description",
+        "format": "free text",
+        "is_phi": false,
+        "phi_type": "none",
+        "role": "value"
+      },
+      {
+        "name": "DX_DTL.DX_DT",
+        "meaning": "Date diagnosis was recorded",
+        "format": "YYYYMMDD",
+        "is_phi": false,
+        "phi_type": "none",
+        "role": "other"
+      },
+      {
+        "name": "DX_DTL.DX_STAT",
+        "meaning": "Diagnosis clinical status",
+        "format": "single-character code (A)",
+        "is_phi": false,
+        "phi_type": "none",
+        "role": "code"
+      },
+      {
+        "name": "REF_CD.CD_TYP",
+        "meaning": "Reference code classification group",
+        "format": "code list (ENC, STAT, SX)",
+        "is_phi": false,
+        "phi_type": "none",
+        "role": "lookup"
+      },
+      {
+        "name": "REF_CD.CD_VAL",
+        "meaning": "Reference code key value",
+        "format": "alphanumeric code",
+        "is_phi": false,
+        "phi_type": "none",
+        "role": "lookup"
+      },
+      {
+        "name": "REF_CD.CD_DESC",
+        "meaning": "Description of reference code",
+        "format": "free text",
+        "is_phi": false,
+        "phi_type": "none",
+        "role": "lookup"
+      }
+    ],
+    "patient_identifier": {
+      "field": "PT_MSTR.PT_ID",
+      "description": "Unique patient identifier used across patient, encounter, and diagnosis tables acting as the primary key/MRN."
+    },
+    "link_keys": [
+      {
+        "field": "PT_MSTR.PT_ID",
+        "likely_links_to": "Enterprise Patient Identifier or MRN"
+      }
+    ],
+    "integration_pattern": {
+      "pattern": "database_cdc",
+      "reason": "Direct SQLite relational database integration where incremental data extraction can be performed by polling modified records via PT_MSTR.REC_UPD_TS."
+    },
+    "data_quality_notes": [
+      "ICD-10 codes in DX_DTL.DX_CD lack standard decimal dot notation (e.g., 'E119' instead of 'E11.9') and require reformatting for standard terminology servers.",
+      "Dates (PT_BIRTH_DT, ADM_DT, DSCH_DT, DX_DT) are stored as 8-digit strings (YYYYMMDD) without time or timezone components.",
+      "Sex, encounter types, and status fields rely on internal codes requiring ConceptMap translation using REF_CD lookup data to map to FHIR code systems.",
+      "ENC_HDR and DX_DTL lack explicit updated timestamp fields, complicating change data capture for non-patient records."
+    ],
+    "risks": [
+      "Concurrency issues and file-locking risks associated with direct database polling against an active SQLite file.",
+      "Missing time components on admission/discharge dates can lead to inaccurate encounter duration calculations in FHIR.",
+      "Lack of updated timestamps on Encounter and Diagnosis tables risks missed updates unless full tables are regularly scanned."
+    ]
+  },
+  "timing_seconds": {
+    "profile": 0.01,
+    "llm": 132.79
+  },
+  "model": "gemini-3.5-flash",
+  "coverage": {
+    "profiled_fields": 27,
+    "analysed_fields": 27,
+    "missing": [],
+    "invented": []
+  }
+}

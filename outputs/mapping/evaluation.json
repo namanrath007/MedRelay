@@ -1,0 +1,52 @@
+{
+  "summary": {
+    "fields_scored": 53,
+    "ml_baseline_accuracy_pct": 75.5,
+    "fhirbridge_accuracy_pct": 98.1,
+    "auto_approved_pct_of_fields": 98.1,
+    "auto_approved_precision_pct": 100.0,
+    "sent_to_human_review": 0,
+    "correctly_left_unmapped": "5/5"
+  },
+  "per_system": {
+    "legacy_db": {
+      "scored": 27,
+      "ml_correct": 16,
+      "final_correct": 26,
+      "auto": 26,
+      "auto_correct": 26,
+      "review": 0,
+      "none_expected": 4,
+      "none_correct": 4,
+      "errors": [
+        {
+          "source": "PT_MSTR.PT_DOB_DT",
+          "expected": "Patient.birthDate",
+          "got": "MISSING"
+        }
+      ]
+    },
+    "rest_api": {
+      "scored": 11,
+      "ml_correct": 11,
+      "final_correct": 11,
+      "auto": 11,
+      "auto_correct": 11,
+      "review": 0,
+      "none_expected": 0,
+      "none_correct": 0,
+      "errors": []
+    },
+    "hl7_feed": {
+      "scored": 15,
+      "ml_correct": 13,
+      "final_correct": 15,
+      "auto": 15,
+      "auto_correct": 15,
+      "review": 0,
+      "none_expected": 1,
+      "none_correct": 1,
+      "errors": []
+    }
+  }
+}

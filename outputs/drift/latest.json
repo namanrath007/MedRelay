@@ -1,0 +1,10 @@
+{
+  "system": "legacy_db",
+  "checked_at": "2026-11-12T15:13:04+00:00",
+  "removed": [],
+  "added": [],
+  "live_adapter": "security OK | records 1192 | runtime errors 0 | FHIR errors 0 | fidelity 100.0% | PASS",
+  "live_errors": [],
+  "status": "healthy",
+  "seconds_to_diagnose_and_fix": 0.02
+}

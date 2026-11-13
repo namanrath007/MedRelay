@@ -1,0 +1,39 @@
+{
+  "system": "rest_api",
+  "passed": true,
+  "attempts_used": 1,
+  "status": "ready_for_approval",
+  "total_seconds": 704.58,
+  "finished_at": "2026-11-12T15:09:59+00:00",
+  "fidelity_target_pct": 99.0,
+  "attempts": [
+    {
+      "attempt": 1,
+      "source": "gemini-3.8-flash",
+      "notes": "Maps the rest_api member entity to FHIR Patient with MRN (extRef) as resource ID. Converts dob using ddmmyyyy_to_date, translates sx to standard FHIR gender codes, and maps portalStatus to active boolean.",
+      "generate_seconds": 704.56,
+      "summary": "security OK | records 200 | runtime errors 0 | FHIR errors 0 | fidelity 100.0% | PASS",
+      "result": {
+        "security": [],
+        "runtime_errors": 0,
+        "runtime_examples": [],
+        "records": 200,
+        "resources": {
+          "Patient": 200
+        },
+        "structure_errors": 0,
+        "structure_examples": {},
+        "fidelity": {
+          "checks": 1600,
+          "passed": 1600,
+          "fidelity_pct": 100.0,
+          "failures": []
+        },
+        "passed": true,
+        "seconds": 0.02
+      },
+      "feedback_sent": null,
+      "code": "from fhirbridge_runtime.transforms import (\n    SYS,\n    code_map,\n    ddmmyyyy_to_date,\n)\n\n\ndef to_fhir(entity: str, record: dict) -> list[dict]:\n    if entity != \"member\":\n        return []\n\n    patient_id = record.get(\"extRef\") or record.get(\"memberId\")\n    patient = {\n        \"resourceType\": \"Patient\",\n        \"id\": patient_id,\n    }\n\n    identifiers = []\n    if record.get(\"memberId\"):\n        identifiers.append({\"system\": SYS[\"portal\"], \"value\": record[\"memberId\"]})\n    if record.get(\"extRef\"):\n        identifiers.append({\"system\": SYS[\"mrn\"], \"value\": record[\"extRef\"]})\n    if identifiers:\n        patient[\"identifier\"] = identifiers\n\n    if record.get(\"portalStatus\") is not None:\n        patient[\"active\"] = record.get(\"portalStatus\") == \"ACTIVE\"\n\n    first_name = record.get(\"nm.first\")\n    last_name = record.get(\"nm.last\")\n    if first_name or last_name:\n        name_obj = {}\n        if last_name:\n            name_obj[\"family\"] = last_name\n        if first_name:\n            name_obj[\"given\"] = [first_name]\n        patient[\"name\"] = [name_obj]\n\n    mobile = record.get(\"contact.mobile\")\n    if mobile:\n        patient[\"telecom\"] = [{\"system\": \"phone\", \"value\": mobile, \"use\": \"mobile\"}]\n\n    gender = code_map(record.get(\"sx\"), {\"F\": \"female\", \"M\": \"male\"})\n    if gender:\n        patient[\"gender\"] = gender\n\n    birth_date = ddmmyyyy_to_date(record.get(\"dob\"))\n    if birth_date:\n        patient[\"birthDate\"] = birth_date\n\n    street = record.get(\"contact.addr.street\")\n    town = record.get(\"contact.addr.town\")\n    eircode = record.get(\"contact.addr.eircode\")\n    if street or town or eircode:\n        addr = {}\n        if street:\n            addr[\"line\"] = [street]\n        if town:\n            addr[\"city\"] = town\n        if eircode:\n            addr[\"postalCode\"] = eircode\n        patient[\"address\"] = [addr]\n\n    return [patient]\n"
+    }
+  ]
+}

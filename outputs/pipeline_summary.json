@@ -1,0 +1,71 @@
+{
+  "generated_at": "2026-11-12T17:40:28",
+  "wall_clock_seconds_per_step": {
+    "discover": "247.2 (incomplete)",
+    "map": "0.9 (incomplete)",
+    "evaluate": 0.0,
+    "validate": "1.0 (incomplete)"
+  },
+  "systems": {
+    "legacy_db": {
+      "discover_seconds": 132.79999999999998,
+      "fields": 27,
+      "map_seconds": 16.362,
+      "auto_approved": 27,
+      "needs_review": 0,
+      "validated": true,
+      "attempts": 2,
+      "build_and_validate_seconds": 136.28,
+      "fidelity_pct": 100.0,
+      "records_processed": 1192,
+      "resources": {
+        "Patient": 200,
+        "Encounter": 492,
+        "Condition": 492
+      },
+      "total_agent_seconds": 285.4
+    },
+    "rest_api": {
+      "discover_seconds": 70.05,
+      "fields": 11,
+      "map_seconds": 6.643999999999999,
+      "auto_approved": 11,
+      "needs_review": 0,
+      "validated": true,
+      "attempts": 1,
+      "build_and_validate_seconds": 704.58,
+      "fidelity_pct": 100.0,
+      "records_processed": 200,
+      "resources": {
+        "Patient": 200
+      },
+      "total_agent_seconds": 781.3
+    },
+    "hl7_feed": {
+      "discover_seconds": 80.24,
+      "fields": 28,
+      "map_seconds": 135.33100000000002,
+      "auto_approved": 36,
+      "needs_review": 0,
+      "validated": true,
+      "attempts": 1,
+      "build_and_validate_seconds": 0.18,
+      "fidelity_pct": 100.0,
+      "records_processed": 400,
+      "resources": {
+        "Patient": 400,
+        "Observation": 400
+      },
+      "total_agent_seconds": 215.8
+    }
+  },
+  "mapping_evaluation": {
+    "fields_scored": 53,
+    "ml_baseline_accuracy_pct": 75.5,
+    "fhirbridge_accuracy_pct": 98.1,
+    "auto_approved_pct_of_fields": 98.1,
+    "auto_approved_precision_pct": 100.0,
+    "sent_to_human_review": 0,
+    "correctly_left_unmapped": "5/5"
+  }
+}

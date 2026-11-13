@@ -1,0 +1,3296 @@
+{
+  "system": "legacy_db",
+  "passed": true,
+  "attempts_used": 2,
+  "status": "ready_for_approval",
+  "total_seconds": 136.28,
+  "finished_at": "2026-11-12T15:28:52+00:00",
+  "fidelity_target_pct": 99.0,
+  "attempts": [
+    {
+      "attempt": 1,
+      "source": "gemini-3.5-flash",
+      "notes": "Adapter implemented for PT_MSTR, ENC_HDR, DX_DTL, and lookup table REF_CD. Maps patient MRN, encounter header details, and diagnosis codes according to FHIR R4 standard conventions and provided mapping rules.",
+      "generate_seconds": 105.22,
+      "summary": "security OK | records 1192 | runtime errors 0 | FHIR errors 0 | fidelity 91.48% | FAIL",
+      "result": {
+        "security": [],
+        "runtime_errors": 0,
+        "runtime_examples": [],
+        "records": 1192,
+        "resources": {
+          "Patient": 200,
+          "Encounter": 492,
+          "Condition": 492
+        },
+        "structure_errors": 0,
+        "structure_examples": {},
+        "fidelity": {
+          "checks": 4732,
+          "passed": 4329,
+          "fidelity_pct": 91.48,
+          "failures": [
+            {
+              "check": "Condition matches a true diagnosis (code+encounter)",
+              "resource": "1fe96b44c513e440",
+              "expected": "ICD-10 code with dot, e.g. E11.9",
+              "got": [
+                "E119"
+              ]
+            },
+            {
+              "check": "Condition matches a true diagnosis (code+encounter)",
+              "resource": "3279ea058ab6fba9",
+              "expected": "ICD-10 code with dot, e.g. E11.9",
+              "got": [
+                "N183"
+              ]
+            },
+            {
+              "check": "Condition matches a true diagnosis (code+encounter)",
+              "resource": "e38b8ddc130648d2",
+              "expected": "ICD-10 code with dot, e.g. E11.9",
+              "got": [
+                "J069"
+              ]
+            },
+            {
+              "check": "Condition matches a true diagnosis (code+encounter)",
+              "resource": "0a75fd06e60c8a81",
+              "expected": "ICD-10 code with dot, e.g. E11.9",
+              "got": [
+                "N183"
+              ]
+            },
+            {
+              "check": "Condition matches a true diagnosis (code+encounter)",
+              "resource": "a5336483c928e973",
+              "expected": "ICD-10 code with dot, e.g. E11.9",
+              "got": [
+                "E119"
+              ]
+            },
+            {
+              "check": "Condition matches a true diagnosis (code+encounter)",
+              "resource": "2f66932b9f38ea61",
+              "expected": "ICD-10 code with dot, e.g. E11.9",
+              "got": [
+                "E119"
+              ]
+            },
+            {
+              "check": "Condition matches a true diagnosis (code+encounter)",
+              "resource": "7a0838f247a67660",
+              "expected": "ICD-10 code with dot, e.g. E11.9",
+              "got": [
+                "N183"
+              ]
+            },
+            {
+              "check": "Condition matches a true diagnosis (code+encounter)",
+              "resource": "9e004635f55f661a",
+              "expected": "ICD-10 code with dot, e.g. E11.9",
+              "got": [
+                "N183"
+              ]
+            },
+            {
+              "check": "Condition matches a true diagnosis (code+encounter)",
+              "resource": "ba04e8100ea5915e",
+              "expected": "ICD-10 code with dot, e.g. E11.9",
+              "got": [
+                "E785"
+              ]
+            },
+            {
+              "check": "Condition matches a true diagnosis (code+encounter)",
+              "resource": "120fc33e44a8fadf",
+              "expected": "ICD-10 code with dot, e.g. E11.9",
+              "got": [
+                "J45909"
+              ]
+            },
+            {
+              "check": "Condition matches a true diagnosis (code+encounter)",
+              "resource": "5f427706edf2dc48",
+              "expected": "ICD-10 code with dot, e.g. E11.9",
+              "got": [
+                "E785"
+              ]
+            },
+            {
+              "check": "Condition matches a true diagnosis (code+encounter)",
+              "resource": "f3c2d396816bead4",
+              "expected": "ICD-10 code with dot, e.g. E11.9",
+              "got": [
+                "N183"
+              ]
+            },
+            {
+              "check": "Condition matches a true diagnosis (code+encounter)",
+              "resource": "9aaeff7f87f08f59",
+              "expected": "ICD-10 code with dot, e.g. E11.9",
+              "got": [
+                "E785"
+              ]
+            },
+            {
+              "check": "Condition matches a true diagnosis (code+encounter)",
+              "resource": "ccf30672b9c8b923",
+              "expected": "ICD-10 code with dot, e.g. E11.9",
+              "got": [
+                "J45909"
+              ]
+            },
+            {
+              "check": "Condition matches a true diagnosis (code+encounter)",
+              "resource": "bdcafe822f18e173",
+              "expected": "ICD-10 code with dot, e.g. E11.9",
+              "got": [
+                "J45909"
+              ]
+            },
+            {
+              "check": "Condition matches a true diagnosis (code+encounter)",
+              "resource": "5852673ba95230b0",
+              "expected": "ICD-10 code with dot, e.g. E11.9",
+              "got": [
+                "J45909"
+              ]
+            },
+            {
+              "check": "Condition matches a true diagnosis (code+encounter)",
+              "resource": "6bcbceadde5223bd",
+              "expected": "ICD-10 code with dot, e.g. E11.9",
+              "got": [
+                "J45909"
+              ]
+            },
+            {
+              "check": "Condition matches a true diagnosis (code+encounter)",
+              "resource": "82beae6b84297d9e",
+              "expected": "ICD-10 code with dot, e.g. E11.9",
+              "got": [
+                "E119"
+              ]
+            },
+            {
+              "check": "Condition matches a true diagnosis (code+encounter)",
+              "resource": "1c00384ffc4aab52",
+              "expected": "ICD-10 code with dot, e.g. E11.9",
+              "got": [
+                "J069"
+              ]
+            },
+            {
+              "check": "Condition matches a true diagnosis (code+encounter)",
+              "resource": "1f914977d2548329",
+              "expected": "ICD-10 code with dot, e.g. E11.9",
+              "got": [
+                "J069"
+              ]
+            },
+            {
+              "check": "Condition matches a true diagnosis (code+encounter)",
+              "resource": "11ab816affc5a16c",
+              "expected": "ICD-10 code with dot, e.g. E11.9",
+              "got": [
+                "J069"
+              ]
+            },
+            {
+              "check": "Condition matches a true diagnosis (code+encounter)",
+              "resource": "259e10de1072e33f",
+              "expected": "ICD-10 code with dot, e.g. E11.9",
+              "got": [
+                "E785"
+              ]
+            },
+            {
+              "check": "Condition matches a true diagnosis (code+encounter)",
+              "resource": "db31a1d01059acce",
+              "expected": "ICD-10 code with dot, e.g. E11.9",
+              "got": [
+                "E785"
+              ]
+            },
+            {
+              "check": "Condition matches a true diagnosis (code+encounter)",
+              "resource": "00e82f99e1384281",
+              "expected": "ICD-10 code with dot, e.g. E11.9",
+              "got": [
+                "E785"
+              ]
+            },
+            {
+              "check": "Condition matches a true diagnosis (code+encounter)",
+              "resource": "794b828197dd818f",
+              "expected": "ICD-10 code with dot, e.g. E11.9",
+              "got": [
+                "E785"
+              ]
+            },
+            {
+              "check": "Condition matches a true diagnosis (code+encounter)",
+              "resource": "75078c478fa7a652",
+              "expected": "ICD-10 code with dot, e.g. E11.9",
+              "got": [
+                "E119"
+              ]
+            },
+            {
+              "check": "Condition matches a true diagnosis (code+encounter)",
+              "resource": "fa279ddbc56c11e7",
+              "expected": "ICD-10 code with dot, e.g. E11.9",
+              "got": [
+                "N183"
+              ]
+            },
+            {
+              "check": "Condition matches a true diagnosis (code+encounter)",
+              "resource": "88bf3e30b03ed4c2",
+              "expected": "ICD-10 code with dot, e.g. E11.9",
+              "got": [
+                "N183"
+              ]
+            },
+            {
+              "check": "Condition matches a true diagnosis (code+encounter)",
+              "resource": "0b5abb3fb079c8eb",
+              "expected": "ICD-10 code with dot, e.g. E11.9",
+              "got": [
+                "N183"
+              ]
+            },
+            {
+              "check": "Condition matches a true diagnosis (code+encounter)",
+              "resource": "1c1929e7c84595ec",
+              "expected": "ICD-10 code with dot, e.g. E11.9",
+              "got": [
+                "N183"
+              ]
+            },
+            {
+              "check": "Condition matches a true diagnosis (code+encounter)",
+              "resource": "56e8d62d95bd8d9b",
+              "expected": "ICD-10 code with dot, e.g. E11.9",
+              "got": [
+                "N183"
+              ]
+            },
+            {
+              "check": "Condition matches a true diagnosis (code+encounter)",
+              "resource": "9e86bac6af256fc4",
+              "expected": "ICD-10 code with dot, e.g. E11.9",
+              "got": [
+                "N183"
+              ]
+            },
+            {
+              "check": "Condition matches a true diagnosis (code+encounter)",
+              "resource": "922f7512c7a96248",
+              "expected": "ICD-10 code with dot, e.g. E11.9",
+              "got": [
+                "E119"
+              ]
+            },
+            {
+              "check": "Condition matches a true diagnosis (code+encounter)",
+              "resource": "ac498750f631418e",
+              "expected": "ICD-10 code with dot, e.g. E11.9",
+              "got": [
+                "E119"
+              ]
+            },
+            {
+              "check": "Condition matches a true diagnosis (code+encounter)",
+              "resource": "33c3c6f9c780a539",
+              "expected": "ICD-10 code with dot, e.g. E11.9",
+              "got": [
+                "J069"
+              ]
+            },
+            {
+              "check": "Condition matches a true diagnosis (code+encounter)",
+              "resource": "465fbd06b6c29629",
+              "expected": "ICD-10 code with dot, e.g. E11.9",
+              "got": [
+                "N183"
+              ]
+            },
+            {
+              "check": "Condition matches a true diagnosis (code+encounter)",
+              "resource": "442bd8c6dce0b2d2",
+              "expected": "ICD-10 code with dot, e.g. E11.9",
+              "got": [
+                "N183"
+              ]
+            },
+            {
+              "check": "Condition matches a true diagnosis (code+encounter)",
+              "resource": "355cdf25ebacc025",
+              "expected": "ICD-10 code with dot, e.g. E11.9",
+              "got": [
+                "N183"
+              ]
+            },
+            {
+              "check": "Condition matches a true diagnosis (code+encounter)",
+              "resource": "6ee3f24863a98de9",
+              "expected": "ICD-10 code with dot, e.g. E11.9",
+              "got": [
+                "N183"
+              ]
+            },
+            {
+              "check": "Condition matches a true diagnosis (code+encounter)",
+              "resource": "0b0b73c10230c1a2",
+              "expected": "ICD-10 code with dot, e.g. E11.9",
+              "got": [
+                "E785"
+              ]
+            },
+            {
+              "check": "Condition matches a true diagnosis (code+encounter)",
+              "resource": "cadcaf2826a491ea",
+              "expected": "ICD-10 code with dot, e.g. E11.9",
+              "got": [
+                "J069"
+              ]
+            },
+            {
+              "check": "Condition matches a true diagnosis (code+encounter)",
+              "resource": "9276441a4ea5226c",
+              "expected": "ICD-10 code with dot, e.g. E11.9",
+              "got": [
+                "E785"
+              ]
+            },
+            {
+              "check": "Condition matches a true diagnosis (code+encounter)",
+              "resource": "39c5648ed5ce70b6",
+              "expected": "ICD-10 code with dot, e.g. E11.9",
+              "got": [
+                "E785"
+              ]
+            },
+            {
+              "check": "Condition matches a true diagnosis (code+encounter)",
+              "resource": "751a9a933a1c7bf7",
+              "expected": "ICD-10 code with dot, e.g. E11.9",
+              "got": [
+                "J45909"
+              ]
+            },
+            {
+              "check": "Condition matches a true diagnosis (code+encounter)",
+              "resource": "d48c3dbbe689ec77",
+              "expected": "ICD-10 code with dot, e.g. E11.9",
+              "got": [
+                "J45909"
+              ]
+            },
+            {
+              "check": "Condition matches a true diagnosis (code+encounter)",
+              "resource": "4c1b0906846ee754",
+              "expected": "ICD-10 code with dot, e.g. E11.9",
+              "got": [
+                "E119"
+              ]
+            },
+            {
+              "check": "Condition matches a true diagnosis (code+encounter)",
+              "resource": "f61096b6a9de6cc0",
+              "expected": "ICD-10 code with dot, e.g. E11.9",
+              "got": [
+                "J069"
+              ]
+            },
+            {
+              "check": "Condition matches a true diagnosis (code+encounter)",
+              "resource": "bfae5422fac0183d",
+              "expected": "ICD-10 code with dot, e.g. E11.9",
+              "got": [
+                "E119"
+              ]
+            },
+            {
+              "check": "Condition matches a true diagnosis (code+encounter)",
+              "resource": "cca087b6059d758a",
+              "expected": "ICD-10 code with dot, e.g. E11.9",
+              "got": [
+                "E119"
+              ]
+            },
+            {
+              "check": "Condition matches a true diagnosis (code+encounter)",
+              "resource": "0d7943b4eee5b362",
+              "expected": "ICD-10 code with dot, e.g. E11.9",
+              "got": [
+                "E119"
+              ]
+            },
+            {
+              "check": "Condition matches a true diagnosis (code+encounter)",
+              "resource": "58b8819f01e98dba",
+              "expected": "ICD-10 code with dot, e.g. E11.9",
+              "got": [
+                "E119"
+              ]
+            },
+            {
+              "check": "Condition matches a true diagnosis (code+encounter)",
+              "resource": "c15b0310092a83dc",
+              "expected": "ICD-10 code with dot, e.g. E11.9",
+              "got": [
+                "J45909"
+              ]
+            },
+            {
+              "check": "Condition matches a true diagnosis (code+encounter)",
+              "resource": "6421512021cb3e7b",
+              "expected": "ICD-10 code with dot, e.g. E11.9",
+              "got": [
+                "E119"
+              ]
+            },
+            {
+              "check": "Condition matches a true diagnosis (code+encounter)",
+              "resource": "1a12f91a539ee208",
+              "expected": "ICD-10 code with dot, e.g. E11.9",
+              "got": [
+                "E785"
+              ]
+            },
+            {
+              "check": "Condition matches a true diagnosis (code+encounter)",
+              "resource": "fbaf4b7521cb43ba",
+              "expected": "ICD-10 code with dot, e.g. E11.9",
+              "got": [
+                "E785"
+              ]
+            },
+            {
+              "check": "Condition matches a true diagnosis (code+encounter)",
+              "resource": "7e029af5e9ce219f",
+              "expected": "ICD-10 code with dot, e.g. E11.9",
+              "got": [
+                "N183"
+              ]
+            },
+            {
+              "check": "Condition matches a true diagnosis (code+encounter)",
+              "resource": "5b18b7f4bd0bb7b0",
+              "expected": "ICD-10 code with dot, e.g. E11.9",
+              "got": [
+                "E785"
+              ]
+            },
+            {
+              "check": "Condition matches a true diagnosis (code+encounter)",
+              "resource": "56cb85aad8e63ceb",
+              "expected": "ICD-10 code with dot, e.g. E11.9",
+              "got": [
+                "E785"
+              ]
+            },
+            {
+              "check": "Condition matches a true diagnosis (code+encounter)",
+              "resource": "da04b3e078221a46",
+              "expected": "ICD-10 code with dot, e.g. E11.9",
+              "got": [
+                "E785"
+              ]
+            },
+            {
+              "check": "Condition matches a true diagnosis (code+encounter)",
+              "resource": "b45e313d59619fbb",
+              "expected": "ICD-10 code with dot, e.g. E11.9",
+              "got": [
+                "E785"
+              ]
+            },
+            {
+              "check": "Condition matches a true diagnosis (code+encounter)",
+              "resource": "79ad55de770f4753",
+              "expected": "ICD-10 code with dot, e.g. E11.9",
+              "got": [
+                "E785"
+              ]
+            },
+            {
+              "check": "Condition matches a true diagnosis (code+encounter)",
+              "resource": "9cc07dd510ba1ae9",
+              "expected": "ICD-10 code with dot, e.g. E11.9",
+              "got": [
+                "N183"
+              ]
+            },
+            {
+              "check": "Condition matches a true diagnosis (code+encounter)",
+              "resource": "7239c5d7b92e5e92",
+              "expected": "ICD-10 code with dot, e.g. E11.9",
+              "got": [
+                "N183"
+              ]
+            },
+            {
+              "check": "Condition matches a true diagnosis (code+encounter)",
+              "resource": "d05c1b7cd6c70804",
+              "expected": "ICD-10 code with dot, e.g. E11.9",
+              "got": [
+                "N183"
+              ]
+            },
+            {
+              "check": "Condition matches a true diagnosis (code+encounter)",
+              "resource": "491443ac236c6ee3",
+              "expected": "ICD-10 code with dot, e.g. E11.9",
+              "got": [
+                "J069"
+              ]
+            },
+            {
+              "check": "Condition matches a true diagnosis (code+encounter)",
+              "resource": "4fb7a106761df3f8",
+              "expected": "ICD-10 code with dot, e.g. E11.9",
+              "got": [
+                "J069"
+              ]
+            },
+            {
+              "check": "Condition matches a true diagnosis (code+encounter)",
+              "resource": "6bb78246c6a7bf9d",
+              "expected": "ICD-10 code with dot, e.g. E11.9",
+              "got": [
+                "E785"
+              ]
+            },
+            {
+              "check": "Condition matches a true diagnosis (code+encounter)",
+              "resource": "a1d661926f14261c",
+              "expected": "ICD-10 code with dot, e.g. E11.9",
+              "got": [
+                "N183"
+              ]
+            },
+            {
+              "check": "Condition matches a true diagnosis (code+encounter)",
+              "resource": "df228b9ab7b08039",
+              "expected": "ICD-10 code with dot, e.g. E11.9",
+              "got": [
+                "E119"
+              ]
+            },
+            {
+              "check": "Condition matches a true diagnosis (code+encounter)",
+              "resource": "19e60cafc93c8cfe",
+              "expected": "ICD-10 code with dot, e.g. E11.9",
+              "got": [
+                "E119"
+              ]
+            },
+            {
+              "check": "Condition matches a true diagnosis (code+encounter)",
+              "resource": "8324684f25af3057",
+              "expected": "ICD-10 code with dot, e.g. E11.9",
+              "got": [
+                "E119"
+              ]
+            },
+            {
+              "check": "Condition matches a true diagnosis (code+encounter)",
+              "resource": "40f0e472ae55100a",
+              "expected": "ICD-10 code with dot, e.g. E11.9",
+              "got": [
+                "E119"
+              ]
+            },
+            {
+              "check": "Condition matches a true diagnosis (code+encounter)",
+              "resource": "d63019109c53a999",
+              "expected": "ICD-10 code with dot, e.g. E11.9",
+              "got": [
+                "E119"
+              ]
+            },
+            {
+              "check": "Condition matches a true diagnosis (code+encounter)",
+              "resource": "d47e2fe7edc7636e",
+              "expected": "ICD-10 code with dot, e.g. E11.9",
+              "got": [
+                "E119"
+              ]
+            },
+            {
+              "check": "Condition matches a true diagnosis (code+encounter)",
+              "resource": "e95cb5ab7c7052a3",
+              "expected": "ICD-10 code with dot, e.g. E11.9",
+              "got": [
+                "J45909"
+              ]
+            },
+            {
+              "check": "Condition matches a true diagnosis (code+encounter)",
+              "resource": "a380ad1b90856f1a",
+              "expected": "ICD-10 code with dot, e.g. E11.9",
+              "got": [
+                "J45909"
+              ]
+            },
+            {
+              "check": "Condition matches a true diagnosis (code+encounter)",
+              "resource": "6b2c1a7045c7c166",
+              "expected": "ICD-10 code with dot, e.g. E11.9",
+              "got": [
+                "J069"
+              ]
+            },
+            {
+              "check": "Condition matches a true diagnosis (code+encounter)",
+              "resource": "010a8a4290d6c304",
+              "expected": "ICD-10 code with dot, e.g. E11.9",
+              "got": [
+                "E119"
+              ]
+            },
+            {
+              "check": "Condition matches a true diagnosis (code+encounter)",
+              "resource": "641bdd5479ca4c31",
+              "expected": "ICD-10 code with dot, e.g. E11.9",
+              "got": [
+                "E785"
+              ]
+            },
+            {
+              "check": "Condition matches a true diagnosis (code+encounter)",
+              "resource": "3744a4bc6ea7d6a3",
+              "expected": "ICD-10 code with dot, e.g. E11.9",
+              "got": [
+                "J069"
+              ]
+            },
+            {
+              "check": "Condition matches a true diagnosis (code+encounter)",
+              "resource": "0cb1c249acaa51b0",
+              "expected": "ICD-10 code with dot, e.g. E11.9",
+              "got": [
+                "E785"
+              ]
+            },
+            {
+              "check": "Condition matches a true diagnosis (code+encounter)",
+              "resource": "1a1318ce731c3a99",
+              "expected": "ICD-10 code with dot, e.g. E11.9",
+              "got": [
+                "N183"
+              ]
+            },
+            {
+              "check": "Condition matches a true diagnosis (code+encounter)",
+              "resource": "019771776fd8077b",
+              "expected": "ICD-10 code with dot, e.g. E11.9",
+              "got": [
+                "N183"
+              ]
+            },
+            {
+              "check": "Condition matches a true diagnosis (code+encounter)",
+              "resource": "ee12e8e5f501935b",
+              "expected": "ICD-10 code with dot, e.g. E11.9",
+              "got": [
+                "J069"
+              ]
+            },
+            {
+              "check": "Condition matches a true diagnosis (code+encounter)",
+              "resource": "d54beca000f3eed8",
+              "expected": "ICD-10 code with dot, e.g. E11.9",
+              "got": [
+                "J45909"
+              ]
+            },
+            {
+              "check": "Condition matches a true diagnosis (code+encounter)",
+              "resource": "8fc27d557e2bd989",
+              "expected": "ICD-10 code with dot, e.g. E11.9",
+              "got": [
+                "J45909"
+              ]
+            },
+            {
+              "check": "Condition matches a true diagnosis (code+encounter)",
+              "resource": "cfc6688a5d4bc574",
+              "expected": "ICD-10 code with dot, e.g. E11.9",
+              "got": [
+                "N183"
+              ]
+            },
+            {
+              "check": "Condition matches a true diagnosis (code+encounter)",
+              "resource": "0f10af98ab97f041",
+              "expected": "ICD-10 code with dot, e.g. E11.9",
+              "got": [
+                "N183"
+              ]
+            },
+            {
+              "check": "Condition matches a true diagnosis (code+encounter)",
+              "resource": "5ea56a689e1a9338",
+              "expected": "ICD-10 code with dot, e.g. E11.9",
+              "got": [
+                "N183"
+              ]
+            },
+            {
+              "check": "Condition matches a true diagnosis (code+encounter)",
+              "resource": "bcc1fb715d07d096",
+              "expected": "ICD-10 code with dot, e.g. E11.9",
+              "got": [
+                "N183"
+              ]
+            },
+            {
+              "check": "Condition matches a true diagnosis (code+encounter)",
+              "resource": "77a7ef79f7e89d8d",
+              "expected": "ICD-10 code with dot, e.g. E11.9",
+              "got": [
+                "E119"
+              ]
+            },
+            {
+              "check": "Condition matches a true diagnosis (code+encounter)",
+              "resource": "c9e62aa29318ad36",
+              "expected": "ICD-10 code with dot, e.g. E11.9",
+              "got": [
+                "E119"
+              ]
+            },
+            {
+              "check": "Condition matches a true diagnosis (code+encounter)",
+              "resource": "4fa939ee27ed7c9d",
+              "expected": "ICD-10 code with dot, e.g. E11.9",
+              "got": [
+                "E119"
+              ]
+            },
+            {
+              "check": "Condition matches a true diagnosis (code+encounter)",
+              "resource": "1006ee9dd5dc7217",
+              "expected": "ICD-10 code with dot, e.g. E11.9",
+              "got": [
+                "J069"
+              ]
+            },
+            {
+              "check": "Condition matches a true diagnosis (code+encounter)",
+              "resource": "76dce9fb442e1030",
+              "expected": "ICD-10 code with dot, e.g. E11.9",
+              "got": [
+                "E785"
+              ]
+            },
+            {
+              "check": "Condition matches a true diagnosis (code+encounter)",
+              "resource": "1e1815d7810431e5",
+              "expected": "ICD-10 code with dot, e.g. E11.9",
+              "got": [
+                "N183"
+              ]
+            },
+            {
+              "check": "Condition matches a true diagnosis (code+encounter)",
+              "resource": "19491d1660fb00b8",
+              "expected": "ICD-10 code with dot, e.g. E11.9",
+              "got": [
+                "J069"
+              ]
+            },
+            {
+              "check": "Condition matches a true diagnosis (code+encounter)",
+              "resource": "6f72b364dfab6b4f",
+              "expected": "ICD-10 code with dot, e.g. E11.9",
+              "got": [
+                "J069"
+              ]
+            },
+            {
+              "check": "Condition matches a true diagnosis (code+encounter)",
+              "resource": "3c87cf22522d183c",
+              "expected": "ICD-10 code with dot, e.g. E11.9",
+              "got": [
+                "J069"
+              ]
+            },
+            {
+              "check": "Condition matches a true diagnosis (code+encounter)",
+              "resource": "15800b5c57685e7a",
+              "expected": "ICD-10 code with dot, e.g. E11.9",
+              "got": [
+                "E785"
+              ]
+            },
+            {
+              "check": "Condition matches a true diagnosis (code+encounter)",
+              "resource": "331182c025d47969",
+              "expected": "ICD-10 code with dot, e.g. E11.9",
+              "got": [
+                "J069"
+              ]
+            },
+            {
+              "check": "Condition matches a true diagnosis (code+encounter)",
+              "resource": "088b0fd0444198e7",
+              "expected": "ICD-10 code with dot, e.g. E11.9",
+              "got": [
+                "E119"
+              ]
+            },
+            {
+              "check": "Condition matches a true diagnosis (code+encounter)",
+              "resource": "71aaf2a397777e42",
+              "expected": "ICD-10 code with dot, e.g. E11.9",
+              "got": [
+                "E785"
+              ]
+            },
+            {
+              "check": "Condition matches a true diagnosis (code+encounter)",
+              "resource": "48bd453b6d577e58",
+              "expected": "ICD-10 code with dot, e.g. E11.9",
+              "got": [
+                "N183"
+              ]
+            },
+            {
+              "check": "Condition matches a true diagnosis (code+encounter)",
+              "resource": "21cd4c16c917706c",
+              "expected": "ICD-10 code with dot, e.g. E11.9",
+              "got": [
+                "E119"
+              ]
+            },
+            {
+              "check": "Condition matches a true diagnosis (code+encounter)",
+              "resource": "df081ad91bc7b9c8",
+              "expected": "ICD-10 code with dot, e.g. E11.9",
+              "got": [
+                "E119"
+              ]
+            },
+            {
+              "check": "Condition matches a true diagnosis (code+encounter)",
+              "resource": "ac96ce312b112784",
+              "expected": "ICD-10 code with dot, e.g. E11.9",
+              "got": [
+                "E119"
+              ]
+            },
+            {
+              "check": "Condition matches a true diagnosis (code+encounter)",
+              "resource": "ac2b9418f8c5f010",
+              "expected": "ICD-10 code with dot, e.g. E11.9",
+              "got": [
+                "J069"
+              ]
+            },
+            {
+              "check": "Condition matches a true diagnosis (code+encounter)",
+              "resource": "e48f9ea4cc304cd5",
+              "expected": "ICD-10 code with dot, e.g. E11.9",
+              "got": [
+                "E119"
+              ]
+            },
+            {
+              "check": "Condition matches a true diagnosis (code+encounter)",
+              "resource": "f726576dab68436a",
+              "expected": "ICD-10 code with dot, e.g. E11.9",
+              "got": [
+                "E785"
+              ]
+            },
+            {
+              "check": "Condition matches a true diagnosis (code+encounter)",
+              "resource": "7f7b3f1fa9fcdd3b",
+              "expected": "ICD-10 code with dot, e.g. E11.9",
+              "got": [
+                "E785"
+              ]
+            },
+            {
+              "check": "Condition matches a true diagnosis (code+encounter)",
+              "resource": "c3688ecef12c4092",
+              "expected": "ICD-10 code with dot, e.g. E11.9",
+              "got": [
+                "J069"
+              ]
+            },
+            {
+              "check": "Condition matches a true diagnosis (code+encounter)",
+              "resource": "fcfbd4e27cf68a70",
+              "expected": "ICD-10 code with dot, e.g. E11.9",
+              "got": [
+                "J069"
+              ]
+            },
+            {
+              "check": "Condition matches a true diagnosis (code+encounter)",
+              "resource": "ed467c7b09820a66",
+              "expected": "ICD-10 code with dot, e.g. E11.9",
+              "got": [
+                "J069"
+              ]
+            },
+            {
+              "check": "Condition matches a true diagnosis (code+encounter)",
+              "resource": "247479d1f6d0e302",
+              "expected": "ICD-10 code with dot, e.g. E11.9",
+              "got": [
+                "E119"
+              ]
+            },
+            {
+              "check": "Condition matches a true diagnosis (code+encounter)",
+              "resource": "f5fc0f93755bf2f3",
+              "expected": "ICD-10 code with dot, e.g. E11.9",
+              "got": [
+                "E119"
+              ]
+            },
+            {
+              "check": "Condition matches a true diagnosis (code+encounter)",
+              "resource": "5652d2f7033c273f",
+              "expected": "ICD-10 code with dot, e.g. E11.9",
+              "got": [
+                "E119"
+              ]
+            },
+            {
+              "check": "Condition matches a true diagnosis (code+encounter)",
+              "resource": "97f9d25157c4a8d5",
+              "expected": "ICD-10 code with dot, e.g. E11.9",
+              "got": [
+                "E119"
+              ]
+            },
+            {
+              "check": "Condition matches a true diagnosis (code+encounter)",
+              "resource": "230803bc45193afb",
+              "expected": "ICD-10 code with dot, e.g. E11.9",
+              "got": [
+                "E785"
+              ]
+            },
+            {
+              "check": "Condition matches a true diagnosis (code+encounter)",
+              "resource": "433cbb55b27f0e1f",
+              "expected": "ICD-10 code with dot, e.g. E11.9",
+              "got": [
+                "E785"
+              ]
+            },
+            {
+              "check": "Condition matches a true diagnosis (code+encounter)",
+              "resource": "98362ccaaee02b13",
+              "expected": "ICD-10 code with dot, e.g. E11.9",
+              "got": [
+                "N183"
+              ]
+            },
+            {
+              "check": "Condition matches a true diagnosis (code+encounter)",
+              "resource": "343696bc37a360dc",
+              "expected": "ICD-10 code with dot, e.g. E11.9",
+              "got": [
+                "N183"
+              ]
+            },
+            {
+              "check": "Condition matches a true diagnosis (code+encounter)",
+              "resource": "308efb83d079dd50",
+              "expected": "ICD-10 code with dot, e.g. E11.9",
+              "got": [
+                "N183"
+              ]
+            },
+            {
+              "check": "Condition matches a true diagnosis (code+encounter)",
+              "resource": "a6003643145a6da6",
+              "expected": "ICD-10 code with dot, e.g. E11.9",
+              "got": [
+                "J069"
+              ]
+            },
+            {
+              "check": "Condition matches a true diagnosis (code+encounter)",
+              "resource": "13c03c09b398459c",
+              "expected": "ICD-10 code with dot, e.g. E11.9",
+              "got": [
+                "J069"
+              ]
+            },
+            {
+              "check": "Condition matches a true diagnosis (code+encounter)",
+              "resource": "4645a1c4df73d0ad",
+              "expected": "ICD-10 code with dot, e.g. E11.9",
+              "got": [
+                "J069"
+              ]
+            },
+            {
+              "check": "Condition matches a true diagnosis (code+encounter)",
+              "resource": "769d131a6ff035f9",
+              "expected": "ICD-10 code with dot, e.g. E11.9",
+              "got": [
+                "J069"
+              ]
+            },
+            {
+              "check": "Condition matches a true diagnosis (code+encounter)",
+              "resource": "b6b311066f1bcf18",
+              "expected": "ICD-10 code with dot, e.g. E11.9",
+              "got": [
+                "E785"
+              ]
+            },
+            {
+              "check": "Condition matches a true diagnosis (code+encounter)",
+              "resource": "9cc14de41020bbfa",
+              "expected": "ICD-10 code with dot, e.g. E11.9",
+              "got": [
+                "E119"
+              ]
+            },
+            {
+              "check": "Condition matches a true diagnosis (code+encounter)",
+              "resource": "5960bbfafd1da0fb",
+              "expected": "ICD-10 code with dot, e.g. E11.9",
+              "got": [
+                "J45909"
+              ]
+            },
+            {
+              "check": "Condition matches a true diagnosis (code+encounter)",
+              "resource": "8088d6b30b6a7e0e",
+              "expected": "ICD-10 code with dot, e.g. E11.9",
+              "got": [
+                "J45909"
+              ]
+            },
+            {
+              "check": "Condition matches a true diagnosis (code+encounter)",
+              "resource": "72cb4d7e90e7cb71",
+              "expected": "ICD-10 code with dot, e.g. E11.9",
+              "got": [
+                "E785"
+              ]
+            },
+            {
+              "check": "Condition matches a true diagnosis (code+encounter)",
+              "resource": "44e90227267a4773",
+              "expected": "ICD-10 code with dot, e.g. E11.9",
+              "got": [
+                "N183"
+              ]
+            },
+            {
+              "check": "Condition matches a true diagnosis (code+encounter)",
+              "resource": "2fb79903b3087fb4",
+              "expected": "ICD-10 code with dot, e.g. E11.9",
+              "got": [
+                "N183"
+              ]
+            },
+            {
+              "check": "Condition matches a true diagnosis (code+encounter)",
+              "resource": "3cc9ad68cbe2c090",
+              "expected": "ICD-10 code with dot, e.g. E11.9",
+              "got": [
+                "E785"
+              ]
+            },
+            {
+              "check": "Condition matches a true diagnosis (code+encounter)",
+              "resource": "c643c3d82c3869cf",
+              "expected": "ICD-10 code with dot, e.g. E11.9",
+              "got": [
+                "J069"
+              ]
+            },
+            {
+              "check": "Condition matches a true diagnosis (code+encounter)",
+              "resource": "981477bb6cfcc7ef",
+              "expected": "ICD-10 code with dot, e.g. E11.9",
+              "got": [
+                "E785"
+              ]
+            },
+            {
+              "check": "Condition matches a true diagnosis (code+encounter)",
+              "resource": "0f8acb47315935e8",
+              "expected": "ICD-10 code with dot, e.g. E11.9",
+              "got": [
+                "J069"
+              ]
+            },
+            {
+              "check": "Condition matches a true diagnosis (code+encounter)",
+              "resource": "8e4741a360eefbe1",
+              "expected": "ICD-10 code with dot, e.g. E11.9",
+              "got": [
+                "E119"
+              ]
+            },
+            {
+              "check": "Condition matches a true diagnosis (code+encounter)",
+              "resource": "93a53a6cb65931c9",
+              "expected": "ICD-10 code with dot, e.g. E11.9",
+              "got": [
+                "J069"
+              ]
+            },
+            {
+              "check": "Condition matches a true diagnosis (code+encounter)",
+              "resource": "e7721154414dbea2",
+              "expected": "ICD-10 code with dot, e.g. E11.9",
+              "got": [
+                "J45909"
+              ]
+            },
+            {
+              "check": "Condition matches a true diagnosis (code+encounter)",
+              "resource": "78774e03a4f8d289",
+              "expected": "ICD-10 code with dot, e.g. E11.9",
+              "got": [
+                "J45909"
+              ]
+            },
+            {
+              "check": "Condition matches a true diagnosis (code+encounter)",
+              "resource": "b61e1b063b343652",
+              "expected": "ICD-10 code with dot, e.g. E11.9",
+              "got": [
+                "N183"
+              ]
+            },
+            {
+              "check": "Condition matches a true diagnosis (code+encounter)",
+              "resource": "6bd90ebc0d4fdfa1",
+              "expected": "ICD-10 code with dot, e.g. E11.9",
+              "got": [
+                "N183"
+              ]
+            },
+            {
+              "check": "Condition matches a true diagnosis (code+encounter)",
+              "resource": "5e42da7aaff62dcf",
+              "expected": "ICD-10 code with dot, e.g. E11.9",
+              "got": [
+                "J45909"
+              ]
+            },
+            {
+              "check": "Condition matches a true diagnosis (code+encounter)",
+              "resource": "ff6a19762eb0b378",
+              "expected": "ICD-10 code with dot, e.g. E11.9",
+              "got": [
+                "N183"
+              ]
+            },
+            {
+              "check": "Condition matches a true diagnosis (code+encounter)",
+              "resource": "26c1c188e5c9c933",
+              "expected": "ICD-10 code with dot, e.g. E11.9",
+              "got": [
+                "N183"
+              ]
+            },
+            {
+              "check": "Condition matches a true diagnosis (code+encounter)",
+              "resource": "e9c94461fe74bede",
+              "expected": "ICD-10 code with dot, e.g. E11.9",
+              "got": [
+                "N183"
+              ]
+            },
+            {
+              "check": "Condition matches a true diagnosis (code+encounter)",
+              "resource": "6839e46d944815f8",
+              "expected": "ICD-10 code with dot, e.g. E11.9",
+              "got": [
+                "N183"
+              ]
+            },
+            {
+              "check": "Condition matches a true diagnosis (code+encounter)",
+              "resource": "2d5c721ad5d18cb2",
+              "expected": "ICD-10 code with dot, e.g. E11.9",
+              "got": [
+                "E785"
+              ]
+            },
+            {
+              "check": "Condition matches a true diagnosis (code+encounter)",
+              "resource": "01124d54ca5b0f32",
+              "expected": "ICD-10 code with dot, e.g. E11.9",
+              "got": [
+                "J45909"
+              ]
+            },
+            {
+              "check": "Condition matches a true diagnosis (code+encounter)",
+              "resource": "8cdfb73cc53db924",
+              "expected": "ICD-10 code with dot, e.g. E11.9",
+              "got": [
+                "J069"
+              ]
+            },
+            {
+              "check": "Condition matches a true diagnosis (code+encounter)",
+              "resource": "ecd7cd67e1400976",
+              "expected": "ICD-10 code with dot, e.g. E11.9",
+              "got": [
+                "J069"
+              ]
+            },
+            {
+              "check": "Condition matches a true diagnosis (code+encounter)",
+              "resource": "4077b0a38a94c942",
+              "expected": "ICD-10 code with dot, e.g. E11.9",
+              "got": [
+                "N183"
+              ]
+            },
+            {
+              "check": "Condition matches a true diagnosis (code+encounter)",
+              "resource": "773033af73ee3c54",
+              "expected": "ICD-10 code with dot, e.g. E11.9",
+              "got": [
+                "J069"
+              ]
+            },
+            {
+              "check": "Condition matches a true diagnosis (code+encounter)",
+              "resource": "b8c9a24a823b0fa6",
+              "expected": "ICD-10 code with dot, e.g. E11.9",
+              "got": [
+                "E785"
+              ]
+            },
+            {
+              "check": "Condition matches a true diagnosis (code+encounter)",
+              "resource": "21e5794f863b618f",
+              "expected": "ICD-10 code with dot, e.g. E11.9",
+              "got": [
+                "E119"
+              ]
+            },
+            {
+              "check": "Condition matches a true diagnosis (code+encounter)",
+              "resource": "436aa71713845940",
+              "expected": "ICD-10 code with dot, e.g. E11.9",
+              "got": [
+                "E785"
+              ]
+            },
+            {
+              "check": "Condition matches a true diagnosis (code+encounter)",
+              "resource": "eef6c298579cf1d9",
+              "expected": "ICD-10 code with dot, e.g. E11.9",
+              "got": [
+                "E785"
+              ]
+            },
+            {
+              "check": "Condition matches a true diagnosis (code+encounter)",
+              "resource": "242f9e39df704d5f",
+              "expected": "ICD-10 code with dot, e.g. E11.9",
+              "got": [
+                "E785"
+              ]
+            },
+            {
+              "check": "Condition matches a true diagnosis (code+encounter)",
+              "resource": "981a850023d6fac1",
+              "expected": "ICD-10 code with dot, e.g. E11.9",
+              "got": [
+                "N183"
+              ]
+            },
+            {
+              "check": "Condition matches a true diagnosis (code+encounter)",
+              "resource": "7e6983c90f2ef4d6",
+              "expected": "ICD-10 code with dot, e.g. E11.9",
+              "got": [
+                "E119"
+              ]
+            },
+            {
+              "check": "Condition matches a true diagnosis (code+encounter)",
+              "resource": "b779bdd5f3ed327f",
+              "expected": "ICD-10 code with dot, e.g. E11.9",
+              "got": [
+                "N183"
+              ]
+            },
+            {
+              "check": "Condition matches a true diagnosis (code+encounter)",
+              "resource": "39ee2ff3d69df413",
+              "expected": "ICD-10 code with dot, e.g. E11.9",
+              "got": [
+                "J45909"
+              ]
+            },
+            {
+              "check": "Condition matches a true diagnosis (code+encounter)",
+              "resource": "dbea8ef647fc520f",
+              "expected": "ICD-10 code with dot, e.g. E11.9",
+              "got": [
+                "J45909"
+              ]
+            },
+            {
+              "check": "Condition matches a true diagnosis (code+encounter)",
+              "resource": "a6420609a5bb6119",
+              "expected": "ICD-10 code with dot, e.g. E11.9",
+              "got": [
+                "J45909"
+              ]
+            },
+            {
+              "check": "Condition matches a true diagnosis (code+encounter)",
+              "resource": "cbc74d4312b9cb11",
+              "expected": "ICD-10 code with dot, e.g. E11.9",
+              "got": [
+                "J45909"
+              ]
+            },
+            {
+              "check": "Condition matches a true diagnosis (code+encounter)",
+              "resource": "0a0c11f52c6797ac",
+              "expected": "ICD-10 code with dot, e.g. E11.9",
+              "got": [
+                "E119"
+              ]
+            },
+            {
+              "check": "Condition matches a true diagnosis (code+encounter)",
+              "resource": "9ce4959b8bf40031",
+              "expected": "ICD-10 code with dot, e.g. E11.9",
+              "got": [
+                "E785"
+              ]
+            },
+            {
+              "check": "Condition matches a true diagnosis (code+encounter)",
+              "resource": "8fedee9194c2286d",
+              "expected": "ICD-10 code with dot, e.g. E11.9",
+              "got": [
+                "N183"
+              ]
+            },
+            {
+              "check": "Condition matches a true diagnosis (code+encounter)",
+              "resource": "9ad46775651adb60",
+              "expected": "ICD-10 code with dot, e.g. E11.9",
+              "got": [
+                "N183"
+              ]
+            },
+            {
+              "check": "Condition matches a true diagnosis (code+encounter)",
+              "resource": "fb8a0e9468053b63",
+              "expected": "ICD-10 code with dot, e.g. E11.9",
+              "got": [
+                "N183"
+              ]
+            },
+            {
+              "check": "Condition matches a true diagnosis (code+encounter)",
+              "resource": "64f9674cc7b6e15c",
+              "expected": "ICD-10 code with dot, e.g. E11.9",
+              "got": [
+                "E785"
+              ]
+            },
+            {
+              "check": "Condition matches a true diagnosis (code+encounter)",
+              "resource": "845538213db98ae3",
+              "expected": "ICD-10 code with dot, e.g. E11.9",
+              "got": [
+                "E785"
+              ]
+            },
+            {
+              "check": "Condition matches a true diagnosis (code+encounter)",
+              "resource": "6dcc63b8bca9ac81",
+              "expected": "ICD-10 code with dot, e.g. E11.9",
+              "got": [
+                "E785"
+              ]
+            },
+            {
+              "check": "Condition matches a true diagnosis (code+encounter)",
+              "resource": "cb34ac4750ce18b1",
+              "expected": "ICD-10 code with dot, e.g. E11.9",
+              "got": [
+                "E785"
+              ]
+            },
+            {
+              "check": "Condition matches a true diagnosis (code+encounter)",
+              "resource": "1704d7d80f2fcfe2",
+              "expected": "ICD-10 code with dot, e.g. E11.9",
+              "got": [
+                "J45909"
+              ]
+            },
+            {
+              "check": "Condition matches a true diagnosis (code+encounter)",
+              "resource": "e720a4f16c98f755",
+              "expected": "ICD-10 code with dot, e.g. E11.9",
+              "got": [
+                "J45909"
+              ]
+            },
+            {
+              "check": "Condition matches a true diagnosis (code+encounter)",
+              "resource": "8e7478b3c8e74170",
+              "expected": "ICD-10 code with dot, e.g. E11.9",
+              "got": [
+                "J45909"
+              ]
+            },
+            {
+              "check": "Condition matches a true diagnosis (code+encounter)",
+              "resource": "ff81d89527e6dca5",
+              "expected": "ICD-10 code with dot, e.g. E11.9",
+              "got": [
+                "J45909"
+              ]
+            },
+            {
+              "check": "Condition matches a true diagnosis (code+encounter)",
+              "resource": "a67333a45222341d",
+              "expected": "ICD-10 code with dot, e.g. E11.9",
+              "got": [
+                "E119"
+              ]
+            },
+            {
+              "check": "Condition matches a true diagnosis (code+encounter)",
+              "resource": "6c5d0218bbe8220f",
+              "expected": "ICD-10 code with dot, e.g. E11.9",
+              "got": [
+                "J069"
+              ]
+            },
+            {
+              "check": "Condition matches a true diagnosis (code+encounter)",
+              "resource": "4001e18f4c9673e5",
+              "expected": "ICD-10 code with dot, e.g. E11.9",
+              "got": [
+                "E785"
+              ]
+            },
+            {
+              "check": "Condition matches a true diagnosis (code+encounter)",
+              "resource": "20b0bb43303907a0",
+              "expected": "ICD-10 code with dot, e.g. E11.9",
+              "got": [
+                "J069"
+              ]
+            },
+            {
+              "check": "Condition matches a true diagnosis (code+encounter)",
+              "resource": "86c28df0c8aa9e84",
+              "expected": "ICD-10 code with dot, e.g. E11.9",
+              "got": [
+                "J069"
+              ]
+            },
+            {
+              "check": "Condition matches a true diagnosis (code+encounter)",
+              "resource": "0608e346897028d2",
+              "expected": "ICD-10 code with dot, e.g. E11.9",
+              "got": [
+                "J069"
+              ]
+            },
+            {
+              "check": "Condition matches a true diagnosis (code+encounter)",
+              "resource": "d8cc2de9e0ead287",
+              "expected": "ICD-10 code with dot, e.g. E11.9",
+              "got": [
+                "J069"
+              ]
+            },
+            {
+              "check": "Condition matches a true diagnosis (code+encounter)",
+              "resource": "c5d890fd75f72ac1",
+              "expected": "ICD-10 code with dot, e.g. E11.9",
+              "got": [
+                "E785"
+              ]
+            },
+            {
+              "check": "Condition matches a true diagnosis (code+encounter)",
+              "resource": "3f3cca2768494b78",
+              "expected": "ICD-10 code with dot, e.g. E11.9",
+              "got": [
+                "J45909"
+              ]
+            },
+            {
+              "check": "Condition matches a true diagnosis (code+encounter)",
+              "resource": "f7a0b5bba8e2455e",
+              "expected": "ICD-10 code with dot, e.g. E11.9",
+              "got": [
+                "E119"
+              ]
+            },
+            {
+              "check": "Condition matches a true diagnosis (code+encounter)",
+              "resource": "5d82d27970469c00",
+              "expected": "ICD-10 code with dot, e.g. E11.9",
+              "got": [
+                "E119"
+              ]
+            },
+            {
+              "check": "Condition matches a true diagnosis (code+encounter)",
+              "resource": "39ad6f3c021c807e",
+              "expected": "ICD-10 code with dot, e.g. E11.9",
+              "got": [
+                "E119"
+              ]
+            },
+            {
+              "check": "Condition matches a true diagnosis (code+encounter)",
+              "resource": "1151ef1db1732f92",
+              "expected": "ICD-10 code with dot, e.g. E11.9",
+              "got": [
+                "E119"
+              ]
+            },
+            {
+              "check": "Condition matches a true diagnosis (code+encounter)",
+              "resource": "293c73320bc68175",
+              "expected": "ICD-10 code with dot, e.g. E11.9",
+              "got": [
+                "E785"
+              ]
+            },
+            {
+              "check": "Condition matches a true diagnosis (code+encounter)",
+              "resource": "6f2a0e7096eb0753",
+              "expected": "ICD-10 code with dot, e.g. E11.9",
+              "got": [
+                "E785"
+              ]
+            },
+            {
+              "check": "Condition matches a true diagnosis (code+encounter)",
+              "resource": "4b7405eb77bdfdbd",
+              "expected": "ICD-10 code with dot, e.g. E11.9",
+              "got": [
+                "E785"
+              ]
+            },
+            {
+              "check": "Condition matches a true diagnosis (code+encounter)",
+              "resource": "dc860665170ad1c9",
+              "expected": "ICD-10 code with dot, e.g. E11.9",
+              "got": [
+                "E785"
+              ]
+            },
+            {
+              "check": "Condition matches a true diagnosis (code+encounter)",
+              "resource": "43eb11fdf89916e9",
+              "expected": "ICD-10 code with dot, e.g. E11.9",
+              "got": [
+                "J45909"
+              ]
+            },
+            {
+              "check": "Condition matches a true diagnosis (code+encounter)",
+              "resource": "d94b9746586e22ba",
+              "expected": "ICD-10 code with dot, e.g. E11.9",
+              "got": [
+                "J069"
+              ]
+            },
+            {
+              "check": "Condition matches a true diagnosis (code+encounter)",
+              "resource": "a2cfb843409a6cb3",
+              "expected": "ICD-10 code with dot, e.g. E11.9",
+              "got": [
+                "E785"
+              ]
+            },
+            {
+              "check": "Condition matches a true diagnosis (code+encounter)",
+              "resource": "dbc04c8c1aef282d",
+              "expected": "ICD-10 code with dot, e.g. E11.9",
+              "got": [
+                "J069"
+              ]
+            },
+            {
+              "check": "Condition matches a true diagnosis (code+encounter)",
+              "resource": "0b7369a2119a79da",
+              "expected": "ICD-10 code with dot, e.g. E11.9",
+              "got": [
+                "J069"
+              ]
+            },
+            {
+              "check": "Condition matches a true diagnosis (code+encounter)",
+              "resource": "054837d9d937b896",
+              "expected": "ICD-10 code with dot, e.g. E11.9",
+              "got": [
+                "E119"
+              ]
+            },
+            {
+              "check": "Condition matches a true diagnosis (code+encounter)",
+              "resource": "b240722c78f0f921",
+              "expected": "ICD-10 code with dot, e.g. E11.9",
+              "got": [
+                "E119"
+              ]
+            },
+            {
+              "check": "Condition matches a true diagnosis (code+encounter)",
+              "resource": "440eedc37ed4cac4",
+              "expected": "ICD-10 code with dot, e.g. E11.9",
+              "got": [
+                "E119"
+              ]
+            },
+            {
+              "check": "Condition matches a true diagnosis (code+encounter)",
+              "resource": "2558a08d55f08ece",
+              "expected": "ICD-10 code with dot, e.g. E11.9",
+              "got": [
+                "N183"
+              ]
+            },
+            {
+              "check": "Condition matches a true diagnosis (code+encounter)",
+              "resource": "b30b9268dd55f7fc",
+              "expected": "ICD-10 code with dot, e.g. E11.9",
+              "got": [
+                "E785"
+              ]
+            },
+            {
+              "check": "Condition matches a true diagnosis (code+encounter)",
+              "resource": "e518402e4a743984",
+              "expected": "ICD-10 code with dot, e.g. E11.9",
+              "got": [
+                "J069"
+              ]
+            },
+            {
+              "check": "Condition matches a true diagnosis (code+encounter)",
+              "resource": "5e929adde96b7931",
+              "expected": "ICD-10 code with dot, e.g. E11.9",
+              "got": [
+                "J45909"
+              ]
+            },
+            {
+              "check": "Condition matches a true diagnosis (code+encounter)",
+              "resource": "b2de4b7f7bc7ee3d",
+              "expected": "ICD-10 code with dot, e.g. E11.9",
+              "got": [
+                "J069"
+              ]
+            },
+            {
+              "check": "Condition matches a true diagnosis (code+encounter)",
+              "resource": "68343bd2d3978892",
+              "expected": "ICD-10 code with dot, e.g. E11.9",
+              "got": [
+                "J069"
+              ]
+            },
+            {
+              "check": "Condition matches a true diagnosis (code+encounter)",
+              "resource": "e27d227bc8a29390",
+              "expected": "ICD-10 code with dot, e.g. E11.9",
+              "got": [
+                "E785"
+              ]
+            },
+            {
+              "check": "Condition matches a true diagnosis (code+encounter)",
+              "resource": "d88cbe1603302d2b",
+              "expected": "ICD-10 code with dot, e.g. E11.9",
+              "got": [
+                "E785"
+              ]
+            },
+            {
+              "check": "Condition matches a true diagnosis (code+encounter)",
+              "resource": "1c52ade7fef1a0df",
+              "expected": "ICD-10 code with dot, e.g. E11.9",
+              "got": [
+                "E785"
+              ]
+            },
+            {
+              "check": "Condition matches a true diagnosis (code+encounter)",
+              "resource": "3b8c49642ace6465",
+              "expected": "ICD-10 code with dot, e.g. E11.9",
+              "got": [
+                "E119"
+              ]
+            },
+            {
+              "check": "Condition matches a true diagnosis (code+encounter)",
+              "resource": "37220c118f928299",
+              "expected": "ICD-10 code with dot, e.g. E11.9",
+              "got": [
+                "E119"
+              ]
+            },
+            {
+              "check": "Condition matches a true diagnosis (code+encounter)",
+              "resource": "346d9fb7f1c88a2b",
+              "expected": "ICD-10 code with dot, e.g. E11.9",
+              "got": [
+                "E119"
+              ]
+            },
+            {
+              "check": "Condition matches a true diagnosis (code+encounter)",
+              "resource": "f6433314fd359989",
+              "expected": "ICD-10 code with dot, e.g. E11.9",
+              "got": [
+                "E119"
+              ]
+            },
+            {
+              "check": "Condition matches a true diagnosis (code+encounter)",
+              "resource": "ddc60f344c00cae2",
+              "expected": "ICD-10 code with dot, e.g. E11.9",
+              "got": [
+                "J45909"
+              ]
+            },
+            {
+              "check": "Condition matches a true diagnosis (code+encounter)",
+              "resource": "7c11cee90f4e7b31",
+              "expected": "ICD-10 code with dot, e.g. E11.9",
+              "got": [
+                "N183"
+              ]
+            },
+            {
+              "check": "Condition matches a true diagnosis (code+encounter)",
+              "resource": "1dd5e75d7454a6ed",
+              "expected": "ICD-10 code with dot, e.g. E11.9",
+              "got": [
+                "N183"
+              ]
+            },
+            {
+              "check": "Condition matches a true diagnosis (code+encounter)",
+              "resource": "03601ab374c7fa2d",
+              "expected": "ICD-10 code with dot, e.g. E11.9",
+              "got": [
+                "N183"
+              ]
+            },
+            {
+              "check": "Condition matches a true diagnosis (code+encounter)",
+              "resource": "51a9274831e7c26a",
+              "expected": "ICD-10 code with dot, e.g. E11.9",
+              "got": [
+                "J069"
+              ]
+            },
+            {
+              "check": "Condition matches a true diagnosis (code+encounter)",
+              "resource": "690a1e6f1701ae6c",
+              "expected": "ICD-10 code with dot, e.g. E11.9",
+              "got": [
+                "J45909"
+              ]
+            },
+            {
+              "check": "Condition matches a true diagnosis (code+encounter)",
+              "resource": "a86acfc1dd01fe3d",
+              "expected": "ICD-10 code with dot, e.g. E11.9",
+              "got": [
+                "J069"
+              ]
+            },
+            {
+              "check": "Condition matches a true diagnosis (code+encounter)",
+              "resource": "36f8e9d7b9605ef8",
+              "expected": "ICD-10 code with dot, e.g. E11.9",
+              "got": [
+                "J069"
+              ]
+            },
+            {
+              "check": "Condition matches a true diagnosis (code+encounter)",
+              "resource": "ef4d9a8ef60e3a1e",
+              "expected": "ICD-10 code with dot, e.g. E11.9",
+              "got": [
+                "J069"
+              ]
+            },
+            {
+              "check": "Condition matches a true diagnosis (code+encounter)",
+              "resource": "f2bc6545afce4492",
+              "expected": "ICD-10 code with dot, e.g. E11.9",
+              "got": [
+                "N183"
+              ]
+            },
+            {
+              "check": "Condition matches a true diagnosis (code+encounter)",
+              "resource": "af6f8cfe0386a004",
+              "expected": "ICD-10 code with dot, e.g. E11.9",
+              "got": [
+                "E119"
+              ]
+            },
+            {
+              "check": "Condition matches a true diagnosis (code+encounter)",
+              "resource": "e346cbf5423afb9f",
+              "expected": "ICD-10 code with dot, e.g. E11.9",
+              "got": [
+                "J069"
+              ]
+            },
+            {
+              "check": "Condition matches a true diagnosis (code+encounter)",
+              "resource": "22a139e734898a8e",
+              "expected": "ICD-10 code with dot, e.g. E11.9",
+              "got": [
+                "N183"
+              ]
+            },
+            {
+              "check": "Condition matches a true diagnosis (code+encounter)",
+              "resource": "5f417fa0c797e1b8",
+              "expected": "ICD-10 code with dot, e.g. E11.9",
+              "got": [
+                "E785"
+              ]
+            },
+            {
+              "check": "Condition matches a true diagnosis (code+encounter)",
+              "resource": "f752634a1bef09e2",
+              "expected": "ICD-10 code with dot, e.g. E11.9",
+              "got": [
+                "N183"
+              ]
+            },
+            {
+              "check": "Condition matches a true diagnosis (code+encounter)",
+              "resource": "44d19de647837fe4",
+              "expected": "ICD-10 code with dot, e.g. E11.9",
+              "got": [
+                "J069"
+              ]
+            },
+            {
+              "check": "Condition matches a true diagnosis (code+encounter)",
+              "resource": "63f97a0df30c09bc",
+              "expected": "ICD-10 code with dot, e.g. E11.9",
+              "got": [
+                "J069"
+              ]
+            },
+            {
+              "check": "Condition matches a true diagnosis (code+encounter)",
+              "resource": "d81a0ad4329817a5",
+              "expected": "ICD-10 code with dot, e.g. E11.9",
+              "got": [
+                "J069"
+              ]
+            },
+            {
+              "check": "Condition matches a true diagnosis (code+encounter)",
+              "resource": "bb2fe6be4bf4d590",
+              "expected": "ICD-10 code with dot, e.g. E11.9",
+              "got": [
+                "J069"
+              ]
+            },
+            {
+              "check": "Condition matches a true diagnosis (code+encounter)",
+              "resource": "69cdcd3438bf66e6",
+              "expected": "ICD-10 code with dot, e.g. E11.9",
+              "got": [
+                "J069"
+              ]
+            },
+            {
+              "check": "Condition matches a true diagnosis (code+encounter)",
+              "resource": "1f6f63d358c9df08",
+              "expected": "ICD-10 code with dot, e.g. E11.9",
+              "got": [
+                "E785"
+              ]
+            },
+            {
+              "check": "Condition matches a true diagnosis (code+encounter)",
+              "resource": "9cd4a74f712cc086",
+              "expected": "ICD-10 code with dot, e.g. E11.9",
+              "got": [
+                "J069"
+              ]
+            },
+            {
+              "check": "Condition matches a true diagnosis (code+encounter)",
+              "resource": "98e1b2db7ae7d8bc",
+              "expected": "ICD-10 code with dot, e.g. E11.9",
+              "got": [
+                "E785"
+              ]
+            },
+            {
+              "check": "Condition matches a true diagnosis (code+encounter)",
+              "resource": "6062da054ff382cd",
+              "expected": "ICD-10 code with dot, e.g. E11.9",
+              "got": [
+                "J45909"
+              ]
+            },
+            {
+              "check": "Condition matches a true diagnosis (code+encounter)",
+              "resource": "acd8661633205cfc",
+              "expected": "ICD-10 code with dot, e.g. E11.9",
+              "got": [
+                "J45909"
+              ]
+            },
+            {
+              "check": "Condition matches a true diagnosis (code+encounter)",
+              "resource": "c19a5996461047d2",
+              "expected": "ICD-10 code with dot, e.g. E11.9",
+              "got": [
+                "J45909"
+              ]
+            },
+            {
+              "check": "Condition matches a true diagnosis (code+encounter)",
+              "resource": "4d15473a7992dee4",
+              "expected": "ICD-10 code with dot, e.g. E11.9",
+              "got": [
+                "J45909"
+              ]
+            },
+            {
+              "check": "Condition matches a true diagnosis (code+encounter)",
+              "resource": "08aa7163ef3d1b34",
+              "expected": "ICD-10 code with dot, e.g. E11.9",
+              "got": [
+                "J45909"
+              ]
+            },
+            {
+              "check": "Condition matches a true diagnosis (code+encounter)",
+              "resource": "61b5087e1ab3138e",
+              "expected": "ICD-10 code with dot, e.g. E11.9",
+              "got": [
+                "N183"
+              ]
+            },
+            {
+              "check": "Condition matches a true diagnosis (code+encounter)",
+              "resource": "8ca1e7071881aaf1",
+              "expected": "ICD-10 code with dot, e.g. E11.9",
+              "got": [
+                "J069"
+              ]
+            },
+            {
+              "check": "Condition matches a true diagnosis (code+encounter)",
+              "resource": "00a2a9f81d331407",
+              "expected": "ICD-10 code with dot, e.g. E11.9",
+              "got": [
+                "J069"
+              ]
+            },
+            {
+              "check": "Condition matches a true diagnosis (code+encounter)",
+              "resource": "1c63ae7d250f8346",
+              "expected": "ICD-10 code with dot, e.g. E11.9",
+              "got": [
+                "J45909"
+              ]
+            },
+            {
+              "check": "Condition matches a true diagnosis (code+encounter)",
+              "resource": "60ebcd5c980686bf",
+              "expected": "ICD-10 code with dot, e.g. E11.9",
+              "got": [
+                "J45909"
+              ]
+            },
+            {
+              "check": "Condition matches a true diagnosis (code+encounter)",
+              "resource": "c163f2a6ed3c0bde",
+              "expected": "ICD-10 code with dot, e.g. E11.9",
+              "got": [
+                "E119"
+              ]
+            },
+            {
+              "check": "Condition matches a true diagnosis (code+encounter)",
+              "resource": "43a9c6bb4746b262",
+              "expected": "ICD-10 code with dot, e.g. E11.9",
+              "got": [
+                "J45909"
+              ]
+            },
+            {
+              "check": "Condition matches a true diagnosis (code+encounter)",
+              "resource": "66e52e295c90c4ea",
+              "expected": "ICD-10 code with dot, e.g. E11.9",
+              "got": [
+                "J45909"
+              ]
+            },
+            {
+              "check": "Condition matches a true diagnosis (code+encounter)",
+              "resource": "4c410eeafc7d994a",
+              "expected": "ICD-10 code with dot, e.g. E11.9",
+              "got": [
+                "J45909"
+              ]
+            },
+            {
+              "check": "Condition matches a true diagnosis (code+encounter)",
+              "resource": "5bc27f4636c488e5",
+              "expected": "ICD-10 code with dot, e.g. E11.9",
+              "got": [
+                "J45909"
+              ]
+            },
+            {
+              "check": "Condition matches a true diagnosis (code+encounter)",
+              "resource": "5af87310eb27c506",
+              "expected": "ICD-10 code with dot, e.g. E11.9",
+              "got": [
+                "J069"
+              ]
+            },
+            {
+              "check": "Condition matches a true diagnosis (code+encounter)",
+              "resource": "7907b82b79b08ffc",
+              "expected": "ICD-10 code with dot, e.g. E11.9",
+              "got": [
+                "J069"
+              ]
+            },
+            {
+              "check": "Condition matches a true diagnosis (code+encounter)",
+              "resource": "a513fe885b60f7af",
+              "expected": "ICD-10 code with dot, e.g. E11.9",
+              "got": [
+                "J45909"
+              ]
+            },
+            {
+              "check": "Condition matches a true diagnosis (code+encounter)",
+              "resource": "551a1917ff334fd3",
+              "expected": "ICD-10 code with dot, e.g. E11.9",
+              "got": [
+                "J45909"
+              ]
+            },
+            {
+              "check": "Condition matches a true diagnosis (code+encounter)",
+              "resource": "1f862fa95d7a6733",
+              "expected": "ICD-10 code with dot, e.g. E11.9",
+              "got": [
+                "J45909"
+              ]
+            },
+            {
+              "check": "Condition matches a true diagnosis (code+encounter)",
+              "resource": "d855a9a5b6b5a956",
+              "expected": "ICD-10 code with dot, e.g. E11.9",
+              "got": [
+                "E785"
+              ]
+            },
+            {
+              "check": "Condition matches a true diagnosis (code+encounter)",
+              "resource": "ac2626c415e6a669",
+              "expected": "ICD-10 code with dot, e.g. E11.9",
+              "got": [
+                "E785"
+              ]
+            },
+            {
+              "check": "Condition matches a true diagnosis (code+encounter)",
+              "resource": "84ddcddd2c8d5b64",
+              "expected": "ICD-10 code with dot, e.g. E11.9",
+              "got": [
+                "E785"
+              ]
+            },
+            {
+              "check": "Condition matches a true diagnosis (code+encounter)",
+              "resource": "778dbd1be2c4fd05",
+              "expected": "ICD-10 code with dot, e.g. E11.9",
+              "got": [
+                "E785"
+              ]
+            },
+            {
+              "check": "Condition matches a true diagnosis (code+encounter)",
+              "resource": "f5528a0bdc3a696c",
+              "expected": "ICD-10 code with dot, e.g. E11.9",
+              "got": [
+                "N183"
+              ]
+            },
+            {
+              "check": "Condition matches a true diagnosis (code+encounter)",
+              "resource": "c18c6b55b9ab6666",
+              "expected": "ICD-10 code with dot, e.g. E11.9",
+              "got": [
+                "N183"
+              ]
+            },
+            {
+              "check": "Condition matches a true diagnosis (code+encounter)",
+              "resource": "c469dc45ded7d8fa",
+              "expected": "ICD-10 code with dot, e.g. E11.9",
+              "got": [
+                "J45909"
+              ]
+            },
+            {
+              "check": "Condition matches a true diagnosis (code+encounter)",
+              "resource": "e6bd850991d6384c",
+              "expected": "ICD-10 code with dot, e.g. E11.9",
+              "got": [
+                "E119"
+              ]
+            },
+            {
+              "check": "Condition matches a true diagnosis (code+encounter)",
+              "resource": "01223deab382a505",
+              "expected": "ICD-10 code with dot, e.g. E11.9",
+              "got": [
+                "N183"
+              ]
+            },
+            {
+              "check": "Condition matches a true diagnosis (code+encounter)",
+              "resource": "6b530782e3f2d820",
+              "expected": "ICD-10 code with dot, e.g. E11.9",
+              "got": [
+                "N183"
+              ]
+            },
+            {
+              "check": "Condition matches a true diagnosis (code+encounter)",
+              "resource": "781d7af84bc5c0f8",
+              "expected": "ICD-10 code with dot, e.g. E11.9",
+              "got": [
+                "N183"
+              ]
+            },
+            {
+              "check": "Condition matches a true diagnosis (code+encounter)",
+              "resource": "899028fbfa3c5e01",
+              "expected": "ICD-10 code with dot, e.g. E11.9",
+              "got": [
+                "N183"
+              ]
+            },
+            {
+              "check": "Condition matches a true diagnosis (code+encounter)",
+              "resource": "46068820d868356e",
+              "expected": "ICD-10 code with dot, e.g. E11.9",
+              "got": [
+                "J069"
+              ]
+            },
+            {
+              "check": "Condition matches a true diagnosis (code+encounter)",
+              "resource": "57c07d32a93b225d",
+              "expected": "ICD-10 code with dot, e.g. E11.9",
+              "got": [
+                "J069"
+              ]
+            },
+            {
+              "check": "Condition matches a true diagnosis (code+encounter)",
+              "resource": "7181cd16ac6f4b0e",
+              "expected": "ICD-10 code with dot, e.g. E11.9",
+              "got": [
+                "J069"
+              ]
+            },
+            {
+              "check": "Condition matches a true diagnosis (code+encounter)",
+              "resource": "561e0105aebf2dfd",
+              "expected": "ICD-10 code with dot, e.g. E11.9",
+              "got": [
+                "J069"
+              ]
+            },
+            {
+              "check": "Condition matches a true diagnosis (code+encounter)",
+              "resource": "8afff2b85039c4e8",
+              "expected": "ICD-10 code with dot, e.g. E11.9",
+              "got": [
+                "J069"
+              ]
+            },
+            {
+              "check": "Condition matches a true diagnosis (code+encounter)",
+              "resource": "d3fd65f99a0b71d9",
+              "expected": "ICD-10 code with dot, e.g. E11.9",
+              "got": [
+                "E119"
+              ]
+            },
+            {
+              "check": "Condition matches a true diagnosis (code+encounter)",
+              "resource": "3eb75a743c306abe",
+              "expected": "ICD-10 code with dot, e.g. E11.9",
+              "got": [
+                "E785"
+              ]
+            },
+            {
+              "check": "Condition matches a true diagnosis (code+encounter)",
+              "resource": "032906fe779b230a",
+              "expected": "ICD-10 code with dot, e.g. E11.9",
+              "got": [
+                "E119"
+              ]
+            },
+            {
+              "check": "Condition matches a true diagnosis (code+encounter)",
+              "resource": "7b3e1ef592f8b769",
+              "expected": "ICD-10 code with dot, e.g. E11.9",
+              "got": [
+                "J45909"
+              ]
+            },
+            {
+              "check": "Condition matches a true diagnosis (code+encounter)",
+              "resource": "e80cc2b13934bfe4",
+              "expected": "ICD-10 code with dot, e.g. E11.9",
+              "got": [
+                "J069"
+              ]
+            },
+            {
+              "check": "Condition matches a true diagnosis (code+encounter)",
+              "resource": "31f0b5eee14683e6",
+              "expected": "ICD-10 code with dot, e.g. E11.9",
+              "got": [
+                "J069"
+              ]
+            },
+            {
+              "check": "Condition matches a true diagnosis (code+encounter)",
+              "resource": "355ccdfe91495df8",
+              "expected": "ICD-10 code with dot, e.g. E11.9",
+              "got": [
+                "J069"
+              ]
+            },
+            {
+              "check": "Condition matches a true diagnosis (code+encounter)",
+              "resource": "3c626cdee2370177",
+              "expected": "ICD-10 code with dot, e.g. E11.9",
+              "got": [
+                "E785"
+              ]
+            },
+            {
+              "check": "Condition matches a true diagnosis (code+encounter)",
+              "resource": "20237eb24787d3d4",
+              "expected": "ICD-10 code with dot, e.g. E11.9",
+              "got": [
+                "J069"
+              ]
+            },
+            {
+              "check": "Condition matches a true diagnosis (code+encounter)",
+              "resource": "7bb1064708c16b28",
+              "expected": "ICD-10 code with dot, e.g. E11.9",
+              "got": [
+                "E119"
+              ]
+            },
+            {
+              "check": "Condition matches a true diagnosis (code+encounter)",
+              "resource": "7af85c4be88bd915",
+              "expected": "ICD-10 code with dot, e.g. E11.9",
+              "got": [
+                "J45909"
+              ]
+            },
+            {
+              "check": "Condition matches a true diagnosis (code+encounter)",
+              "resource": "af2481a408f398d9",
+              "expected": "ICD-10 code with dot, e.g. E11.9",
+              "got": [
+                "J069"
+              ]
+            },
+            {
+              "check": "Condition matches a true diagnosis (code+encounter)",
+              "resource": "76a70f39f65e9495",
+              "expected": "ICD-10 code with dot, e.g. E11.9",
+              "got": [
+                "E785"
+              ]
+            },
+            {
+              "check": "Condition matches a true diagnosis (code+encounter)",
+              "resource": "4e00c9dc53760f45",
+              "expected": "ICD-10 code with dot, e.g. E11.9",
+              "got": [
+                "E785"
+              ]
+            },
+            {
+              "check": "Condition matches a true diagnosis (code+encounter)",
+              "resource": "76cee6ba9358c067",
+              "expected": "ICD-10 code with dot, e.g. E11.9",
+              "got": [
+                "J069"
+              ]
+            },
+            {
+              "check": "Condition matches a true diagnosis (code+encounter)",
+              "resource": "fc4bc5d3eb348716",
+              "expected": "ICD-10 code with dot, e.g. E11.9",
+              "got": [
+                "J069"
+              ]
+            },
+            {
+              "check": "Condition matches a true diagnosis (code+encounter)",
+              "resource": "72435b19e2753f11",
+              "expected": "ICD-10 code with dot, e.g. E11.9",
+              "got": [
+                "J069"
+              ]
+            },
+            {
+              "check": "Condition matches a true diagnosis (code+encounter)",
+              "resource": "af76ba723136c21d",
+              "expected": "ICD-10 code with dot, e.g. E11.9",
+              "got": [
+                "J069"
+              ]
+            },
+            {
+              "check": "Condition matches a true diagnosis (code+encounter)",
+              "resource": "59ae4b720dbd1ab8",
+              "expected": "ICD-10 code with dot, e.g. E11.9",
+              "got": [
+                "E119"
+              ]
+            },
+            {
+              "check": "Condition matches a true diagnosis (code+encounter)",
+              "resource": "9849373f2b3b81ec",
+              "expected": "ICD-10 code with dot, e.g. E11.9",
+              "got": [
+                "N183"
+              ]
+            },
+            {
+              "check": "Condition matches a true diagnosis (code+encounter)",
+              "resource": "b25959802ae042a1",
+              "expected": "ICD-10 code with dot, e.g. E11.9",
+              "got": [
+                "N183"
+              ]
+            },
+            {
+              "check": "Condition matches a true diagnosis (code+encounter)",
+              "resource": "c130c641ccc2bdb5",
+              "expected": "ICD-10 code with dot, e.g. E11.9",
+              "got": [
+                "E119"
+              ]
+            },
+            {
+              "check": "Condition matches a true diagnosis (code+encounter)",
+              "resource": "39a72a7ee032d0e4",
+              "expected": "ICD-10 code with dot, e.g. E11.9",
+              "got": [
+                "J45909"
+              ]
+            },
+            {
+              "check": "Condition matches a true diagnosis (code+encounter)",
+              "resource": "7464852f0b6cb5db",
+              "expected": "ICD-10 code with dot, e.g. E11.9",
+              "got": [
+                "E119"
+              ]
+            },
+            {
+              "check": "Condition matches a true diagnosis (code+encounter)",
+              "resource": "c381514bb6c58a40",
+              "expected": "ICD-10 code with dot, e.g. E11.9",
+              "got": [
+                "E119"
+              ]
+            },
+            {
+              "check": "Condition matches a true diagnosis (code+encounter)",
+              "resource": "0eebc23256d6cc16",
+              "expected": "ICD-10 code with dot, e.g. E11.9",
+              "got": [
+                "J069"
+              ]
+            },
+            {
+              "check": "Condition matches a true diagnosis (code+encounter)",
+              "resource": "fbb9a797eaf8068c",
+              "expected": "ICD-10 code with dot, e.g. E11.9",
+              "got": [
+                "J069"
+              ]
+            },
+            {
+              "check": "Condition matches a true diagnosis (code+encounter)",
+              "resource": "2c4cf714cfd7665f",
+              "expected": "ICD-10 code with dot, e.g. E11.9",
+              "got": [
+                "N183"
+              ]
+            },
+            {
+              "check": "Condition matches a true diagnosis (code+encounter)",
+              "resource": "3edd4728aa8c2719",
+              "expected": "ICD-10 code with dot, e.g. E11.9",
+              "got": [
+                "N183"
+              ]
+            },
+            {
+              "check": "Condition matches a true diagnosis (code+encounter)",
+              "resource": "5d375c24da28849c",
+              "expected": "ICD-10 code with dot, e.g. E11.9",
+              "got": [
+                "E785"
+              ]
+            },
+            {
+              "check": "Condition matches a true diagnosis (code+encounter)",
+              "resource": "c03ccdfe9ae087c2",
+              "expected": "ICD-10 code with dot, e.g. E11.9",
+              "got": [
+                "E785"
+              ]
+            },
+            {
+              "check": "Condition matches a true diagnosis (code+encounter)",
+              "resource": "09759106942291b6",
+              "expected": "ICD-10 code with dot, e.g. E11.9",
+              "got": [
+                "N183"
+              ]
+            },
+            {
+              "check": "Condition matches a true diagnosis (code+encounter)",
+              "resource": "4a2f09f8e93ca7a2",
+              "expected": "ICD-10 code with dot, e.g. E11.9",
+              "got": [
+                "E785"
+              ]
+            },
+            {
+              "check": "Condition matches a true diagnosis (code+encounter)",
+              "resource": "6f1e92943e948385",
+              "expected": "ICD-10 code with dot, e.g. E11.9",
+              "got": [
+                "N183"
+              ]
+            },
+            {
+              "check": "Condition matches a true diagnosis (code+encounter)",
+              "resource": "bbb0d24b9dddd320",
+              "expected": "ICD-10 code with dot, e.g. E11.9",
+              "got": [
+                "J069"
+              ]
+            },
+            {
+              "check": "Condition matches a true diagnosis (code+encounter)",
+              "resource": "99550b027d670f10",
+              "expected": "ICD-10 code with dot, e.g. E11.9",
+              "got": [
+                "J069"
+              ]
+            },
+            {
+              "check": "Condition matches a true diagnosis (code+encounter)",
+              "resource": "799e735ad0842a95",
+              "expected": "ICD-10 code with dot, e.g. E11.9",
+              "got": [
+                "J069"
+              ]
+            },
+            {
+              "check": "Condition matches a true diagnosis (code+encounter)",
+              "resource": "93e6443196213918",
+              "expected": "ICD-10 code with dot, e.g. E11.9",
+              "got": [
+                "J069"
+              ]
+            },
+            {
+              "check": "Condition matches a true diagnosis (code+encounter)",
+              "resource": "3f6ac6354887d942",
+              "expected": "ICD-10 code with dot, e.g. E11.9",
+              "got": [
+                "J45909"
+              ]
+            },
+            {
+              "check": "Condition matches a true diagnosis (code+encounter)",
+              "resource": "51158a4facfd8dce",
+              "expected": "ICD-10 code with dot, e.g. E11.9",
+              "got": [
+                "J45909"
+              ]
+            },
+            {
+              "check": "Condition matches a true diagnosis (code+encounter)",
+              "resource": "cc26eb4080a441af",
+              "expected": "ICD-10 code with dot, e.g. E11.9",
+              "got": [
+                "E785"
+              ]
+            },
+            {
+              "check": "Condition matches a true diagnosis (code+encounter)",
+              "resource": "b18bf63e29a4b97d",
+              "expected": "ICD-10 code with dot, e.g. E11.9",
+              "got": [
+                "E785"
+              ]
+            },
+            {
+              "check": "Condition matches a true diagnosis (code+encounter)",
+              "resource": "c326a13402ebc3e8",
+              "expected": "ICD-10 code with dot, e.g. E11.9",
+              "got": [
+                "E785"
+              ]
+            },
+            {
+              "check": "Condition matches a true diagnosis (code+encounter)",
+              "resource": "29c9ef61587e1f0b",
+              "expected": "ICD-10 code with dot, e.g. E11.9",
+              "got": [
+                "E785"
+              ]
+            },
+            {
+              "check": "Condition matches a true diagnosis (code+encounter)",
+              "resource": "8d70c8ecadb79c92",
+              "expected": "ICD-10 code with dot, e.g. E11.9",
+              "got": [
+                "E785"
+              ]
+            },
+            {
+              "check": "Condition matches a true diagnosis (code+encounter)",
+              "resource": "d9eccd7ea46a92c6",
+              "expected": "ICD-10 code with dot, e.g. E11.9",
+              "got": [
+                "N183"
+              ]
+            },
+            {
+              "check": "Condition matches a true diagnosis (code+encounter)",
+              "resource": "11f37261a89dacd6",
+              "expected": "ICD-10 code with dot, e.g. E11.9",
+              "got": [
+                "E785"
+              ]
+            },
+            {
+              "check": "Condition matches a true diagnosis (code+encounter)",
+              "resource": "3e540dab874f324f",
+              "expected": "ICD-10 code with dot, e.g. E11.9",
+              "got": [
+                "J069"
+              ]
+            },
+            {
+              "check": "Condition matches a true diagnosis (code+encounter)",
+              "resource": "cf02bbfac4312193",
+              "expected": "ICD-10 code with dot, e.g. E11.9",
+              "got": [
+                "J069"
+              ]
+            },
+            {
+              "check": "Condition matches a true diagnosis (code+encounter)",
+              "resource": "2d3b466f9550b932",
+              "expected": "ICD-10 code with dot, e.g. E11.9",
+              "got": [
+                "N183"
+              ]
+            },
+            {
+              "check": "Condition matches a true diagnosis (code+encounter)",
+              "resource": "bff9086f4d936ae0",
+              "expected": "ICD-10 code with dot, e.g. E11.9",
+              "got": [
+                "J069"
+              ]
+            },
+            {
+              "check": "Condition matches a true diagnosis (code+encounter)",
+              "resource": "cb23136005b88f7d",
+              "expected": "ICD-10 code with dot, e.g. E11.9",
+              "got": [
+                "N183"
+              ]
+            },
+            {
+              "check": "Condition matches a true diagnosis (code+encounter)",
+              "resource": "6b1a3e34db36d323",
+              "expected": "ICD-10 code with dot, e.g. E11.9",
+              "got": [
+                "E785"
+              ]
+            },
+            {
+              "check": "Condition matches a true diagnosis (code+encounter)",
+              "resource": "c799afcfd6d40024",
+              "expected": "ICD-10 code with dot, e.g. E11.9",
+              "got": [
+                "J45909"
+              ]
+            },
+            {
+              "check": "Condition matches a true diagnosis (code+encounter)",
+              "resource": "18a9b7f626fd8ff4",
+              "expected": "ICD-10 code with dot, e.g. E11.9",
+              "got": [
+                "E119"
+              ]
+            },
+            {
+              "check": "Condition matches a true diagnosis (code+encounter)",
+              "resource": "fb4aa0cc09e1e031",
+              "expected": "ICD-10 code with dot, e.g. E11.9",
+              "got": [
+                "E785"
+              ]
+            },
+            {
+              "check": "Condition matches a true diagnosis (code+encounter)",
+              "resource": "b95f54f5474205ae",
+              "expected": "ICD-10 code with dot, e.g. E11.9",
+              "got": [
+                "E785"
+              ]
+            },
+            {
+              "check": "Condition matches a true diagnosis (code+encounter)",
+              "resource": "1fd3d125e573137a",
+              "expected": "ICD-10 code with dot, e.g. E11.9",
+              "got": [
+                "J069"
+              ]
+            },
+            {
+              "check": "Condition matches a true diagnosis (code+encounter)",
+              "resource": "5b6b4c7cc2caaec6",
+              "expected": "ICD-10 code with dot, e.g. E11.9",
+              "got": [
+                "J069"
+              ]
+            },
+            {
+              "check": "Condition matches a true diagnosis (code+encounter)",
+              "resource": "070bd7f15e6804e7",
+              "expected": "ICD-10 code with dot, e.g. E11.9",
+              "got": [
+                "N183"
+              ]
+            },
+            {
+              "check": "Condition matches a true diagnosis (code+encounter)",
+              "resource": "f3d40757423d4fcd",
+              "expected": "ICD-10 code with dot, e.g. E11.9",
+              "got": [
+                "N183"
+              ]
+            },
+            {
+              "check": "Condition matches a true diagnosis (code+encounter)",
+              "resource": "8aaa7f227ab759bd",
+              "expected": "ICD-10 code with dot, e.g. E11.9",
+              "got": [
+                "N183"
+              ]
+            },
+            {
+              "check": "Condition matches a true diagnosis (code+encounter)",
+              "resource": "4d6f36f7d2342bfc",
+              "expected": "ICD-10 code with dot, e.g. E11.9",
+              "got": [
+                "N183"
+              ]
+            },
+            {
+              "check": "Condition matches a true diagnosis (code+encounter)",
+              "resource": "71f5e2f6b146b056",
+              "expected": "ICD-10 code with dot, e.g. E11.9",
+              "got": [
+                "E119"
+              ]
+            },
+            {
+              "check": "Condition matches a true diagnosis (code+encounter)",
+              "resource": "8f3ee5a8441b007d",
+              "expected": "ICD-10 code with dot, e.g. E11.9",
+              "got": [
+                "N183"
+              ]
+            },
+            {
+              "check": "Condition matches a true diagnosis (code+encounter)",
+              "resource": "a11a0827a7d68dd5",
+              "expected": "ICD-10 code with dot, e.g. E11.9",
+              "got": [
+                "J069"
+              ]
+            },
+            {
+              "check": "Condition matches a true diagnosis (code+encounter)",
+              "resource": "38420ffe8dd1b757",
+              "expected": "ICD-10 code with dot, e.g. E11.9",
+              "got": [
+                "E785"
+              ]
+            },
+            {
+              "check": "Condition matches a true diagnosis (code+encounter)",
+              "resource": "b8759d98e8b3a304",
+              "expected": "ICD-10 code with dot, e.g. E11.9",
+              "got": [
+                "J45909"
+              ]
+            },
+            {
+              "check": "Condition matches a true diagnosis (code+encounter)",
+              "resource": "c33457d279f4e2c2",
+              "expected": "ICD-10 code with dot, e.g. E11.9",
+              "got": [
+                "J45909"
+              ]
+            },
+            {
+              "check": "Condition matches a true diagnosis (code+encounter)",
+              "resource": "347e04f9f517396b",
+              "expected": "ICD-10 code with dot, e.g. E11.9",
+              "got": [
+                "J45909"
+              ]
+            },
+            {
+              "check": "Condition matches a true diagnosis (code+encounter)",
+              "resource": "e671c0ad17b37fd2",
+              "expected": "ICD-10 code with dot, e.g. E11.9",
+              "got": [
+                "J45909"
+              ]
+            },
+            {
+              "check": "Condition matches a true diagnosis (code+encounter)",
+              "resource": "ab3b19edbee7007c",
+              "expected": "ICD-10 code with dot, e.g. E11.9",
+              "got": [
+                "J45909"
+              ]
+            },
+            {
+              "check": "Condition matches a true diagnosis (code+encounter)",
+              "resource": "6ae545500fae0f80",
+              "expected": "ICD-10 code with dot, e.g. E11.9",
+              "got": [
+                "J069"
+              ]
+            },
+            {
+              "check": "Condition matches a true diagnosis (code+encounter)",
+              "resource": "fd18b3130cea7936",
+              "expected": "ICD-10 code with dot, e.g. E11.9",
+              "got": [
+                "J069"
+              ]
+            },
+            {
+              "check": "Condition matches a true diagnosis (code+encounter)",
+              "resource": "451e2a680b3b9d62",
+              "expected": "ICD-10 code with dot, e.g. E11.9",
+              "got": [
+                "J069"
+              ]
+            },
+            {
+              "check": "Condition matches a true diagnosis (code+encounter)",
+              "resource": "e66414d452bd2be7",
+              "expected": "ICD-10 code with dot, e.g. E11.9",
+              "got": [
+                "J069"
+              ]
+            },
+            {
+              "check": "Condition matches a true diagnosis (code+encounter)",
+              "resource": "dc12de90e3be5e49",
+              "expected": "ICD-10 code with dot, e.g. E11.9",
+              "got": [
+                "J45909"
+              ]
+            },
+            {
+              "check": "Condition matches a true diagnosis (code+encounter)",
+              "resource": "3ea84939bcd8bbfb",
+              "expected": "ICD-10 code with dot, e.g. E11.9",
+              "got": [
+                "J45909"
+              ]
+            },
+            {
+              "check": "Condition matches a true diagnosis (code+encounter)",
+              "resource": "1a3a5e5d8a61dee3",
+              "expected": "ICD-10 code with dot, e.g. E11.9",
+              "got": [
+                "J45909"
+              ]
+            },
+            {
+              "check": "Condition matches a true diagnosis (code+encounter)",
+              "resource": "2054a445825dfe38",
+              "expected": "ICD-10 code with dot, e.g. E11.9",
+              "got": [
+                "J45909"
+              ]
+            },
+            {
+              "check": "Condition matches a true diagnosis (code+encounter)",
+              "resource": "bebfecbaeed59c7e",
+              "expected": "ICD-10 code with dot, e.g. E11.9",
+              "got": [
+                "J45909"
+              ]
+            },
+            {
+              "check": "Condition matches a true diagnosis (code+encounter)",
+              "resource": "3609c5a1d6dd6c24",
+              "expected": "ICD-10 code with dot, e.g. E11.9",
+              "got": [
+                "J069"
+              ]
+            },
+            {
+              "check": "Condition matches a true diagnosis (code+encounter)",
+              "resource": "d2fc68bba476f904",
+              "expected": "ICD-10 code with dot, e.g. E11.9",
+              "got": [
+                "E119"
+              ]
+            },
+            {
+              "check": "Condition matches a true diagnosis (code+encounter)",
+              "resource": "2c39c2240b33e705",
+              "expected": "ICD-10 code with dot, e.g. E11.9",
+              "got": [
+                "E119"
+              ]
+            },
+            {
+              "check": "Condition matches a true diagnosis (code+encounter)",
+              "resource": "4f6ee55fb1cac0b0",
+              "expected": "ICD-10 code with dot, e.g. E11.9",
+              "got": [
+                "J069"
+              ]
+            },
+            {
+              "check": "Condition matches a true diagnosis (code+encounter)",
+              "resource": "81854e7026986a55",
+              "expected": "ICD-10 code with dot, e.g. E11.9",
+              "got": [
+                "N183"
+              ]
+            },
+            {
+              "check": "Condition matches a true diagnosis (code+encounter)",
+              "resource": "8eefb83a55346bf0",
+              "expected": "ICD-10 code with dot, e.g. E11.9",
+              "got": [
+                "E119"
+              ]
+            },
+            {
+              "check": "Condition matches a true diagnosis (code+encounter)",
+              "resource": "c11cafa42e56d0f6",
+              "expected": "ICD-10 code with dot, e.g. E11.9",
+              "got": [
+                "E119"
+              ]
+            },
+            {
+              "check": "Condition matches a true diagnosis (code+encounter)",
+              "resource": "dffe06dbbf4997e9",
+              "expected": "ICD-10 code with dot, e.g. E11.9",
+              "got": [
+                "J069"
+              ]
+            },
+            {
+              "check": "Condition matches a true diagnosis (code+encounter)",
+              "resource": "8316c692618ac8f6",
+              "expected": "ICD-10 code with dot, e.g. E11.9",
+              "got": [
+                "J45909"
+              ]
+            },
+            {
+              "check": "Condition matches a true diagnosis (code+encounter)",
+              "resource": "00f3a74ea85540e8",
+              "expected": "ICD-10 code with dot, e.g. E11.9",
+              "got": [
+                "J45909"
+              ]
+            },
+            {
+              "check": "Condition matches a true diagnosis (code+encounter)",
+              "resource": "bf51bdfaefa39647",
+              "expected": "ICD-10 code with dot, e.g. E11.9",
+              "got": [
+                "E119"
+              ]
+            },
+            {
+              "check": "Condition matches a true diagnosis (code+encounter)",
+              "resource": "a228c6f1d9254405",
+              "expected": "ICD-10 code with dot, e.g. E11.9",
+              "got": [
+                "E785"
+              ]
+            },
+            {
+              "check": "Condition matches a true diagnosis (code+encounter)",
+              "resource": "1e4b1e7946628377",
+              "expected": "ICD-10 code with dot, e.g. E11.9",
+              "got": [
+                "E785"
+              ]
+            },
+            {
+              "check": "Condition matches a true diagnosis (code+encounter)",
+              "resource": "59541cd1b7222fb2",
+              "expected": "ICD-10 code with dot, e.g. E11.9",
+              "got": [
+                "E119"
+              ]
+            },
+            {
+              "check": "Condition matches a true diagnosis (code+encounter)",
+              "resource": "b49b81676dc5387a",
+              "expected": "ICD-10 code with dot, e.g. E11.9",
+              "got": [
+                "E119"
+              ]
+            },
+            {
+              "check": "Condition matches a true diagnosis (code+encounter)",
+              "resource": "17d5a05041d64205",
+              "expected": "ICD-10 code with dot, e.g. E11.9",
+              "got": [
+                "E119"
+              ]
+            },
+            {
+              "check": "Condition matches a true diagnosis (code+encounter)",
+              "resource": "d0f5b8080c41e4c9",
+              "expected": "ICD-10 code with dot, e.g. E11.9",
+              "got": [
+                "E785"
+              ]
+            },
+            {
+              "check": "Condition matches a true diagnosis (code+encounter)",
+              "resource": "6e86b9473dc76ab0",
+              "expected": "ICD-10 code with dot, e.g. E11.9",
+              "got": [
+                "J45909"
+              ]
+            },
+            {
+              "check": "Condition matches a true diagnosis (code+encounter)",
+              "resource": "4dcf7dfd7a744992",
+              "expected": "ICD-10 code with dot, e.g. E11.9",
+              "got": [
+                "J069"
+              ]
+            },
+            {
+              "check": "Condition matches a true diagnosis (code+encounter)",
+              "resource": "6242ee984a5e6af8",
+              "expected": "ICD-10 code with dot, e.g. E11.9",
+              "got": [
+                "E119"
+              ]
+            },
+            {
+              "check": "Condition matches a true diagnosis (code+encounter)",
+              "resource": "6cff0859a5d754b1",
+              "expected": "ICD-10 code with dot, e.g. E11.9",
+              "got": [
+                "N183"
+              ]
+            },
+            {
+              "check": "Condition matches a true diagnosis (code+encounter)",
+              "resource": "91860601cd02b8ca",
+              "expected": "ICD-10 code with dot, e.g. E11.9",
+              "got": [
+                "J45909"
+              ]
+            },
+            {
+              "check": "Condition matches a true diagnosis (code+encounter)",
+              "resource": "da1f2072368482ae",
+              "expected": "ICD-10 code with dot, e.g. E11.9",
+              "got": [
+                "J45909"
+              ]
+            },
+            {
+              "check": "Condition matches a true diagnosis (code+encounter)",
+              "resource": "820e5714e3a87339",
+              "expected": "ICD-10 code with dot, e.g. E11.9",
+              "got": [
+                "E785"
+              ]
+            },
+            {
+              "check": "Condition matches a true diagnosis (code+encounter)",
+              "resource": "1bbcb4ea29ddb88e",
+              "expected": "ICD-10 code with dot, e.g. E11.9",
+              "got": [
+                "E785"
+              ]
+            },
+            {
+              "check": "Condition matches a true diagnosis (code+encounter)",
+              "resource": "90e69dc7ddb95483",
+              "expected": "ICD-10 code with dot, e.g. E11.9",
+              "got": [
+                "N183"
+              ]
+            },
+            {
+              "check": "Condition matches a true diagnosis (code+encounter)",
+              "resource": "cee447d38bc43496",
+              "expected": "ICD-10 code with dot, e.g. E11.9",
+              "got": [
+                "J069"
+              ]
+            },
+            {
+              "check": "Condition matches a true diagnosis (code+encounter)",
+              "resource": "a80c9ed553c03cfc",
+              "expected": "ICD-10 code with dot, e.g. E11.9",
+              "got": [
+                "E119"
+              ]
+            },
+            {
+              "check": "Condition matches a true diagnosis (code+encounter)",
+              "resource": "7d2ded77fed0c068",
+              "expected": "ICD-10 code with dot, e.g. E11.9",
+              "got": [
+                "E119"
+              ]
+            },
+            {
+              "check": "Condition matches a true diagnosis (code+encounter)",
+              "resource": "07872d685070230a",
+              "expected": "ICD-10 code with dot, e.g. E11.9",
+              "got": [
+                "E785"
+              ]
+            },
+            {
+              "check": "Condition matches a true diagnosis (code+encounter)",
+              "resource": "c29c4f1a6614ee2b",
+              "expected": "ICD-10 code with dot, e.g. E11.9",
+              "got": [
+                "J45909"
+              ]
+            },
+            {
+              "check": "Condition matches a true diagnosis (code+encounter)",
+              "resource": "d0c9dac91b820800",
+              "expected": "ICD-10 code with dot, e.g. E11.9",
+              "got": [
+                "E119"
+              ]
+            },
+            {
+              "check": "Condition matches a true diagnosis (code+encounter)",
+              "resource": "c5a92e3ab309be77",
+              "expected": "ICD-10 code with dot, e.g. E11.9",
+              "got": [
+                "J069"
+              ]
+            },
+            {
+              "check": "Condition matches a true diagnosis (code+encounter)",
+              "resource": "bf721602dac62760",
+              "expected": "ICD-10 code with dot, e.g. E11.9",
+              "got": [
+                "J069"
+              ]
+            },
+            {
+              "check": "Condition matches a true diagnosis (code+encounter)",
+              "resource": "3099a3e7d45901bb",
+              "expected": "ICD-10 code with dot, e.g. E11.9",
+              "got": [
+                "J45909"
+              ]
+            },
+            {
+              "check": "Condition matches a true diagnosis (code+encounter)",
+              "resource": "115938c5b597fd32",
+              "expected": "ICD-10 code with dot, e.g. E11.9",
+              "got": [
+                "J45909"
+              ]
+            },
+            {
+              "check": "Condition matches a true diagnosis (code+encounter)",
+              "resource": "8f0881c19b984ac6",
+              "expected": "ICD-10 code with dot, e.g. E11.9",
+              "got": [
+                "E785"
+              ]
+            },
+            {
+              "check": "Condition matches a true diagnosis (code+encounter)",
+              "resource": "d8344b40a487185d",
+              "expected": "ICD-10 code with dot, e.g. E11.9",
+              "got": [
+                "N183"
+              ]
+            },
+            {
+              "check": "Condition matches a true diagnosis (code+encounter)",
+              "resource": "877ffa18f769c1c9",
+              "expected": "ICD-10 code with dot, e.g. E11.9",
+              "got": [
+                "E119"
+              ]
+            },
+            {
+              "check": "Condition matches a true diagnosis (code+encounter)",
+              "resource": "ae2a170a66482e6e",
+              "expected": "ICD-10 code with dot, e.g. E11.9",
+              "got": [
+                "N183"
+              ]
+            },
+            {
+              "check": "Condition matches a true diagnosis (code+encounter)",
+              "resource": "81cd8cffb67fc4aa",
+              "expected": "ICD-10 code with dot, e.g. E11.9",
+              "got": [
+                "E785"
+              ]
+            },
+            {
+              "check": "Condition matches a true diagnosis (code+encounter)",
+              "resource": "d4fbe583d8fa6593",
+              "expected": "ICD-10 code with dot, e.g. E11.9",
+              "got": [
+                "J069"
+              ]
+            },
+            {
+              "check": "Condition matches a true diagnosis (code+encounter)",
+              "resource": "5071221f319c2589",
+              "expected": "ICD-10 code with dot, e.g. E11.9",
+              "got": [
+                "E119"
+              ]
+            },
+            {
+              "check": "Condition matches a true diagnosis (code+encounter)",
+              "resource": "d05f0030575cc386",
+              "expected": "ICD-10 code with dot, e.g. E11.9",
+              "got": [
+                "E119"
+              ]
+            }
+          ]
+        },
+        "passed": false,
+        "seconds": 0.06
+      },
+      "feedback_sent": null,
+      "code": "import re\nfrom fhirbridge_runtime.transforms import (\n    SYS,\n    code_map,\n    ref,\n    stable_id,\n    ts_to_datetime,\n    yyyymmdd_to_date,\n)\n\n\ndef _is_valid_id(val: str) -> bool:\n    return bool(val and re.match(r\"^[A-Za-z0-9-.]{1,64}$\", str(val)))\n\n\ndef to_fhir(entity: str, record: dict) -> list[dict]:\n    if not record:\n        return []\n\n    if entity == \"PT_MSTR\":\n        pt_id = record.get(\"PT_MSTR.PT_ID\")\n        if not pt_id:\n            return []\n\n        res = {\n            \"resourceType\": \"Patient\",\n            \"id\": str(pt_id),\n            \"identifier\": [{\"system\": SYS[\"mrn\"], \"value\": str(pt_id)}],\n        }\n\n        gender = code_map(record.get(\"PT_MSTR.PT_SX_CD\"), {\"1\": \"male\", \"2\": \"female\", \"9\": \"other\"})\n        if gender:\n            res[\"gender\"] = gender\n\n        bdate = yyyymmdd_to_date(record.get(\"PT_MSTR.PT_BIRTH_DT\"))\n        if bdate:\n            res[\"birthDate\"] = bdate\n\n        lst_nm = record.get(\"PT_MSTR.PT_LST_NM\")\n        fst_nm = record.get(\"PT_MSTR.PT_FST_NM\")\n        if lst_nm or fst_nm:\n            name_dict = {}\n            if lst_nm:\n                name_dict[\"family\"] = lst_nm\n            if fst_nm:\n                name_dict[\"given\"] = [fst_nm]\n            res[\"name\"] = [name_dict]\n\n        addr1 = record.get(\"PT_MSTR.PT_ADR_1\")\n        city = record.get(\"PT_MSTR.PT_CTY\")\n        post = record.get(\"PT_MSTR.PT_PST_CD\")\n        country = record.get(\"PT_MSTR.PT_CNTRY\")\n        if any([addr1, city, post, country]):\n            addr_dict = {}\n            if addr1:\n                addr_dict[\"line\"] = [addr1]\n            if city:\n                addr_dict[\"city\"] = city\n            if post:\n                addr_dict[\"postalCode\"] = post\n            if country:\n                addr_dict[\"country\"] = country\n            res[\"address\"] = [addr_dict]\n\n        ph = record.get(\"PT_MSTR.PT_PH_NO\")\n        if ph:\n            res[\"telecom\"] = [{\"system\": \"phone\", \"value\": ph}]\n\n        upd = record.get(\"PT_MSTR.REC_UPD_TS\")\n        if upd:\n            dt_str = ts_to_datetime(upd)\n            if dt_str:\n                res[\"meta\"] = {\"lastUpdated\": f\"{dt_str}Z\"}\n\n        return [res]\n\n    elif entity == \"ENC_HDR\":\n        enc_id = record.get(\"ENC_HDR.ENC_ID\")\n        if not enc_id:\n            return []\n\n        res_id = str(enc_id) if _is_valid_id(str(enc_id)) else stable_id(\"Encounter\", enc_id)\n        res = {\n            \"resourceType\": \"Encounter\",\n            \"id\": res_id,\n            \"identifier\": [{\"value\": str(enc_id)}],\n        }\n\n        stat = code_map(record.get(\"ENC_HDR.ENC_STAT\"), {\"C\": \"finished\"})\n        if stat:\n            res[\"status\"] = stat\n\n        cls_code = code_map(record.get(\"ENC_HDR.ENC_TYP_CD\"), {\"OP\": \"AMB\", \"ED\": \"EMER\", \"IP\": \"IMP\"})\n        if cls_code:\n            res[\"class\"] = {\"system\": SYS[\"act_code\"], \"code\": cls_code}\n\n        pt_id = record.get(\"ENC_HDR.PT_ID\")\n        if pt_id:\n            res[\"subject\"] = ref(\"Patient\", pt_id)\n\n        adm_dt = yyyymmdd_to_date(record.get(\"ENC_HDR.ADM_DT\"))\n        dsch_dt = yyyymmdd_to_date(record.get(\"ENC_HDR.DSCH_DT\"))\n        if adm_dt or dsch_dt:\n            period = {}\n            if adm_dt:\n                period[\"start\"] = adm_dt\n            if dsch_dt:\n                period[\"end\"] = dsch_dt\n            res[\"period\"] = period\n\n        return [res]\n\n    elif entity == \"DX_DTL\":\n        dx_cd = record.get(\"DX_DTL.DX_CD\")\n        pt_id = record.get(\"DX_DTL.PT_ID\")\n        enc_id = record.get(\"DX_DTL.ENC_ID\")\n        seq = record.get(\"DX_DTL.DX_SEQ\")\n\n        cid = stable_id(\"Condition\", pt_id, enc_id, seq, dx_cd)\n        res = {\n            \"resourceType\": \"Condition\",\n            \"id\": cid,\n        }\n\n        if pt_id:\n            res[\"subject\"] = ref(\"Patient\", pt_id)\n        if enc_id:\n            res[\"encounter\"] = ref(\"Encounter\", enc_id)\n\n        cstat = code_map(record.get(\"DX_DTL.DX_STAT\"), {\"A\": \"active\"})\n        if cstat:\n            res[\"clinicalStatus\"] = {\n                \"coding\": [{\"system\": SYS[\"condition_clinical\"], \"code\": cstat}]\n            }\n\n        dx_dt = yyyymmdd_to_date(record.get(\"DX_DTL.DX_DT\"))\n        if dx_dt:\n            res[\"onsetDateTime\"] = dx_dt\n\n        if dx_cd:\n            coding = {\"system\": SYS[\"icd10\"], \"code\": dx_cd}\n            desc = record.get(\"DX_DTL.DX_DESC\")\n            if desc:\n                coding[\"display\"] = desc\n            res[\"code\"] = {\"coding\": [coding]}\n\n        return [res]\n\n    return []\n"
+    },
+    {
+      "attempt": 2,
+      "source": "gemini-3.5-flash",
+      "notes": "Applied icd10_add_dot to format ICD-10 diagnosis codes correctly with dots (e.g., E11.9). Handled reference formats, dates, timestamps, and codings according to target FHIR R4 schema.",
+      "generate_seconds": 30.96,
+      "summary": "security OK | records 1192 | runtime errors 0 | FHIR errors 0 | fidelity 100.0% | PASS",
+      "result": {
+        "security": [],
+        "runtime_errors": 0,
+        "runtime_examples": [],
+        "records": 1192,
+        "resources": {
+          "Patient": 200,
+          "Encounter": 492,
+          "Condition": 492
+        },
+        "structure_errors": 0,
+        "structure_examples": {},
+        "fidelity": {
+          "checks": 5538,
+          "passed": 5538,
+          "fidelity_pct": 100.0,
+          "failures": []
+        },
+        "passed": true,
+        "seconds": 0.03
+      },
+      "feedback_sent": "DATA FIDELITY 91.48% (target 99.0%). Failing checks:\n- Condition matches a true diagnosis (code+encounter) wrong in 403 cases; e.g. expected format 'ICD-10 code with dot, e.g. E11.9', got \"['E119']\"",
+      "code": "import re\nfrom fhirbridge_runtime.transforms import (\n    SYS,\n    code_map,\n    icd10_add_dot,\n    ref,\n    stable_id,\n    ts_to_datetime,\n    yyyymmdd_to_date,\n)\n\n\ndef _is_valid_id(val: str) -> bool:\n    return bool(val and re.match(r\"^[A-Za-z0-9-.]{1,64}$\", str(val)))\n\n\ndef to_fhir(entity: str, record: dict) -> list[dict]:\n    if not record:\n        return []\n\n    if entity == \"PT_MSTR\":\n        pt_id = record.get(\"PT_MSTR.PT_ID\")\n        if not pt_id:\n            return []\n\n        res = {\n            \"resourceType\": \"Patient\",\n            \"id\": str(pt_id),\n            \"identifier\": [{\"system\": SYS[\"mrn\"], \"value\": str(pt_id)}],\n        }\n\n        gender = code_map(record.get(\"PT_MSTR.PT_SX_CD\"), {\"1\": \"male\", \"2\": \"female\", \"9\": \"other\"})\n        if gender:\n            res[\"gender\"] = gender\n\n        bdate = yyyymmdd_to_date(record.get(\"PT_MSTR.PT_BIRTH_DT\"))\n        if bdate:\n            res[\"birthDate\"] = bdate\n\n        lst_nm = record.get(\"PT_MSTR.PT_LST_NM\")\n        fst_nm = record.get(\"PT_MSTR.PT_FST_NM\")\n        if lst_nm or fst_nm:\n            name_dict = {}\n            if lst_nm:\n                name_dict[\"family\"] = lst_nm\n            if fst_nm:\n                name_dict[\"given\"] = [fst_nm]\n            res[\"name\"] = [name_dict]\n\n        addr1 = record.get(\"PT_MSTR.PT_ADR_1\")\n        city = record.get(\"PT_MSTR.PT_CTY\")\n        post = record.get(\"PT_MSTR.PT_PST_CD\")\n        country = record.get(\"PT_MSTR.PT_CNTRY\")\n        if any([addr1, city, post, country]):\n            addr_dict = {}\n            if addr1:\n                addr_dict[\"line\"] = [addr1]\n            if city:\n                addr_dict[\"city\"] = city\n            if post:\n                addr_dict[\"postalCode\"] = post\n            if country:\n                addr_dict[\"country\"] = country\n            res[\"address\"] = [addr_dict]\n\n        ph = record.get(\"PT_MSTR.PT_PH_NO\")\n        if ph:\n            res[\"telecom\"] = [{\"system\": \"phone\", \"value\": ph}]\n\n        upd = record.get(\"PT_MSTR.REC_UPD_TS\")\n        if upd:\n            dt_str = ts_to_datetime(upd)\n            if dt_str:\n                res[\"meta\"] = {\"lastUpdated\": dt_str if dt_str.endswith(\"Z\") else f\"{dt_str}Z\"}\n\n        return [res]\n\n    elif entity == \"ENC_HDR\":\n        enc_id = record.get(\"ENC_HDR.ENC_ID\")\n        if not enc_id:\n            return []\n\n        res_id = str(enc_id) if _is_valid_id(str(enc_id)) else stable_id(\"Encounter\", enc_id)\n        res = {\n            \"resourceType\": \"Encounter\",\n            \"id\": res_id,\n            \"identifier\": [{\"value\": str(enc_id)}],\n        }\n\n        stat = code_map(record.get(\"ENC_HDR.ENC_STAT\"), {\"C\": \"finished\"})\n        if stat:\n            res[\"status\"] = stat\n\n        cls_code = code_map(record.get(\"ENC_HDR.ENC_TYP_CD\"), {\"OP\": \"AMB\", \"ED\": \"EMER\", \"IP\": \"IMP\"})\n        if cls_code:\n            res[\"class\"] = {\"system\": SYS[\"act_code\"], \"code\": cls_code}\n\n        pt_id = record.get(\"ENC_HDR.PT_ID\")\n        if pt_id:\n            res[\"subject\"] = ref(\"Patient\", pt_id)\n\n        adm_dt = yyyymmdd_to_date(record.get(\"ENC_HDR.ADM_DT\"))\n        dsch_dt = yyyymmdd_to_date(record.get(\"ENC_HDR.DSCH_DT\"))\n        if adm_dt or dsch_dt:\n            period = {}\n            if adm_dt:\n                period[\"start\"] = adm_dt\n            if dsch_dt:\n                period[\"end\"] = dsch_dt\n            res[\"period\"] = period\n\n        return [res]\n\n    elif entity == \"DX_DTL\":\n        dx_cd = record.get(\"DX_DTL.DX_CD\")\n        pt_id = record.get(\"DX_DTL.PT_ID\")\n        enc_id = record.get(\"DX_DTL.ENC_ID\")\n        seq = record.get(\"DX_DTL.DX_SEQ\")\n\n        cid = stable_id(\"Condition\", pt_id, enc_id, seq, dx_cd)\n        res = {\n            \"resourceType\": \"Condition\",\n            \"id\": cid,\n        }\n\n        if pt_id:\n            res[\"subject\"] = ref(\"Patient\", pt_id)\n        if enc_id:\n            res[\"encounter\"] = ref(\"Encounter\", enc_id)\n\n        cstat = code_map(record.get(\"DX_DTL.DX_STAT\"), {\"A\": \"active\"})\n        if cstat:\n            res[\"clinicalStatus\"] = {\n                \"coding\": [{\"system\": SYS[\"condition_clinical\"], \"code\": cstat}]\n            }\n\n        dx_dt = yyyymmdd_to_date(record.get(\"DX_DTL.DX_DT\"))\n        if dx_dt:\n            res[\"onsetDateTime\"] = dx_dt\n\n        if dx_cd:\n            code_val = icd10_add_dot(str(dx_cd))\n            coding = {\"system\": SYS[\"icd10\"], \"code\": code_val}\n            desc = record.get(\"DX_DTL.DX_DESC\")\n            if desc:\n                coding[\"display\"] = desc\n            res[\"code\"] = {\"coding\": [coding]}\n\n        return [res]\n\n    return []\n"
+    }
+  ]
+}
