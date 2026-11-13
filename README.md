@@ -45,12 +45,12 @@ flowchart LR
 ## Quick start
 
 ```bash
-python -m venv .venv && source .venv/bin/activate      # optional but recommended
+python -m venv .venv && source .venv/bin/activate      
 python -m pip install -r requirements.txt
-cp .env.example .env                                    # add your GEMINI_API_KEY
+cp .env.example .env                                   
 
-python scripts/build_all.py                             # synthetic data + 3 mock systems
-python scripts/smoke_test.py                            # 6 x PASS
+python scripts/build_all.py                             
+python scripts/smoke_test.py                            
 ```
 
 Three terminals:
@@ -64,7 +64,7 @@ python run_pipeline.py
 
 # 3 - dashboard (and optionally the FHIR API on :8002)
 python -m streamlit run dashboard/app.py
-python -m uvicorn fhir_api.app:app --port 8002          # X-API-Key: fhir-demo-key
+python -m uvicorn fhir_api.app:app --port 8002          
 ```
 
 Individual steps: `python -m agents.discover`, `python -m agents.map`, `python scripts/evaluate_mapping.py`,
