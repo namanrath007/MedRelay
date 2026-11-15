@@ -8,6 +8,7 @@ Pages: Overview | 1 Discover | 2 Map review | 3 Build & validate | Patient 360 |
 The mock portal API must be running on :8001 for pipeline buttons that read it.
 """
 import json
+import os
 import subprocess
 import sys
 from pathlib import Path
@@ -26,6 +27,49 @@ OUT = ROOT / "outputs"
 st.set_page_config(page_title="MedRelay", page_icon="🩺", layout="wide")
 
 
+# ---------------------------------------------------------------- self-starting backend (for hosted demos)
+# Streamlit Community Cloud only runs this file, so on first load we: copy hosted secrets into the
+# environment, rebuild the synthetic data if it is missing, and start the two internal APIs.
+@st.cache_resource(show_spinner="Starting MedRelay services (first load only)...")
+def ensure_backend():
+    import time
+    import urllib.request
+    try:  # hosted secrets (Streamlit Cloud) -> environment, so agents/subprocesses see them
+        for k, v in st.secrets.items():
+            if isinstance(v, (str, int, float, bool)):
+                os.environ.setdefault(k, str(v))
+    except Exception:
+        pass
+    status = {}
+    if not (ROOT / "mock_systems" / "legacy_db" / "legacy_ehr.db").exists() or \
+            not any((ROOT / "mock_systems" / "hl7_feed" / "outbox").glob("*.hl7")):
+        r = subprocess.run([sys.executable, "scripts/build_all.py"], cwd=ROOT, capture_output=True, text=True)
+        status["data"] = "built" if r.returncode == 0 else f"build failed: {r.stderr[-300:]}"
+
+    def up(port, path):
+        try:
+            urllib.request.urlopen(f"http://127.0.0.1:{port}{path}", timeout=1)
+            return True
+        except Exception:
+            return False
+
+    for port, app, path in ((8001, "mock_systems.rest_api.app:app", "/health"),
+                            (8002, "fhir_api.app:app", "/fhir/metadata")):
+        if not up(port, path):
+            subprocess.Popen([sys.executable, "-m", "uvicorn", app, "--host", "127.0.0.1", "--port", str(port)],
+                             cwd=ROOT, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
+            for _ in range(30):
+                if up(port, path):
+                    break
+                time.sleep(0.5)
+        status[port] = "up" if up(port, path) else "not running"
+    return status
+
+
+if os.getenv("AUTO_START", "1") == "1":
+    BACKEND = ensure_backend()
+
+
 # ---------------------------------------------------------------- helpers
 def load(rel):
     p = OUT / rel
@@ -36,7 +80,31 @@ def save(rel, data):
     (OUT / rel).write_text(json.dumps(data, indent=2, default=str))
 
 
-def run(cmd: list[str], label: str):
+# ---------------------------------------------------------------- public demo mode
+# DEMO_MODE=1 (set on the hosting platform): visitors can browse every result and run the drift demo,
+# but anything that spends Gemini quota or changes shared results needs ADMIN_PASSWORD.
+from fhirbridge_runtime import env  # noqa: E402,F401  (loads .env locally)
+
+DEMO = os.getenv("DEMO_MODE", "0") == "1"
+ASSISTANT_LIMIT = int(os.getenv("DEMO_ASSISTANT_LIMIT", "5"))
+
+
+def is_admin() -> bool:
+    return not DEMO or st.session_state.get("admin", False)
+
+
+def locked(what: str = "This action") -> bool:
+    """True (and shows a note) if a demo visitor tries an admin-only action."""
+    if is_admin():
+        return False
+    st.warning(f"{what} is reserved for the team in the public demo (it changes shared results or uses "
+               "Gemini quota). All results shown were produced by the real pipeline.")
+    return True
+
+
+def run(cmd: list[str], label: str, public: bool = False):
+    if not public and locked(label):
+        return
     with st.spinner(f"{label}..."):
         proc = subprocess.run([sys.executable] + cmd, cwd=ROOT, capture_output=True, text=True)
     out = (proc.stdout + proc.stderr).strip()
@@ -54,7 +122,23 @@ st.sidebar.caption("AI agents that carry hospital data into FHIR - without dropp
 page = st.sidebar.radio("Go to", ["Overview", "1 · Discover", "2 · Map review", "3 · Build & validate",
                                   "Patient 360", "Drift monitor", "Assistant"])
 st.sidebar.divider()
+if "BACKEND" in globals():
+    ok = BACKEND.get(8001) == "up" and BACKEND.get(8002) == "up"
+    st.sidebar.caption(("🟢" if ok else "🔴") + f" Services: portal API {BACKEND.get(8001)} · FHIR API {BACKEND.get(8002)}"
+                       + (f" · data {BACKEND['data']}" if "data" in BACKEND else ""))
 st.sidebar.caption("All data is synthetic. Agents only ever see privacy-masked samples.")
+if DEMO:
+    st.sidebar.info("Public demo: browse all results and try the Drift monitor. "
+                    "Running the agents is reserved for the team.")
+    if not st.session_state.get("admin"):
+        pw = st.sidebar.text_input("Team password", type="password")
+        if pw and pw == os.getenv("ADMIN_PASSWORD", "") and os.getenv("ADMIN_PASSWORD"):
+            st.session_state.admin = True
+            st.rerun()
+        elif pw:
+            st.sidebar.error("Wrong password")
+    else:
+        st.sidebar.success("Team mode: all actions enabled")
 
 # ---------------------------------------------------------------- OVERVIEW
 if page == "Overview":
@@ -138,7 +222,7 @@ elif page == "1 · Discover":
             for r in a.get("risks", []) + a.get("data_quality_notes", []):
                 st.write("•", r)
         st.caption(f"Status: **{d['status']}**")
-        if d["status"] != "approved" and st.button("✅ Approve discovery profile"):
+        if d["status"] != "approved" and st.button("✅ Approve discovery profile") and not locked("Approving"):
             d["status"] = "approved"
             save(f"discovery/{s}.json", d)
             st.rerun()
@@ -168,7 +252,7 @@ elif page == "2 · Map review":
                            "confidence": st.column_config.ProgressColumn("confidence", min_value=0, max_value=1)},
             disabled=["source", "confidence", "status", "reason"])
         c = st.columns(2)
-        if c[0].button("💾 Save my edits (marks edited rows approved)"):
+        if c[0].button("💾 Save my edits (marks edited rows approved)") and not locked("Saving edits"):
             by_src = {x["source"]: x for x in m["mappings"]}
             changed = 0
             for _, row in edited.iterrows():
@@ -183,7 +267,7 @@ elif page == "2 · Map review":
             st.success(f"Saved {changed} human edit(s).")
             st.rerun()
         pending = [x for x in m["mappings"] if x["status"] == "needs_review"]
-        if pending and c[1].button(f"✅ Approve all {len(pending)} pending as shown"):
+        if pending and c[1].button(f"✅ Approve all {len(pending)} pending as shown") and not locked("Approving"):
             for x in pending:
                 x.update({"status": "approved", "decided_by": "human"})
             save(f"mapping/{s}.json", m)
@@ -272,16 +356,16 @@ elif page == "Drift monitor":
     st.info("Demo order: **1** Simulate schema change → **2** Run drift monitor → **3** Approve fix → **4** Reset demo")
     c = st.columns(4)
     if c[0].button("1 · 💥 Simulate schema change"):
-        run(["scripts/simulate_drift.py", "--apply"], "Simulate drift")
+        run(["scripts/simulate_drift.py", "--apply"], "Simulate drift", public=True)
         st.caption("Now click **2 · Run drift monitor**.")
     if c[1].button("2 · 🔍 Run drift monitor"):
-        run(["-m", "agents.drift"], "Drift monitor")
+        run(["-m", "agents.drift"] + ([] if is_admin() else ["--no-llm"]), "Drift monitor", public=True)
     pending = (load("drift/latest.json") or {}).get("status") == "fix_pending_approval"  # read after step 2 ran
     if c[2].button("3 · ✅ Approve fix", disabled=not pending,
                    help=None if pending else "Nothing to approve yet - run steps 1 and 2 first"):
-        run(["-m", "agents.drift", "--approve"], "Approve fix")
+        run(["-m", "agents.drift", "--approve"], "Approve fix", public=True)
     if c[3].button("4 · ↺ Reset demo"):
-        run(["scripts/simulate_drift.py", "--reset"], "Reset")
+        run(["scripts/simulate_drift.py", "--reset"], "Reset", public=True)
     d = load("drift/latest.json")
     if d:
         status = d.get("status")
@@ -325,7 +409,11 @@ elif page == "Assistant":
         st.session_state.chat = []
     for role, text in st.session_state.chat:
         st.chat_message(role).write(text)
-    q = st.chat_input("e.g. Why did the lab feed need two attempts?  Which fields hold PHI?")
+    asked = sum(1 for r, _ in st.session_state.chat if r == "user")
+    if not is_admin():
+        st.caption(f"Public demo: {max(ASSISTANT_LIMIT - asked, 0)} of {ASSISTANT_LIMIT} questions left.")
+    q = st.chat_input("e.g. Why did the lab feed need two attempts?  Which fields hold PHI?",
+                      disabled=not is_admin() and asked >= ASSISTANT_LIMIT)
     if q:
         st.session_state.chat.append(("user", q))
         st.chat_message("user").write(q)

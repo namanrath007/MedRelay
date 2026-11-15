@@ -80,6 +80,13 @@ Start from a later step with `python run_pipeline.py --from validate`. Delete `o
 
 Hard mode (no schema comments for the agents to read): `python scripts/build_all.py --hard`.
 
+## Deploy
+
+Free hosting on **Streamlit Community Cloud**: the dashboard rebuilds the data and starts the internal APIs
+itself on first load. A `Dockerfile` is included for Docker hosts such as Render. See
+[docs/deploy.md](docs/deploy.md). Set `DEMO_MODE=1` and `ADMIN_PASSWORD` so visitors can browse
+results and try the drift demo without spending your Gemini quota.
+
 ## The three mock systems
 
 | System | Tech | What makes it hard | Patient ID |

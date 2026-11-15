@@ -1,0 +1,8 @@
+.env
+.venv/
+.git/
+__pycache__/
+*.pyc
+.DS_Store
+mock_systems/legacy_db/legacy_ehr.db
+mock_systems/hl7_feed/outbox/
