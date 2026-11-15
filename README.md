@@ -13,6 +13,16 @@ integrations when a source system changes. A human approves at every gate.
 
 > All data is synthetic. No real patient data is used anywhere in this project.
 
+
+## Team Members
+
+| Name | Email ID |
+|---|---|
+| Naman Rath - 26120508 | naman.rath@ucdconnect.ie |
+| Rohan - 26105705 | rohan1@ucdconnect.ie |
+| Bhavya Sri Lanka- 26101292 | bhavya.lanka@ucdconnect.ie |
+| Diptee Bharat Sable - 26116615 | diptee.sable@ucdconnect.ie |
+
 ## Solution Demo
 
 Watch MedRelay in action! This demonstration showcases how AI agents discover healthcare data sources, map fields to HL7 FHIR R4, generate integration code, and validate the results.
