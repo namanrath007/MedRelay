@@ -13,6 +13,10 @@ integrations when a source system changes. A human approves at every gate.
 
 > All data is synthetic. No real patient data is used anywhere in this project.
 
+## Deployment
+
+🌐 **Live demo:** https://medrelay.streamlit.app
+
 ## Architecture
 
 ```mermaid
