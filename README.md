@@ -19,8 +19,6 @@ Watch MedRelay in action! This demonstration showcases how AI agents discover he
 
 ### MedRelay — Solution Walkthrough
 
-
-https://github.com/user-attachments/assets/f35ff5b0-5574-45fe-82e2-9b9ada7dae14
 🎬 **Demo video:** https://drive.google.com/file/d/1Y0rfinSF6QjzZWljUtLsH4RAGzjdHiss/view?usp=drive_link
 
 
