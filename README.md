@@ -13,6 +13,18 @@ integrations when a source system changes. A human approves at every gate.
 
 > All data is synthetic. No real patient data is used anywhere in this project.
 
+## Solution Demo
+
+Watch MedRelay in action! This demonstration showcases how AI agents discover healthcare data sources, map fields to HL7 FHIR R4, generate integration code, and validate the results.
+
+### MedRelay — Solution Walkthrough
+
+
+https://github.com/user-attachments/assets/f35ff5b0-5574-45fe-82e2-9b9ada7dae14
+
+
+
+
 ## Architecture
 
 ```mermaid
