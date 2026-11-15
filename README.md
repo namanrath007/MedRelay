@@ -13,10 +13,6 @@ integrations when a source system changes. A human approves at every gate.
 
 > All data is synthetic. No real patient data is used anywhere in this project.
 
-## Deployment
-
-🌐 **Live demo:** https://medrelay.streamlit.app
-
 ## Architecture
 
 ```mermaid
@@ -84,12 +80,14 @@ Start from a later step with `python run_pipeline.py --from validate`. Delete `o
 
 Hard mode (no schema comments for the agents to read): `python scripts/build_all.py --hard`.
 
-## Deploy
+## Deployment
 
 Free hosting on **Streamlit Community Cloud**: the dashboard rebuilds the data and starts the internal APIs
 itself on first load. A `Dockerfile` is included for Docker hosts such as Render. See
 [docs/deploy.md](docs/deploy.md). Set `DEMO_MODE=1` and `ADMIN_PASSWORD` so visitors can browse
 results and try the drift demo without spending your Gemini quota.
+
+🌐 **Live demo:** https://medrelay.streamlit.app
 
 ## The three mock systems
 
