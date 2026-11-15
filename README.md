@@ -31,7 +31,10 @@ Watch MedRelay in action! This demonstration showcases how AI agents discover he
 
 🎬 **Demo video:** https://drive.google.com/file/d/1Y0rfinSF6QjzZWljUtLsH4RAGzjdHiss/view?usp=drive_link
 
+📊 Hackathon Presentation
 
+Explore our final EXL × UCD Data & AI Hackathon 2026 presentation.
+[MedRelay_final-Submission (1).pptx](https://github.com/user-attachments/files/34884737/MedRelay_final-Submission.1.pptx)
 
 
 ## Architecture
